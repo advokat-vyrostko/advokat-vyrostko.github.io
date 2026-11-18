@@ -70,3 +70,6 @@ footer{background:#0b1b30;color:#e8edf4;padding:34px 0}.footer-row{display:flex;
  .about-portrait{max-width:340px!important;justify-self:center!important}
  .about-portrait img{max-height:440px!important}
 }
+
+/* Google Maps links */
+footer a{display:inline-block;margin-top:5px}.contact-card .btn{margin-top:12px}
