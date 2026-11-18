@@ -457,3 +457,28 @@ footer a { color: #f0c56c; display: inline-block; margin-top: 5px; }
   }
 }
 
+
+
+/* Scroll reveal for photographs on the About page */
+.about-portrait,
+.office-gallery figure {
+  opacity: 0;
+  transform: translate3d(0, 34px, 0);
+  transition: opacity .85s ease, transform .85s cubic-bezier(.2,.7,.2,1);
+  will-change: opacity, transform;
+}
+.office-gallery figure:nth-child(2) { transition-delay: .14s; }
+.about-portrait.is-visible,
+.office-gallery figure.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .about-portrait,
+  .office-gallery figure {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+}
