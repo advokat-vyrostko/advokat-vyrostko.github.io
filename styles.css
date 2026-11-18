@@ -73,3 +73,16 @@ footer{background:#0b1b30;color:#e8edf4;padding:34px 0}.footer-row{display:flex;
 
 /* Google Maps links */
 footer a{display:inline-block;margin-top:5px}.contact-card .btn{margin-top:12px}
+
+
+/* WhatsApp and Viber contact links — available on every page */
+.messenger-contact{position:fixed;right:22px;bottom:22px;z-index:40;display:flex;gap:10px;align-items:center}
+.messenger-link{display:inline-flex;align-items:center;justify-content:center;min-width:112px;padding:12px 18px;border-radius:999px;color:#fff;font-size:14px;font-weight:700;box-shadow:0 5px 18px rgba(13,27,46,.2);transition:transform .2s,filter .2s}
+.messenger-link:hover{transform:translateY(-2px);filter:brightness(1.06)}
+.messenger-whatsapp{background:#168b4b}
+.messenger-viber{background:#665cac}
+@media(max-width:720px){
+ body{padding-bottom:76px}
+ .messenger-contact{right:0;left:0;bottom:0;padding:10px 15px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid var(--line);justify-content:center;gap:10px}
+ .messenger-link{flex:1;max-width:220px;min-width:0;padding:12px 10px;font-size:14px}
+}
