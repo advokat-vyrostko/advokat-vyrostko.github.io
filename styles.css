@@ -397,3 +397,49 @@ footer a { color: #f0c56c; display: inline-block; margin-top: 5px; }
   border-radius: 7px;
 }
 .map-frame iframe { border: 0; }
+
+
+/* Discreet fixed messenger shortcuts */
+.messenger-contact {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px;
+  background: rgba(255,255,255,.94);
+  border: 1px solid rgba(20,36,58,.10);
+  border-radius: 999px;
+  box-shadow: 0 3px 14px rgba(13,27,46,.10);
+  backdrop-filter: blur(8px);
+}
+.messenger-contact .messenger-link {
+  padding: 7px 11px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: none;
+}
+.messenger-contact .messenger-whatsapp { background: #4d8061; }
+.messenger-contact .messenger-viber { background: #77719a; }
+.messenger-contact .messenger-link:hover {
+  filter: brightness(1.04);
+  transform: none;
+}
+@media (max-width: 720px) {
+  .messenger-contact {
+    right: 12px;
+    bottom: calc(12px + env(safe-area-inset-bottom));
+    left: auto;
+    padding: 5px;
+    gap: 6px;
+    background: rgba(255,255,255,.92);
+    box-shadow: 0 2px 10px rgba(13,27,46,.09);
+  }
+  .messenger-contact .messenger-link {
+    padding: 7px 10px;
+    font-size: 11px;
+  }
+}
