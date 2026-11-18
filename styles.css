@@ -109,11 +109,3 @@ footer a{display:inline-block;margin-top:5px}.contact-card .btn{margin-top:12px}
   92%{transform:rotate(5deg)}
 }
 @media(prefers-reduced-motion:reduce){.phone-ring-icon{animation:none}}
-
-/* Original legal-practice emblem inspired by heraldic legal symbolism */
-.hero-identity{display:flex;align-items:center;gap:22px;margin:0 0 18px}
-.law-emblem{width:104px;min-width:104px;filter:drop-shadow(0 5px 8px rgba(20,36,58,.12))}
-.law-emblem svg{display:block;width:100%;height:auto}
-.hero-name h1{margin:12px 0 12px}
-.emblem-caption{font-size:10px;font-weight:700;letter-spacing:.16em;color:#8b6829}
-@media(max-width:720px){.hero-identity{gap:14px}.law-emblem{width:78px;min-width:78px}.hero-name h1{font-size:clamp(34px,8vw,48px);margin:10px 0}.emblem-caption{font-size:8px;letter-spacing:.1em}}
