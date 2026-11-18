@@ -1339,3 +1339,87 @@ footer small {
     border-top: 1px solid rgba(237,189,88,.22);
   }
 }
+
+
+/* Refined motion system: subtle, consistent and non-blocking */
+.hero::before {
+  animation: hero-photo-motion 24s ease-in-out infinite alternate;
+}
+@keyframes hero-photo-motion {
+  from { transform: scale(1.04) translate3d(0,0,0); }
+  to { transform: scale(1.10) translate3d(-.7%,-.35%,0); }
+}
+header {
+  animation: header-settle .55s cubic-bezier(.2,.7,.2,1) both;
+}
+@keyframes header-settle {
+  from { opacity: .72; transform: translate3d(0,-7px,0); }
+  to { opacity: 1; transform: translate3d(0,0,0); }
+}
+.motion-reveal {
+  opacity: 0;
+  transform: translate3d(0,18px,0);
+  transition:
+    opacity .62s ease var(--reveal-delay, 0ms),
+    transform .68s cubic-bezier(.2,.7,.2,1) var(--reveal-delay, 0ms);
+}
+.motion-reveal.motion-visible {
+  opacity: 1;
+  transform: translate3d(0,0,0);
+}
+.home-page .hero-inner,
+.home-page .hero p,
+.home-page .hero-actions {
+  animation: home-intro .72s cubic-bezier(.2,.7,.2,1) both;
+}
+.home-page .hero-inner { animation-delay: .08s; }
+.home-page .hero p { animation-delay: .2s; }
+.home-page .hero-actions { animation-delay: .32s; }
+.home-page .about-panel::after {
+  animation: orbit-drift 20s ease-in-out infinite alternate;
+}
+@keyframes orbit-drift {
+  from { transform: translate3d(0,0,0) scale(1); }
+  to { transform: translate3d(-12px,-9px,0) scale(1.06); }
+}
+.practice-card,
+.contact-card,
+.fact,
+.article-item,
+.about-portrait,
+.office-gallery figure {
+  transition:
+    opacity .62s ease var(--reveal-delay, 0ms),
+    transform .68s cubic-bezier(.2,.7,.2,1) var(--reveal-delay, 0ms),
+    box-shadow .25s ease,
+    border-color .25s ease;
+}
+.practice-card:hover,
+.contact-card:hover,
+.article-item:hover {
+  transform: translate3d(0,-3px,0);
+  box-shadow: 0 12px 28px rgba(20,36,58,.075);
+}
+.fact:hover { transform: translate3d(0,-3px,0); }
+@media (max-width: 720px) {
+  .motion-reveal {
+    transform: translate3d(0,14px,0);
+    transition-duration: .52s;
+  }
+  .home-page .hero::before { animation-duration: 30s; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .motion-reveal, .site-reveal, .home-reveal,
+  .about-portrait, .office-gallery figure {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
