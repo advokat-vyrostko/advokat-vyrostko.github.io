@@ -1204,3 +1204,24 @@ footer {
     line-height: 1.7;
   }
 }
+
+
+/* Official advocate-register link */
+.era u-status-link { margin-top: 12px; }
+.era u-status-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #8c641e;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(211,154,47,.55);
+  padding-bottom: 3px;
+  transition: color .2s ease, border-color .2s ease;
+}
+.era u-status-link a:hover {
+  color: var(--navy);
+  border-color: var(--navy);
+}
