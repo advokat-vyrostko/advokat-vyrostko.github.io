@@ -712,3 +712,291 @@ nav a:hover::after, nav a.active::after { transform: scaleX(1); }
   .brand, .brand-mark, nav a, nav a::after, .nav > .btn,
   .nav > .btn::before, .menu-toggle { transition: none; }
 }
+
+
+/* Balanced spacing and symmetrical page rhythm */
+:root {
+  --space-section: clamp(56px, 6vw, 76px);
+  --space-card: 22px;
+}
+main > .section {
+  padding-block: var(--space-section);
+}
+main > .section + .section {
+  border-top: 0;
+}
+.section-head {
+  width: min(100%, 720px);
+  margin: 0 auto 38px;
+  padding-inline: 12px;
+}
+.section-head h2 {
+  margin: 12px 0 14px;
+  line-height: 1.14;
+}
+.section-head p {
+  max-width: 640px;
+  margin-inline: auto;
+  line-height: 1.7;
+}
+.page-hero {
+  padding-block: clamp(48px, 5.5vw, 68px);
+}
+.page-hero .wrap {
+  max-width: 1180px;
+}
+.page-hero h1 {
+  margin: 14px 0 16px;
+  line-height: 1.12;
+}
+.page-hero p {
+  max-width: 700px;
+  line-height: 1.75;
+}
+.content {
+  width: min(100%, 850px);
+  margin-inline: auto;
+}
+.content h2 {
+  margin: 36px 0 13px;
+  line-height: 1.18;
+}
+.content h2:first-child {
+  margin-top: 0;
+}
+.content p, .content li {
+  line-height: 1.78;
+}
+.content p {
+  margin: 0 0 18px;
+}
+.content ul {
+  margin: 12px 0 22px;
+}
+.note {
+  margin-block: 26px;
+  padding: 16px 20px;
+  line-height: 1.7;
+}
+.practice-grid {
+  gap: 18px;
+  align-items: stretch;
+}
+.practice-card {
+  min-height: 184px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 25px 22px;
+}
+.practice-card h3 {
+  margin: 15px 0 10px;
+  line-height: 1.22;
+}
+.practice-card p {
+  line-height: 1.65;
+}
+.practice-card:last-child {
+  grid-column: 2 / span 2;
+}
+.about-grid {
+  gap: clamp(28px, 4vw, 48px);
+}
+.about-panel {
+  padding: clamp(28px, 3.5vw, 42px);
+}
+.about-panel h2 {
+  line-height: 1.16;
+}
+.facts {
+  gap: 16px;
+  align-content: stretch;
+}
+.fact {
+  min-height: 126px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 22px 24px;
+}
+.fact strong {
+  line-height: 1.2;
+}
+.about-profile-grid {
+  gap: clamp(32px, 4vw, 54px);
+  align-items: center;
+}
+.about-profile-copy h2 {
+  margin: 0 0 14px;
+}
+.about-profile-copy h2:not(:first-child) {
+  margin-top: 32px;
+}
+.about-profile-copy p {
+  line-height: 1.78;
+}
+.about-portrait {
+  align-self: center;
+}
+.office-gallery {
+  gap: 22px;
+  align-items: stretch;
+}
+.office-gallery img,
+.office-gallery-main img {
+  height: 430px;
+  object-fit: cover;
+}
+.contact-grid {
+  gap: 18px;
+  align-items: stretch;
+}
+.contact-card {
+  min-height: 190px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 26px;
+}
+.contact-card h3 {
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+.contact-card p {
+  line-height: 1.65;
+}
+.contact-card .btn {
+  align-self: flex-start;
+  margin-top: auto;
+}
+.office-map {
+  margin-top: 28px;
+  padding: clamp(22px, 3vw, 32px);
+}
+.office-map h2 {
+  margin-bottom: 10px;
+}
+.map-frame iframe {
+  height: 420px;
+}
+.article-list {
+  gap: 18px;
+}
+.article-item {
+  padding: 24px 26px;
+}
+.article-item h3 {
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+.article-item p {
+  line-height: 1.7;
+}
+.cta-band {
+  padding: 38px 0;
+}
+.cta-row {
+  align-items: center;
+  gap: 28px;
+}
+.cta-row h2 {
+  margin: 0 0 10px;
+  line-height: 1.18;
+}
+.cta-row p {
+  margin: 0;
+  line-height: 1.65;
+}
+footer {
+  padding-block: 36px;
+}
+.footer-row {
+  gap: 32px;
+}
+.footer-row > div {
+  line-height: 1.8;
+}
+@media (max-width: 980px) {
+  .practice-card:last-child {
+    grid-column: auto;
+  }
+  .practice-card {
+    min-height: 170px;
+  }
+  .about-grid {
+    gap: 24px;
+  }
+}
+@media (max-width: 720px) {
+  :root {
+    --space-section: 48px;
+  }
+  .page-hero {
+    padding-block: 42px 36px;
+  }
+  .page-hero h1 {
+    font-size: clamp(34px, 9vw, 40px);
+    margin: 12px 0;
+  }
+  .page-hero p {
+    line-height: 1.65;
+  }
+  .section-head {
+    margin-bottom: 28px;
+    padding-inline: 4px;
+  }
+  .section-head h2 {
+    font-size: 29px;
+  }
+  .practice-grid {
+    gap: 14px;
+  }
+  .practice-card {
+    min-height: 0;
+    padding: 22px;
+  }
+  .about-grid, .contact-grid {
+    gap: 16px;
+  }
+  .about-panel {
+    padding: 26px 24px;
+  }
+  .facts {
+    gap: 12px;
+  }
+  .fact {
+    min-height: 112px;
+    padding: 17px;
+  }
+  .about-profile-grid, .office-gallery {
+    gap: 26px;
+  }
+  .about-profile-copy h2:not(:first-child) {
+    margin-top: 26px;
+  }
+  .office-gallery img, .office-gallery-main img {
+    height: auto;
+    max-height: 520px;
+    object-fit: contain;
+  }
+  .contact-card {
+    min-height: 0;
+    padding: 22px;
+  }
+  .office-map {
+    margin-top: 22px;
+    padding: 18px;
+  }
+  .map-frame iframe {
+    height: 320px;
+  }
+  .article-item {
+    padding: 20px;
+  }
+  .cta-band {
+    padding: 30px 0;
+  }
+  footer {
+    padding-block: 30px;
+  }
+}
