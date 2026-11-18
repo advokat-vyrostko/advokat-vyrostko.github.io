@@ -1486,3 +1486,85 @@ header {
     transition: none !important;
   }
 }
+
+
+/* Landscape tablets and compact laptops: use the same clean menu as portrait tablets */
+@media (min-width: 1101px) and (max-width: 1500px) {
+  header .nav {
+    min-height: 82px;
+    gap: 16px;
+    justify-content: space-between;
+  }
+  header .brand {
+    flex: 0 1 auto;
+    min-width: 0;
+    max-width: 390px;
+  }
+  header .brand strong {
+    font-size: 21px;
+    white-space: normal;
+  }
+  header .menu-toggle {
+    display: flex;
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(211,154,47,.35);
+    border-radius: 7px;
+    background: #fff;
+    line-height: 1;
+    cursor: pointer;
+  }
+  header .nav > .btn {
+    display: none;
+  }
+  header .nav nav {
+    display: none;
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 24px;
+    right: 24px;
+    z-index: 50;
+    padding: 12px;
+    background: rgba(255,255,255,.985);
+    border: 1px solid rgba(211,154,47,.22);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 16px 32px rgba(13,27,46,.13);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    font-size: 15px;
+  }
+  header .nav nav.open {
+    display: flex;
+  }
+  header .nav nav a {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 16px;
+    line-height: 1.35;
+    white-space: normal;
+    border: 0;
+    border-radius: 5px;
+  }
+  header .nav nav a:hover,
+  header .nav nav a.active {
+    background: #f8f5ee;
+    border: 0;
+  }
+  header .nav nav a::before {
+    left: 3px;
+  }
+  header .nav nav.open a {
+    animation: menu-row-enter .3s cubic-bezier(.2,.7,.2,1) both;
+  }
+  header .nav nav.open a:nth-child(1) { animation-delay: .025s; }
+  header .nav nav.open a:nth-child(2) { animation-delay: .055s; }
+  header .nav nav.open a:nth-child(3) { animation-delay: .085s; }
+  header .nav nav.open a:nth-child(4) { animation-delay: .115s; }
+  header .nav nav.open a:nth-child(5) { animation-delay: .145s; }
+  header .nav nav.open a:nth-child(6) { animation-delay: .175s; }
+}
