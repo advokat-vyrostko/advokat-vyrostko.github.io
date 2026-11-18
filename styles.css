@@ -1645,3 +1645,45 @@ header {
   .office-wayfinding-gallery { grid-template-columns: 1fr; gap: 16px; }
   .office-wayfinding-gallery img { height: auto; max-height: 360px; }
 }
+
+
+/* Contact map and location photos: one coherent visual group */
+.office-map {
+  padding: 26px;
+  background: #f8f7f3;
+  border-color: rgba(20,36,58,.12);
+}
+.office-map .map-frame {
+  border: 1px solid rgba(20,36,58,.16);
+  border-radius: 8px;
+  box-shadow: 0 5px 16px rgba(20,36,58,.08);
+}
+.office-wayfinding-gallery {
+  margin-top: 14px;
+  gap: 14px;
+}
+.office-wayfinding-gallery figure {
+  overflow: hidden;
+  padding: 0 0 10px;
+  background: #fff;
+  border: 1px solid rgba(20,36,58,.13);
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(20,36,58,.07);
+}
+.office-wayfinding-gallery img {
+  height: clamp(190px, 23vw, 285px);
+  border-radius: 0;
+  box-shadow: none;
+}
+.office-wayfinding-gallery figcaption {
+  margin: 0;
+  padding: 10px 12px 0;
+  color: #344256;
+  font-size: 13px;
+  letter-spacing: .015em;
+}
+@media (max-width: 720px) {
+  .office-map { padding: 16px; }
+  .office-wayfinding-gallery { margin-top: 12px; gap: 12px; }
+  .office-wayfinding-gallery img { height: auto; max-height: 300px; }
+}
