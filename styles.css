@@ -109,3 +109,12 @@ footer a{display:inline-block;margin-top:5px}.contact-card .btn{margin-top:12px}
   92%{transform:rotate(5deg)}
 }
 @media(prefers-reduced-motion:reduce){.phone-ring-icon{animation:none}}
+
+/* Embedded office location map on contacts page */
+.office-map{margin-top:34px;padding:28px;background:var(--cream);border:1px solid var(--line);border-radius:8px}
+.office-map h2{margin:0 0 8px;font:700 28px/1.2 var(--serif);color:var(--navy)}
+.office-map p{margin:0 0 18px;color:var(--muted)}
+.map-frame{overflow:hidden;border-radius:6px;border:1px solid var(--line);background:#eee}
+.map-frame iframe{display:block;width:100%;height:420px}
+.map-open-link{display:inline-block;margin-top:14px;color:var(--navy);font-weight:700;border-bottom:1px solid var(--gold)}
+@media(max-width:720px){.office-map{padding:18px}.map-frame iframe{height:320px}.office-map h2{font-size:24px}}
