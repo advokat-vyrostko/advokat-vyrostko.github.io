@@ -1,21 +1,29 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
-    <loc>https://advokat-vyrostko.github.io/</loc>
+    <loc>https://advokat-vyrostko.com.ua/</loc>
   </url>
+
   <url>
-    <loc>https://advokat-vyrostko.github.io/about.html</loc>
+    <loc>https://advokat-vyrostko.com.ua/about.html</loc>
   </url>
+
   <url>
-    <loc>https://advokat-vyrostko.github.io/practice.html</loc>
+    <loc>https://advokat-vyrostko.com.ua/practice.html</loc>
   </url>
+
   <url>
-    <loc>https://advokat-vyrostko.github.io/cases.html</loc>
+    <loc>https://advokat-vyrostko.com.ua/cases.html</loc>
   </url>
+
   <url>
-    <loc>https://advokat-vyrostko.github.io/publications.html</loc>
+    <loc>https://advokat-vyrostko.com.ua/publications.html</loc>
   </url>
+
   <url>
-    <loc>https://advokat-vyrostko.github.io/contacts.html</loc>
+    <loc>https://advokat-vyrostko.com.ua/contacts.html</loc>
   </url>
+
 </urlset>
