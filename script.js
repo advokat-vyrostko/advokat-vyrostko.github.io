@@ -4,7 +4,8 @@ if(toggle&&nav){toggle.addEventListener('click',()=>{nav.classList.toggle('open'
 document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>nav?.classList.remove('open')));
 
 // Direct contact buttons shown on every page.
-if (!document.querySelector('.messenger-contact')) {
+const isHomePage = window.location.pathname === '/' || window.location.pathname.endsWith('/index.html');
+if (isHomePage && !document.querySelector('.messenger-contact')) {
   const contact = document.createElement('div');
   contact.className = 'messenger-contact';
   contact.setAttribute('aria-label', 'Зв’язатися з адвокатом у месенджері');
