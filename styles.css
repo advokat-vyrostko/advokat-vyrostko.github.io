@@ -1687,3 +1687,81 @@ header {
   .office-wayfinding-gallery { margin-top: 12px; gap: 12px; }
   .office-wayfinding-gallery img { height: auto; max-height: 300px; }
 }
+
+
+/* Subtle photo overlay integrated with the map */
+.office-map .map-frame {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(20,36,58,.10);
+}
+.office-map .map-frame iframe {
+  display: block;
+  border: 0;
+}
+.office-map .office-wayfinding-gallery {
+  position: absolute;
+  z-index: 2;
+  right: 18px;
+  bottom: 18px;
+  display: flex;
+  align-items: flex-end;
+  gap: 0;
+  width: min(390px, 48%);
+  pointer-events: none;
+}
+.office-map .office-wayfinding-gallery figure {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 5px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.88);
+  border-radius: 8px;
+  background: rgba(255,255,255,.68);
+  box-shadow: 0 8px 24px rgba(13,27,46,.22);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.office-map .office-wayfinding-gallery figure + figure {
+  margin-left: -24px;
+  transform: translateY(-13px);
+}
+.office-map .office-wayfinding-gallery img {
+  display: block;
+  width: 100%;
+  height: 112px;
+  object-fit: cover;
+  border-radius: 5px;
+  opacity: .94;
+}
+.office-map .office-wayfinding-gallery figcaption {
+  margin: 4px 1px 1px;
+  color: #263449;
+  font-size: 11px;
+  line-height: 1.25;
+  font-weight: 700;
+  text-align: center;
+}
+@media (max-width: 720px) {
+  .office-map .map-frame { overflow: visible; }
+  .office-map .office-wayfinding-gallery {
+    position: static;
+    width: 100%;
+    margin: 14px 0 0;
+    gap: 12px;
+    pointer-events: auto;
+  }
+  .office-map .office-wayfinding-gallery figure + figure {
+    margin-left: 0;
+    transform: none;
+  }
+  .office-map .office-wayfinding-gallery figure {
+    background: rgba(255,255,255,.94);
+    padding: 4px;
+  }
+  .office-map .office-wayfinding-gallery img { height: 105px; opacity: 1; }
+}
