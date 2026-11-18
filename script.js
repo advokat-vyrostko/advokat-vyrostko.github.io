@@ -65,3 +65,37 @@ if (window.location.pathname === '/' || window.location.pathname.endsWith('/inde
     homeRevealItems.forEach(item => item.classList.add('is-visible'));
   }
 }
+
+
+// Shared scroll-reveal animation for all pages except the homepage,
+// which has its own staggered animation sequence above.
+if (!(window.location.pathname === '/' || window.location.pathname.endsWith('/index.html'))) {
+  const revealTargets = document.querySelectorAll(
+    'main .page-hero .wrap, main .section > .wrap, main .content > h2, main .content > p, ' +
+    'main .content > .note, main .contact-card, main .office-map, main .office-gallery figure, ' +
+    'main .about-profile-copy, main .about-portrait'
+  );
+  revealTargets.forEach((element, index) => {
+    element.classList.add('site-reveal');
+    if (element.matches('.about-profile-copy, .contact-card:nth-child(odd)')) {
+      element.dataset.reveal = 'left';
+    } else if (element.matches('.about-portrait, .contact-card:nth-child(even), .office-gallery figure:nth-child(even)')) {
+      element.dataset.reveal = 'right';
+    }
+    element.style.transitionDelay = (index % 4) * 75 + 'ms';
+  });
+
+  if ('IntersectionObserver' in window) {
+    const siteObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -28px 0px' });
+    revealTargets.forEach(element => siteObserver.observe(element));
+  } else {
+    revealTargets.forEach(element => element.classList.add('is-visible'));
+  }
+}
