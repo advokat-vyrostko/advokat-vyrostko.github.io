@@ -86,3 +86,12 @@ footer a{display:inline-block;margin-top:5px}.contact-card .btn{margin-top:12px}
  .messenger-contact{right:0;left:0;bottom:0;padding:10px 15px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid var(--line);justify-content:center;gap:10px}
  .messenger-link{flex:1;max-width:220px;min-width:0;padding:12px 10px;font-size:14px}
 }
+
+/* Inline messenger buttons beside the phone number */
+.messenger-inline{display:inline-flex;align-items:center;gap:8px;margin-left:12px;vertical-align:middle;flex-wrap:wrap}
+.messenger-inline .messenger-link{min-width:0;padding:7px 13px;font-size:13px;box-shadow:none}
+.contact-phone-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+@media(max-width:720px){
+ .messenger-inline{margin-left:0;margin-top:8px}
+ .contact-phone-row{align-items:flex-start;flex-direction:column}
+}
