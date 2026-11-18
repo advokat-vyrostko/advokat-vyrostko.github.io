@@ -1068,3 +1068,70 @@ footer {
     background: #f8f5ee;
   }
 }
+
+
+/* About page: make the advocate's portrait the visual focal point */
+.about-profile-grid {
+  grid-template-columns: minmax(320px, .9fr) minmax(0, 1.1fr);
+  gap: clamp(36px, 5vw, 68px);
+  align-items: center;
+}
+.about-profile-grid .about-portrait {
+  grid-column: 1;
+  grid-row: 1;
+  width: 100%;
+  max-width: 440px;
+  justify-self: center;
+  padding: 9px;
+  border: 1px solid rgba(211,154,47,.38);
+  border-radius: 12px;
+  background: linear-gradient(145deg, #fff 0%, #f7f3e9 100%);
+  box-shadow: 0 18px 42px rgba(20,36,58,.12);
+}
+.about-profile-grid .about-portrait img {
+  width: 100%;
+  height: clamp(430px, 48vw, 560px);
+  max-height: 560px;
+  object-fit: cover;
+  object-position: center 35%;
+  border-radius: 7px;
+}
+.about-profile-grid .about-profile-copy {
+  grid-column: 2;
+  grid-row: 1;
+  max-width: 620px;
+}
+.about-profile-copy h2:first-child {
+  font-size: clamp(30px, 3vw, 38px);
+  margin-bottom: 18px;
+}
+.about-profile-copy h2:not(:first-child) {
+  margin-top: 34px;
+}
+.about-profile-copy p {
+  font-size: 16px;
+  line-height: 1.82;
+}
+@media (max-width: 720px) {
+  .about-profile-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 30px;
+  }
+  .about-profile-grid .about-portrait {
+    order: -1;
+    width: min(100%, 390px);
+    max-width: 390px;
+    padding: 7px;
+  }
+  .about-profile-grid .about-portrait img {
+    height: auto;
+    max-height: 520px;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
+  .about-profile-grid .about-profile-copy {
+    max-width: none;
+  }
+}
