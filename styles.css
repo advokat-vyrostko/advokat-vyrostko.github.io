@@ -366,3 +366,34 @@ footer a { color: #f0c56c; display: inline-block; margin-top: 5px; }
 @media (prefers-reduced-motion: reduce) {
   .phone-ring-icon { animation: none; }
 }
+
+
+/* Shared inline contact buttons and consistent page accents */
+.messenger-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: 7px 12px;
+  border-radius: 18px;
+  color: #fff;
+  font: 700 13px var(--sans);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: filter .2s, transform .2s;
+}
+.messenger-link:hover { filter: brightness(1.08); transform: translateY(-1px); }
+.messenger-whatsapp { background: #168b4b; }
+.messenger-viber { background: #665cac; }
+.eyebrow-center { justify-content: center; }
+.eyebrow-light { color: #f0c56c; }
+.about-portrait { width: 100%; max-width: 380px; margin: 0 auto; }
+.about-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: contain;
+  border-radius: 7px;
+}
+.map-frame iframe { border: 0; }
