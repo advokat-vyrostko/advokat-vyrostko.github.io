@@ -1135,3 +1135,72 @@ footer {
     max-width: none;
   }
 }
+
+
+/* About page: typographic balance alongside the portrait */
+.about-profile-grid .about-profile-copy {
+  max-width: 600px;
+  padding: 8px 0 8px 2px;
+}
+.about-profile-copy h2:first-child {
+  font-size: clamp(29px, 2.8vw, 36px);
+  line-height: 1.16;
+  letter-spacing: -.018em;
+  margin: 0 0 16px;
+}
+.about-profile-copy h2:not(:first-child) {
+  font-size: clamp(25px, 2.35vw, 30px);
+  line-height: 1.2;
+  margin: 27px 0 10px;
+  padding-bottom: 8px;
+  position: relative;
+}
+.about-profile-copy h2:not(:first-child)::after {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 2px;
+  margin-top: 9px;
+  background: var(--gold);
+  opacity: .8;
+}
+.about-profile-copy p {
+  max-width: 590px;
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 1.72;
+  color: #465264;
+}
+.about-profile-copy h2 + p {
+  margin-bottom: 0;
+}
+.about-profile-copy h2:not(:first-child) + p {
+  margin-bottom: 0;
+}
+.about-profile-grid {
+  gap: clamp(38px, 5.2vw, 70px);
+}
+@media (min-width: 721px) {
+  .about-profile-grid .about-profile-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+@media (max-width: 720px) {
+  .about-profile-grid .about-profile-copy {
+    padding: 0;
+  }
+  .about-profile-copy h2:first-child {
+    font-size: 30px;
+    margin-bottom: 13px;
+  }
+  .about-profile-copy h2:not(:first-child) {
+    font-size: 26px;
+    margin-top: 25px;
+  }
+  .about-profile-copy p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+}
