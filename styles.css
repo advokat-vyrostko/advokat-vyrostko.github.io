@@ -1861,3 +1861,46 @@ nav {
     font-weight: 600;
   }
 }
+
+
+/* Compact footer: remove repeated contact details */
+.footer-row.footer-compact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.footer-compact .footer-brand {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #fff;
+  font: 700 21px/1.2 var(--serif);
+}
+.footer-compact > div:nth-child(2) {
+  line-height: 1.4;
+}
+.footer-compact > div:nth-child(2) > a {
+  color: #f0c56c;
+  font-weight: 600;
+}
+.footer-compact > small:last-child {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-align: right;
+}
+@media (max-width: 720px) {
+  .footer-row.footer-compact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .footer-compact > small:last-child {
+    text-align: left;
+    padding-top: 8px;
+  }
+}
