@@ -1591,3 +1591,57 @@ header {
 .contact-card .instagram-link:hover {
   color: var(--navy) !important;
 }
+
+
+/* Office wayfinding photos below the map */
+.office-wayfinding {
+  margin: 30px 0 22px;
+  padding: 26px;
+  background: #f7f5ef;
+  border: 1px solid rgba(211,154,47,.28);
+  border-radius: 10px;
+}
+.office-wayfinding h3 {
+  margin: 0 0 9px;
+  font-size: 24px;
+}
+.office-wayfinding > p {
+  max-width: 760px;
+  line-height: 1.7;
+  margin: 0 0 18px;
+}
+.office-wayfinding-gallery {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 18px;
+}
+.office-wayfinding-gallery figure {
+  margin: 0;
+  min-width: 0;
+}
+.office-wayfinding-gallery img {
+  display: block;
+  width: 100%;
+  height: clamp(220px, 28vw, 340px);
+  object-fit: cover;
+  object-position: center;
+  border-radius: 7px;
+  box-shadow: 0 8px 22px rgba(20,36,58,.12);
+}
+.office-wayfinding-gallery figcaption {
+  margin-top: 9px;
+  color: #596273;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+.office-wayfinding .office-wayfinding-note {
+  margin: 18px 0 0;
+  font-weight: 700;
+  color: var(--navy);
+}
+@media (max-width: 720px) {
+  .office-wayfinding { padding: 18px; margin-top: 22px; }
+  .office-wayfinding-gallery { grid-template-columns: 1fr; gap: 16px; }
+  .office-wayfinding-gallery img { height: auto; max-height: 360px; }
+}
