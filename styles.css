@@ -1000,3 +1000,71 @@ footer {
     padding-block: 30px;
   }
 }
+
+
+/* Tablet navigation: prevent compressed and uneven menu items */
+@media (min-width: 721px) and (max-width: 1100px) {
+  .nav {
+    min-height: 78px;
+    justify-content: space-between;
+    gap: 18px;
+  }
+  .brand {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+  .brand strong {
+    font-size: 19px;
+    white-space: nowrap;
+  }
+  .menu-toggle {
+    display: block;
+    flex: 0 0 auto;
+    width: 46px;
+    height: 46px;
+    border: 1px solid rgba(211,154,47,.35);
+    border-radius: 6px;
+    background: #fff;
+    line-height: 1;
+  }
+  .nav > .btn {
+    display: none;
+  }
+  .nav nav {
+    display: none;
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 22px;
+    right: 22px;
+    z-index: 30;
+    padding: 12px;
+    background: rgba(255,255,255,.98);
+    border: 1px solid rgba(211,154,47,.2);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 16px 32px rgba(13,27,46,.12);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+  }
+  .nav nav.open {
+    display: flex;
+  }
+  .nav nav a {
+    display: block;
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 5px;
+    line-height: 1.35;
+    white-space: normal;
+  }
+  .nav nav a::after {
+    left: 14px;
+    right: auto;
+    bottom: 6px;
+    width: 34px;
+  }
+  .nav nav a:hover,
+  .nav nav a.active {
+    background: #f8f5ee;
+  }
+}
