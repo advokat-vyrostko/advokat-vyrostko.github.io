@@ -1765,3 +1765,40 @@ header {
   }
   .office-map .office-wayfinding-gallery img { height: 105px; opacity: 1; }
 }
+
+
+/* Compact circular messenger icons in the contact phone card */
+.contact-phone-row .messenger-inline {
+  gap: 10px;
+  margin-left: 16px;
+  vertical-align: middle;
+}
+.contact-phone-row .messenger-link {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 0;
+  line-height: 1;
+  box-shadow: 0 3px 9px rgba(20,36,58,.14);
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+.contact-phone-row .messenger-link::after {
+  font: 700 17px/1 Arial, sans-serif;
+  color: #fff;
+}
+.contact-phone-row .messenger-whatsapp::after { content: "W"; }
+.contact-phone-row .messenger-viber::after { content: "V"; }
+.contact-phone-row .messenger-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 13px rgba(20,36,58,.2);
+}
+@media (max-width: 720px) {
+  .contact-phone-row .messenger-inline { margin-left: 12px; gap: 8px; }
+  .contact-phone-row .messenger-link {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+  }
+}
