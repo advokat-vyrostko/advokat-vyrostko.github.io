@@ -1568,3 +1568,26 @@ header {
   header .nav nav.open a:nth-child(5) { animation-delay: .145s; }
   header .nav nav.open a:nth-child(6) { animation-delay: .175s; }
 }
+
+
+/* Instagram profile link */
+.instagram-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #e2b653 !important;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color .2s ease, opacity .2s ease;
+}
+.instagram-link:hover {
+  color: #fff !important;
+  opacity: .92;
+  text-decoration: underline;
+}
+.contact-card .instagram-link {
+  color: #8c641e !important;
+}
+.contact-card .instagram-link:hover {
+  color: var(--navy) !important;
+}
