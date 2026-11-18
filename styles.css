@@ -45,3 +45,17 @@ footer{background:#0b1b30;color:#e8edf4;padding:34px 0}.footer-row{display:flex;
 .note{border-left:3px solid var(--gold);padding:12px 16px;background:#fbf8f1;color:#596575;font-size:14px;margin:22px 0}
 @media(max-width:980px){nav{gap:13px;font-size:13px}.brand strong{font-size:19px}.nav>.btn{display:none}.practice-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:720px){.wrap{width:min(100% - 30px,600px)}.nav{min-height:70px}.menu-toggle{display:block}nav{display:none;position:absolute;top:70px;left:0;right:0;background:#fff;padding:14px 22px 22px;box-shadow:0 12px 20px #14243a18;flex-direction:column;align-items:flex-start}nav.open{display:flex}.brand{min-width:0}.brand strong{font-size:17px}.brand small{font-size:10px}.hero{min-height:540px;background:linear-gradient(180deg,rgba(251,250,247,.98) 0%,rgba(251,250,247,.92) 53%,rgba(251,250,247,.15) 100%),url('assets/hero-office.jpg') center/cover no-repeat}.hero-inner{padding:54px 0}.hero p{font-size:17px}.contact-inline{border-left:0;border-top:1px solid var(--gold);padding:13px 0 0}.section{padding:48px 0}.section-head h2{font-size:30px}.practice-grid{grid-template-columns:1fr}.practice-card{min-height:0}.about-grid,.contact-grid{grid-template-columns:1fr;gap:20px}.about-panel{padding:28px}.facts{grid-template-columns:1fr 1fr}.cta-row,.footer-row{align-items:flex-start;flex-direction:column}.page-hero{padding:45px 0 35px}.page-hero h1{font-size:38px}}
+
+/* About page: original portrait and office photographs */
+.about-profile-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:54px;align-items:start}
+.about-profile-copy{max-width:690px}
+.about-profile-copy h2{font-size:29px;margin:0 0 12px}
+.about-profile-copy h2:not(:first-child){margin-top:30px}
+.about-profile-copy p{font-size:16px;color:#39475a;margin:0}
+.about-portrait,.office-gallery figure{margin:0}
+.about-portrait img{display:block;width:100%;max-height:620px;object-fit:cover;object-position:center 30%;border-radius:7px}
+.about-portrait figcaption,.office-gallery figcaption{font-size:13px;color:var(--muted);padding-top:10px}
+.office-gallery{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:start}
+.office-gallery img{display:block;width:100%;height:390px;object-fit:cover;object-position:center;border-radius:7px}
+.office-gallery-main img{height:490px}
+@media(max-width:720px){.about-profile-grid,.office-gallery{grid-template-columns:1fr;gap:26px}.about-portrait img{max-height:560px}.office-gallery img,.office-gallery-main img{height:auto;max-height:520px;object-fit:contain;background:#eee}}
