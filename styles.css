@@ -121,7 +121,7 @@ h1, h2, h3 {
   z-index: 0;
   background: url('assets/hero-office.jpg') center right/cover no-repeat;
   transform: scale(1.04);
-  animation: hero-photo-motion 26s ease-in-out infinite alternate;
+  animation: hero-photo-motion 14s ease-in-out infinite alternate;
 }
 .hero::after {
   content: "";
@@ -134,7 +134,7 @@ h1, h2, h3 {
 .hero > .wrap { position: relative; z-index: 2; }
 @keyframes hero-photo-motion {
   from { transform: scale(1.04) translate3d(0, 0, 0); }
-  to { transform: scale(1.13) translate3d(-1.2%, -0.6%, 0); }
+  to { transform: scale(1.22) translate3d(-2.2%, -1%, 0); }
 }
 .hero-inner { padding: 68px 0 64px; max-width: 660px; position: relative; }
 h1 {
@@ -305,14 +305,7 @@ h1 {
   flex-wrap: wrap;
 }
 .phone-call-link { display: inline-flex; align-items: center; gap: 6px; }
-.phone-ring-icon {
-  display: inline-block;
-  transform-origin: 70% 70%;
-  animation: phone-ring 1.8s ease-in-out infinite;
-}
-@keyframes phone-ring {
-  0%, 68%, 100% { transform: rotate(0deg); }
-  72% { transform: rotate(-18deg); }
+72% { transform: rotate(-18deg); }
   76% { transform: rotate(16deg); }
   80% { transform: rotate(-14deg); }
   84% { transform: rotate(12deg); }
@@ -388,13 +381,7 @@ footer a { color: #f0c56c; display: inline-block; margin-top: 5px; }
   .office-map { padding: 18px; }
   .office-map h2 { font-size: 24px; }
   .map-frame iframe { height: 320px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .phone-ring-icon { animation: none; }
-}
-
-
-/* Shared inline contact buttons and consistent page accents */
+}/* Shared inline contact buttons and consistent page accents */
 .messenger-link {
   display: inline-flex;
   align-items: center;
@@ -470,7 +457,3 @@ footer a { color: #f0c56c; display: inline-block; margin-top: 5px; }
   }
 }
 
-
-@media (prefers-reduced-motion: reduce) {
-  .hero::before { animation: none; transform: scale(1.04); }
-}
