@@ -16,3 +16,22 @@ if (isHomePage && !document.querySelector('.messenger-contact')) {
   `;
   document.body.appendChild(contact);
 }
+
+
+// Smoothly reveal About-page photographs as they enter the viewport.
+const revealPhotos = document.querySelectorAll('.about-portrait, .office-gallery figure');
+if (revealPhotos.length) {
+  if ('IntersectionObserver' in window) {
+    const photoObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.16, rootMargin: '0px 0px -35px 0px' });
+    revealPhotos.forEach(photo => photoObserver.observe(photo));
+  } else {
+    revealPhotos.forEach(photo => photo.classList.add('is-visible'));
+  }
+}
