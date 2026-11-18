@@ -1207,8 +1207,8 @@ footer {
 
 
 /* Official advocate-register link */
-.era u-status-link { margin-top: 12px; }
-.era u-status-link a {
+.u-status-link { margin-top: 12px; }
+.u-status-link a {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -1221,7 +1221,7 @@ footer {
   padding-bottom: 3px;
   transition: color .2s ease, border-color .2s ease;
 }
-.era u-status-link a:hover {
+.u-status-link a:hover {
   color: var(--navy);
   border-color: var(--navy);
 }
