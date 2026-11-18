@@ -1,101 +1,70 @@
-const toggle=document.querySelector('.menu-toggle');
-const nav=document.querySelector('nav');
-if(toggle&&nav){toggle.addEventListener('click',()=>{nav.classList.toggle('open');toggle.setAttribute('aria-expanded',nav.classList.contains('open')?'true':'false')})}
-document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>nav?.classList.remove('open')));
+(() => {
+  const body = document.body;
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.nav nav');
+  const isHome = window.location.pathname === '/' || window.location.pathname.endsWith('/index.html');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// Direct contact buttons shown on every page.
-const isHomePage = window.location.pathname === '/' || window.location.pathname.endsWith('/index.html');
-if (isHomePage && !document.querySelector('.messenger-contact')) {
-  const contact = document.createElement('div');
-  contact.className = 'messenger-contact';
-  contact.setAttribute('aria-label', 'Зв’язатися з адвокатом у месенджері');
-  const message = encodeURIComponent('Добрий день! Хочу отримати консультацію адвоката.');
-  contact.innerHTML = `
-    <a class="messenger-link messenger-whatsapp" href="https://wa.me/380638180427?text=${message}" target="_blank" rel="noopener noreferrer" aria-label="Написати у WhatsApp">WhatsApp</a>
-    <a class="messenger-link messenger-viber" href="viber://chat?number=%2B380638180427" aria-label="Написати у Viber">Viber</a>
-  `;
-  document.body.appendChild(contact);
-}
-
-
-// Smoothly reveal About-page photographs as they enter the viewport.
-const revealPhotos = document.querySelectorAll('.about-portrait, .office-gallery figure');
-if (revealPhotos.length) {
-  if ('IntersectionObserver' in window) {
-    const photoObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.16, rootMargin: '0px 0px -35px 0px' });
-    revealPhotos.forEach(photo => photoObserver.observe(photo));
-  } else {
-    revealPhotos.forEach(photo => photo.classList.add('is-visible'));
+  if (toggle && nav) {
+    const closeMenu = () => {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    };
+    toggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') closeMenu();
+    });
   }
-}
 
-
-// Homepage entrance and scroll-triggered reveal animations.
-if (window.location.pathname === '/' || window.location.pathname.endsWith('/index.html')) {
-  document.body.classList.add('home-page');
-  const homeRevealItems = document.querySelectorAll(
-    '.section-head, .practice-card, .about-panel, .fact, .cta-row'
-  );
-  homeRevealItems.forEach((item, index) => {
-    item.classList.add('home-reveal');
-    if (item.classList.contains('practice-card') || item.classList.contains('fact')) {
-      item.style.transitionDelay = (index % 8) * 85 + 'ms';
-    }
-  });
-  document.body.classList.add('motion-ready');
-
-  if ('IntersectionObserver' in window) {
-    const homeObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
-    homeRevealItems.forEach(item => homeObserver.observe(item));
-  } else {
-    homeRevealItems.forEach(item => item.classList.add('is-visible'));
+  if (isHome && !document.querySelector('.messenger-contact')) {
+    const contact = document.createElement('div');
+    contact.className = 'messenger-contact';
+    contact.setAttribute('aria-label', 'Зв’язатися з адвокатом у месенджері');
+    const message = encodeURIComponent('Добрий день! Хочу отримати консультацію адвоката.');
+    contact.innerHTML = `
+      <a class="messenger-link messenger-whatsapp" href="https://wa.me/380638180427?text=${message}" target="_blank" rel="noopener noreferrer" aria-label="Написати у WhatsApp">WhatsApp</a>
+      <a class="messenger-link messenger-viber" href="viber://chat?number=%2B380638180427" aria-label="Написати у Viber">Viber</a>
+    `;
+    body.appendChild(contact);
   }
-}
 
+  if (reduceMotion) return;
+  if (isHome) body.classList.add('home-page');
 
-// Shared scroll-reveal animation for all pages except the homepage,
-// which has its own staggered animation sequence above.
-if (!(window.location.pathname === '/' || window.location.pathname.endsWith('/index.html'))) {
-  const revealTargets = document.querySelectorAll(
-    'main .page-hero .wrap, main .section > .wrap, main .content > h2, main .content > p, ' +
-    'main .content > .note, main .contact-card, main .office-map, main .office-gallery figure, ' +
-    'main .about-profile-copy, main .about-portrait'
-  );
-  revealTargets.forEach((element, index) => {
-    element.classList.add('site-reveal');
-    if (element.matches('.about-profile-copy, .contact-card:nth-child(odd)')) {
-      element.dataset.reveal = 'left';
-    } else if (element.matches('.about-portrait, .contact-card:nth-child(even), .office-gallery figure:nth-child(even)')) {
-      element.dataset.reveal = 'right';
-    }
-    element.style.transitionDelay = (index % 4) * 75 + 'ms';
+  const selectors = [
+    'main .page-hero .eyebrow', 'main .page-hero h1', 'main .page-hero p',
+    'main .section-head', 'main .practice-card', 'main .about-panel',
+    'main .fact', 'main .cta-row', 'main .about-profile-copy',
+    'main .about-portrait', 'main .office-gallery figure',
+    'main .contact-card', 'main .office-map', 'main .article-item',
+    'main .content > h2', 'main .content > p', 'main .content > .note'
+  ].join(',');
+
+  const targets = Array.from(document.querySelectorAll(selectors));
+  if (!targets.length || !('IntersectionObserver' in window)) {
+    targets.forEach(element => element.classList.add('motion-visible'));
+    return;
+  }
+
+  const groupCounts = new Map();
+  targets.forEach(element => {
+    const group = element.parentElement;
+    const index = groupCounts.get(group) || 0;
+    groupCounts.set(group, index + 1);
+    element.style.setProperty('--reveal-delay', Math.min(index * 85, 340) + 'ms');
+    element.classList.add('motion-reveal');
   });
 
-  if ('IntersectionObserver' in window) {
-    const siteObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -28px 0px' });
-    revealTargets.forEach(element => siteObserver.observe(element));
-  } else {
-    revealTargets.forEach(element => element.classList.add('is-visible'));
-  }
-}
+  const observer = new IntersectionObserver((entries, currentObserver) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('motion-visible');
+      currentObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -36px 0px' });
+  targets.forEach(element => observer.observe(element));
+})();
