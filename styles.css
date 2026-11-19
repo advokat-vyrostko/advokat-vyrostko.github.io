@@ -3920,3 +3920,21 @@ html body main .contact-grid {
   background-color: rgba(255,255,255,.07) !important;
   background-image: none !important;
 }
+
+
+/* ABOUT PAGE: match the translucent surface used on the contact cards */
+html body:has(.about-profile-grid) main .about-profile-grid > .about-profile-copy {
+  background: rgba(255,255,255,.20) !important;
+  background-color: rgba(255,255,255,.20) !important;
+  background-image: none !important;
+  border: 1px solid rgba(255,255,255,.52) !important;
+  border-radius: 8px !important;
+  padding: 18px 20px !important;
+  box-shadow: 0 8px 24px rgba(31,45,57,.045), inset 0 1px 0 rgba(255,255,255,.24) !important;
+  -webkit-backdrop-filter: blur(7px) saturate(1.06) !important;
+  backdrop-filter: blur(7px) saturate(1.06) !important;
+}
+html body:has(.about-profile-grid) main .about-profile-copy > * {
+  background: transparent !important;
+  background-color: transparent !important;
+}
