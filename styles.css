@@ -5069,3 +5069,17 @@ html{scroll-behavior:smooth;scroll-padding-top:82px}body{background:var(--ppaper
     overflow-wrap:normal!important;
   }
 }
+
+
+/* VERSION 0102 — tablet only: keep hero paragraph left of the portrait */
+@media screen and (min-width:761px) and (max-width:1150px){
+  .portfolio-hero .hero-description{
+    display:block!important;
+    width:100%!important;
+    max-width:500px!important;
+    margin-right:auto!important;
+    white-space:normal!important;
+    word-break:normal!important;
+    overflow-wrap:normal!important;
+  }
+}
