@@ -104,6 +104,15 @@
     mainContent.addEventListener('lostpointercapture', cancelSwipe, { passive: true });
   }
 
+  // Visible mobile hint: tells visitors that pages can be changed with a swipe.
+  if (!document.querySelector('.swipe-hint')) {
+    const hint = document.createElement('div');
+    hint.className = 'swipe-hint';
+    hint.setAttribute('aria-label', 'Гортайте сторінки свайпом ліворуч або праворуч');
+    hint.innerHTML = '<span class="swipe-hint-arrow swipe-hint-left" aria-hidden="true">‹</span><span class="swipe-hint-label">Гортайте сторінки</span><span class="swipe-hint-arrow swipe-hint-right" aria-hidden="true">›</span>';
+    body.appendChild(hint);
+  }
+
   if (reduceMotion) return;
   if (isHome) body.classList.add('home-page');
 
