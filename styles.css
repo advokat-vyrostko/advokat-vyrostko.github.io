@@ -2573,3 +2573,50 @@ p { text-wrap: pretty; }
     object-fit: contain;
   }
 }
+
+/* Elegant typography refinement: lighter editorial serif + humanist sans */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@400;450;500;600;650;700&display=swap');
+
+:root {
+  --serif: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --sans: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+}
+body {
+  font-family: var(--sans);
+  font-weight: 400;
+  letter-spacing: .005em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+h1, h2, h3,
+.brand strong, .footer-brand,
+.fact strong, .office-map h2 {
+  font-family: var(--serif) !important;
+  font-weight: 500 !important;
+  letter-spacing: -.012em;
+}
+h1 {
+  font-weight: 500 !important;
+  letter-spacing: -.025em;
+  line-height: 1.04;
+}
+h2 { font-weight: 500 !important; }
+h3 { font-weight: 500 !important; }
+.brand strong { font-weight: 600 !important; letter-spacing: -.018em; }
+.footer-brand { font-weight: 500 !important; }
+nav, .btn, .eyebrow, .contact-inline, .messenger-link {
+  font-family: var(--sans);
+}
+nav { font-weight: 500; letter-spacing: .01em; }
+.btn { font-weight: 600; letter-spacing: .005em; }
+.eyebrow {
+  font-weight: 600;
+  letter-spacing: .16em;
+}
+.hero-inner > p, .page-hero p, .content p, .content li {
+  font-weight: 400;
+  letter-spacing: .003em;
+}
+.practice-card h3, .contact-card h3, .article-item h3 {
+  font-weight: 500 !important;
+}
