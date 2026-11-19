@@ -3754,3 +3754,40 @@ main .wrap.contact-grid > .contact-card {
     background: rgba(244,246,247,.48) !important;
   }
 }
+
+
+/* REPLACE THE COURTHOUSE DRAWING WITH A QUIET ABSTRACT MONOCHROME BACKDROP */
+html {
+  background-color: #f1f2f1 !important;
+  background-image:
+    radial-gradient(ellipse at 12% 18%, rgba(188,198,205,.20) 0, transparent 38%),
+    radial-gradient(ellipse at 88% 78%, rgba(188,198,205,.18) 0, transparent 42%),
+    repeating-linear-gradient(155deg, transparent 0 118px, rgba(117,132,145,.075) 119px, transparent 121px),
+    linear-gradient(135deg, #f7f8f7 0%, #ecefed 52%, #f5f6f4 100%) !important;
+  background-attachment: fixed !important;
+  background-size: cover !important;
+}
+body::before { display: none !important; content: none !important; }
+main { background: transparent !important; }
+main > .page-hero,
+main > .section,
+main > .section.alt,
+main > .practice-detail-section {
+  background: rgba(245,247,246,.48) !important;
+}
+main .wrap.contact-grid {
+  background: rgba(245,246,243,.24) !important;
+  background-image: none !important;
+}
+main .wrap.contact-grid > .contact-card {
+  background: rgba(255,255,255,.64) !important;
+  -webkit-backdrop-filter: blur(9px) saturate(1.04) !important;
+  backdrop-filter: blur(9px) saturate(1.04) !important;
+}
+@media (max-width: 720px) {
+  html { background-attachment: scroll !important; }
+  main > .page-hero,
+  main > .section,
+  main > .section.alt,
+  main > .practice-detail-section { background: rgba(245,247,246,.62) !important; }
+}
