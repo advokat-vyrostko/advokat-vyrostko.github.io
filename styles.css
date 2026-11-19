@@ -3256,3 +3256,78 @@ main {
     padding: 20px;
   }
 }
+
+/* Muted Koziatyn station photography: different architectural view on every page */
+.page-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #f3f1eb !important;
+}
+.page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-position: center 48%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: .31;
+  filter: saturate(.48) contrast(.92) brightness(1.06);
+}
+.page-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(90deg,
+    rgba(248,247,243,.96) 0%,
+    rgba(248,247,243,.88) 42%,
+    rgba(248,247,243,.65) 72%,
+    rgba(248,247,243,.48) 100%);
+  pointer-events: none;
+}
+.page-hero > .wrap,
+.page-hero > .photo-credit {
+  position: relative;
+  z-index: 2;
+}
+body.page-home .hero::before {
+  background-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Koziatyn%20Railway%20station%20from%20the%20platform.jpg?width=1800") !important;
+  background-position: center 48% !important;
+  opacity: .40;
+  filter: saturate(.48) contrast(.92) brightness(1.06);
+}
+body.page-about .page-hero::before { background-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Koziatyn%20Railway%20Station%20P1460705.jpg?width=1800"); }
+body.page-practice .page-hero::before { background-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/%D0%97%D0%B0%D0%BB%D1%96%D0%B7%D0%BD%D0%B8%D1%87%D0%BD%D0%B8%D0%B9%20%D0%B2%D0%BE%D0%BA%D0%B7%D0%B0%D0%BB%20%D0%B2%20%D0%9A%D0%BE%D0%B7%D1%8F%D1%82%D0%B8%D0%BD%D1%96%2003.JPG?width=1800"); }
+body.page-cases .page-hero::before { background-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Koziatyn%20Railway%20station01.jpg?width=1800"); }
+body.page-publications .page-hero::before { background-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Railway%20Station%20in%20Koziatyn.jpg?width=1800"); }
+body.page-contacts .page-hero::before { background-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Koziatyn%20Railway%20Station%20P1460705.jpg?width=1800"); }
+.page-hero .photo-credit {
+  margin: 8px auto 0;
+  width: min(1200px, calc(100% - 48px));
+  color: #66717b;
+  font: 10px/1.4 var(--sans);
+  opacity: .82;
+}
+.page-hero .photo-credit a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+body.page-home .hero .photo-credit {
+  position: relative;
+  z-index: 2;
+  margin: 0 auto 14px;
+  width: min(1200px, calc(100% - 48px));
+  color: #66717b;
+  font: 10px/1.4 var(--sans);
+  opacity: .82;
+}
+@media (max-width: 720px) {
+  .page-hero::before { opacity: .22; }
+  .page-hero::after {
+    background: linear-gradient(90deg, rgba(248,247,243,.96), rgba(248,247,243,.82));
+  }
+  body.page-home .hero::before { opacity: .28; }
+}
