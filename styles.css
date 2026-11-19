@@ -4020,3 +4020,160 @@ html body main > section.section.section.section.section > .wrap.contact-grid.co
   border: 1px solid rgba(255,255,255,.82) !important;
   box-shadow: 0 5px 18px rgba(35,48,60,.035), inset 0 1px 0 rgba(255,255,255,.3) !important;
 }
+
+
+/* ==========================================================
+   HARMONIC DESIGN SYSTEM — Golden Ratio / Fibonacci / Rule of Thirds
+   Unified responsive layout across all pages.
+   ========================================================== */
+:root {
+  --phi: 1.618;
+  --fib-5: 5px;
+  --fib-8: 8px;
+  --fib-13: 13px;
+  --fib-21: 21px;
+  --fib-34: 34px;
+  --fib-55: 55px;
+  --fib-89: 89px;
+  --layout-max: 1280px;
+  --layout-gutter: clamp(20px, 4.2vw, 55px);
+  --surface-glass: rgba(255,255,255,.18);
+  --surface-border: rgba(255,255,255,.64);
+  --shadow-soft: 0 13px 34px rgba(20,36,58,.065);
+}
+html { scroll-padding-top: 96px; }
+body { line-height: 1.62; letter-spacing: .002em; }
+.wrap { width: min(var(--layout-max), calc(100% - 2 * var(--layout-gutter))) !important; margin-inline: auto !important; }
+header { background: rgba(250,251,251,.91) !important; border-bottom-color: rgba(20,36,58,.10) !important; }
+.nav { min-height: 89px !important; gap: 34px !important; }
+.brand { gap: 13px !important; min-width: 0 !important; }
+.brand-mark { width: 5px !important; height: 55px !important; }
+.brand strong { font-size: clamp(17px, 1.55vw, 22px) !important; letter-spacing: -.025em; }
+nav { gap: clamp(21px, 2.6vw, 34px) !important; font-size: 14px !important; }
+nav .menu-consult { display: none !important; }
+.nav > .btn { padding: 13px 21px !important; white-space: nowrap; }
+h1 { font-size: clamp(42px, 5.2vw, 68px) !important; line-height: 1.045 !important; letter-spacing: -.035em !important; }
+h2 { letter-spacing: -.025em; }
+h3 { letter-spacing: -.015em; }
+.hero { min-height: clamp(560px, 53vw, 720px) !important; }
+.hero::after {
+  background: linear-gradient(90deg, rgba(250,250,247,.99) 0%, rgba(250,250,247,.96) 34%, rgba(250,250,247,.78) 52%, rgba(250,250,247,.08) 76%) !important;
+}
+.hero-inner { width: 61.8% !important; max-width: 760px !important; padding: clamp(55px, 7vw, 89px) 0 !important; }
+.hero .eyebrow { margin-bottom: 21px; }
+.hero h1 { max-width: 720px; margin: 13px 0 21px !important; }
+.hero p { max-width: 540px !important; font-size: clamp(17px, 1.5vw, 21px) !important; line-height: 1.55 !important; }
+.hero-actions { gap: 21px !important; }
+.contact-inline { gap: 8px !important; padding-left: 21px !important; font-size: 13px !important; }
+.btn { min-height: 48px; padding: 13px 21px !important; border-radius: 4px !important; box-shadow: 0 5px 16px rgba(160,111,26,.13); }
+.btn:hover { transform: translateY(-2px); }
+.section { padding: clamp(55px, 6.8vw, 89px) 0 !important; }
+.section-head { max-width: 760px; margin: 0 auto 34px !important; }
+.section-head h2 { font-size: clamp(30px, 3.2vw, 42px) !important; margin-bottom: 13px !important; }
+.section-head p { max-width: 610px; margin-inline: auto !important; }
+.practice-grid { grid-template-columns: repeat(3, minmax(0,1fr)) !important; gap: 21px !important; }
+.practice-card {
+  min-height: 210px !important;
+  padding: 26px 21px !important;
+  border-radius: 5px !important;
+  display: flex; flex-direction: column; align-items: flex-start;
+  transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease;
+}
+.practice-card h3 { font-size: clamp(18px, 1.65vw, 22px) !important; line-height: 1.2 !important; margin: 21px 0 8px !important; }
+.practice-card p { line-height: 1.58; }
+.practice-card:hover { transform: translateY(-3px); }
+.about-grid { grid-template-columns: minmax(0,1.618fr) minmax(0,1fr) !important; gap: 34px !important; }
+.about-panel { padding: clamp(26px, 3.4vw, 55px) !important; border-radius: 5px !important; min-height: 100%; display: flex; flex-direction: column; justify-content: center; }
+.about-panel h2 { font-size: clamp(32px, 3.4vw, 42px) !important; }
+.facts { gap: 13px !important; align-content: stretch; }
+.fact { padding: 21px !important; border-radius: 5px !important; min-height: 132px; display: flex; flex-direction: column; justify-content: center; }
+.fact strong { font-size: clamp(19px, 1.8vw, 24px) !important; }
+.page-hero { padding: clamp(55px, 6vw, 89px) 0 34px !important; }
+.page-hero .wrap { max-width: var(--layout-max); }
+.page-hero h1 { font-size: clamp(38px, 4.6vw, 55px) !important; margin: 13px 0 !important; }
+.page-hero p { max-width: 760px; font-size: 17px; }
+.about-profile-grid { grid-template-columns: minmax(0,1.618fr) minmax(260px,1fr) !important; gap: 34px !important; align-items: center !important; }
+.about-profile-copy { max-width: none !important; padding: clamp(21px, 2.6vw, 34px) !important; }
+.about-profile-copy h2 { font-size: clamp(24px, 2.4vw, 31px) !important; }
+.about-portrait { max-width: none !important; width: 100% !important; justify-self: stretch !important; }
+.about-portrait img { width: 100% !important; max-height: 610px !important; object-fit: cover !important; object-position: center 25% !important; }
+.office-gallery { grid-template-columns: minmax(0,1.618fr) minmax(0,1fr) !important; gap: 21px !important; }
+.office-gallery-main img, .office-gallery img { height: clamp(260px, 32vw, 420px) !important; }
+.contact-grid { grid-template-columns: repeat(2,minmax(0,1fr)) !important; gap: 21px !important; }
+.contact-card { min-height: 180px; padding: 26px !important; border-radius: 5px !important; }
+.contact-card h3 { font-size: 21px !important; }
+.office-map { margin-top: 34px !important; padding: clamp(21px,3vw,34px) !important; border-radius: 5px !important; }
+.office-map h2 { font-size: clamp(25px,2.5vw,34px) !important; }
+.map-frame iframe { height: clamp(300px, 38vw, 500px) !important; }
+.practice-detail-grid { grid-template-columns: repeat(3,minmax(0,1fr)) !important; gap: 21px !important; }
+.practice-detail-card { padding: 26px 21px !important; border-radius: 5px !important; }
+.content { max-width: 850px !important; }
+.note { padding: 21px !important; }
+footer { padding-block: 34px !important; }
+
+/* The 61.8 / 38.2 composition is reserved for wide screens. */
+@media (max-width: 980px) {
+  .nav { min-height: 78px !important; gap: 21px !important; }
+  .brand strong { font-size: 18px !important; }
+  nav { gap: 21px !important; }
+  .hero { min-height: 600px !important; }
+  .hero-inner { width: 68% !important; }
+  .practice-grid, .practice-detail-grid { grid-template-columns: repeat(2,minmax(0,1fr)) !important; }
+  .about-grid { grid-template-columns: minmax(0,1.25fr) minmax(0,1fr) !important; gap: 21px !important; }
+}
+@media (max-width: 720px) {
+  :root { --layout-gutter: 21px; }
+  html { scroll-padding-top: 76px; }
+  .wrap { width: calc(100% - 42px) !important; }
+  .nav { min-height: 70px !important; gap: 13px !important; }
+  .brand { max-width: calc(100% - 54px); }
+  .brand-mark { height: 42px !important; width: 4px !important; flex: 0 0 4px; }
+  .brand strong { font-size: clamp(15px,4vw,18px) !important; line-height: 1.1 !important; }
+  .brand small { font-size: 9px !important; letter-spacing: .11em; }
+  .menu-toggle { width: 42px; height: 42px; border-radius: 4px; background: rgba(20,36,58,.055) !important; }
+  nav { top: 70px !important; padding: 21px !important; gap: 13px !important; }
+  nav a { width: 100%; padding: 10px 0 !important; }
+  nav .menu-consult { display: block !important; color: var(--navy); font-weight: 700; border-top: 1px solid var(--line); margin-top: 5px; padding-top: 16px !important; }
+  .nav > .btn { display: none !important; }
+  .hero { min-height: 640px !important; align-items: flex-start !important; }
+  .hero::before { background-position: 63% center !important; }
+  .hero::after { background: linear-gradient(180deg, rgba(250,250,247,.98) 0%, rgba(250,250,247,.94) 48%, rgba(250,250,247,.45) 75%, rgba(250,250,247,.08) 100%) !important; }
+  .hero-inner { width: 100% !important; max-width: 100% !important; padding: 55px 0 34px !important; }
+  .hero h1 { font-size: clamp(38px, 10vw, 52px) !important; }
+  .hero p { max-width: 95% !important; font-size: 17px !important; }
+  .hero-actions { align-items: flex-start !important; flex-direction: column !important; gap: 21px !important; }
+  .contact-inline { border-left: 0 !important; border-top: 1px solid var(--gold) !important; padding: 13px 0 0 !important; width: 100%; }
+  .section { padding: 55px 0 !important; }
+  .section-head { margin-bottom: 26px !important; }
+  .section-head h2 { font-size: 31px !important; }
+  .practice-grid, .practice-detail-grid { grid-template-columns: 1fr !important; gap: 13px !important; }
+  .practice-card { min-height: 0 !important; padding: 21px !important; }
+  .practice-card h3 { margin-top: 13px !important; }
+  .about-grid, .about-profile-grid, .office-gallery { grid-template-columns: 1fr !important; gap: 21px !important; }
+  .about-panel { padding: 26px !important; min-height: 0; }
+  .facts { grid-template-columns: repeat(2,minmax(0,1fr)) !important; gap: 8px !important; }
+  .fact { min-height: 112px; padding: 13px !important; }
+  .fact strong { font-size: 18px !important; }
+  .fact span { font-size: 12px !important; }
+  .about-profile-copy { padding: 21px !important; }
+  .about-portrait { max-width: 100% !important; }
+  .about-portrait img { max-height: 520px !important; object-fit: cover !important; }
+  .office-gallery-main img, .office-gallery img { height: auto !important; max-height: 390px; }
+  .contact-grid { grid-template-columns: 1fr !important; gap: 13px !important; }
+  .contact-card { min-height: 0; padding: 21px !important; }
+  .office-map { margin-top: 21px !important; padding: 13px !important; }
+  .map-frame iframe { height: 330px !important; }
+  .page-hero { padding: 55px 0 26px !important; }
+  .page-hero h1 { font-size: 39px !important; }
+  .page-hero p { font-size: 16px; }
+  .swipe-hint { bottom: 13px !important; }
+}
+@media (max-width: 380px) {
+  .brand strong { font-size: 14px !important; }
+  .hero { min-height: 680px !important; }
+  .facts { grid-template-columns: 1fr !important; }
+  .fact { min-height: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
