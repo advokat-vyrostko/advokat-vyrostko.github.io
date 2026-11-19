@@ -2177,3 +2177,38 @@ header .menu-toggle {
     object-position: center 35% !important;
   }
 }
+
+
+/* About page desktop: show the complete portrait without cropping */
+@media (min-width: 1101px) {
+  body:has(.about-profile-grid) main .page-hero {
+    padding-top: 22px !important;
+    padding-bottom: 22px !important;
+  }
+  body:has(.about-profile-grid) main .page-hero .wrap {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  body:has(.about-profile-grid) main .section {
+    padding-top: 22px !important;
+    padding-bottom: 28px !important;
+  }
+  body:has(.about-profile-grid) .about-profile-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(320px, .9fr) !important;
+    gap: 38px !important;
+    align-items: center !important;
+  }
+  body:has(.about-profile-grid) .about-portrait {
+    width: 100% !important;
+    max-width: 360px !important;
+    justify-self: center !important;
+  }
+  body:has(.about-profile-grid) .about-portrait img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 430px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+}
