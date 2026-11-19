@@ -1,5 +1,11 @@
 (() => {
   const body = document.body;
+  const header = document.querySelector('header');
+  const updateHeaderTransparency = () => {
+    if (header) header.classList.toggle('is-scrolled', window.scrollY > 24);
+  };
+  updateHeaderTransparency();
+  window.addEventListener('scroll', updateHeaderTransparency, { passive: true });
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.nav nav');
   const isHome = window.location.pathname === '/' || window.location.pathname.endsWith('/index.html');
