@@ -3282,7 +3282,7 @@ header.is-scrolled {
 
 /* Mobile swipe hint */
 .swipe-hint { display: none; }
-@media (max-width: 720px) {
+@media (max-width: 1100px) {
   .swipe-hint {
     position: fixed;
     left: 50%;
