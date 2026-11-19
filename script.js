@@ -1,9 +1,10 @@
 (() => {
   'use strict';
   const body = document.body;
-  const header = document.querySelector('header');
+  const header = document.querySelector('.portfolio-header');
   const toggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('.nav nav');
+  const nav = document.querySelector('.portfolio-header nav');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const updateHeader = () => {
     if (header) header.classList.toggle('is-scrolled', window.scrollY > 24);
@@ -32,18 +33,19 @@
     });
   }
 
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduceMotion || !('IntersectionObserver' in window)) return;
-  const targets = document.querySelectorAll('.section-head, .practice-card, .fact, .about-portrait, .office-gallery figure, .contact-card, .office-map');
+  const targets = document.querySelectorAll(
+    '.profile-photo, .profile-text, .practice-intro, .practice-grid article, ' +
+    '.approach-list > div, .office-gallery figure, .contact-intro, .contact-details, .map-frame'
+  );
+  if (!targets.length) return;
+  body.classList.add('js-motion');
   const observer = new IntersectionObserver((entries, currentObserver) => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
       entry.target.classList.add('motion-visible');
       currentObserver.unobserve(entry.target);
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-  targets.forEach(el => {
-    el.classList.add('motion-reveal');
-    observer.observe(el);
-  });
+  }, { threshold: 0.12, rootMargin: '0px 0px -35px 0px' });
+  targets.forEach(el => observer.observe(el));
 })();
