@@ -4922,3 +4922,80 @@ html{scroll-behavior:smooth;scroll-padding-top:82px}body{background:var(--ppaper
 @media(max-width:900px){.wrap{width:calc(100% - 44px)!important}.portfolio-header .nav{gap:15px}.portfolio-header nav{gap:12px}.portfolio-header nav a{font-size:10px!important}.header-contact{display:none}.hero-index{display:none}.split-layout{grid-template-columns:100px 1fr;gap:25px}.practice-intro,.practice-grid,.office-gallery,.office-address,.contact-layout,.contact-section .map-frame,.legal-note{margin-left:125px}.contact-layout{padding-left:0}}
 @media(max-width:680px){html{scroll-padding-top:64px}.wrap{width:calc(100% - 36px)!important}.portfolio-header .nav{min-height:64px!important;gap:10px}.portfolio-header .brand strong{font-size:17px!important}.portfolio-header .brand-mark{height:34px!important}.menu-toggle{display:block;margin-left:auto;padding:6px 9px;border:1px solid var(--pline);background:transparent;color:var(--pnavy);font-size:21px}.portfolio-header nav{display:none;position:absolute;top:64px;left:0;right:0;padding:15px 20px 20px;background:#f9f8f4;flex-direction:column;gap:0;border-bottom:1px solid var(--pline);box-shadow:0 12px 20px #0d1b2d12}.portfolio-header nav.open{display:flex}.portfolio-header nav a{padding:12px 0!important;border-bottom:1px solid var(--pline)!important;font-size:13px!important}.portfolio-hero{min-height:calc(100svh - 64px);align-items:flex-start}.hero-photo{inset:0;background-position:58% center}.hero-shade{background:linear-gradient(180deg,#0d1b2de0,#0d1b2df2 54%,#0d1b2d 100%)}.hero-layout{padding:65px 0 95px}.hero-copy .eyebrow{max-width:290px;font-size:9px!important}.hero-copy h1{font-size:clamp(43px,11vw,60px)!important;margin:24px 0 17px!important}.hero-description{font-size:14px!important}.hero-actions{align-items:flex-start;flex-direction:column;gap:19px;margin-top:27px!important}.hero-meta{margin-top:38px;font-size:8px}.hero-bottom{padding:13px 18px;font-size:8px}.section{padding:68px 0!important}.split-layout{grid-template-columns:1fr;gap:22px}.section-title{font-size:36px!important;margin-bottom:28px!important}.profile-content{grid-template-columns:1fr;gap:25px}.profile-photo{max-width:440px}.profile-photo img{aspect-ratio:5/4;max-height:390px}.profile-text p.lead{font-size:19px}.section-topline{margin-bottom:36px}.section-topline>span{font-size:8px}.practice-intro,.practice-grid,.office-gallery,.office-address,.contact-layout,.contact-section .map-frame,.legal-note{margin-left:0}.practice-intro{margin-bottom:25px}.practice-grid{grid-template-columns:1fr}.practice-grid article{min-height:0;padding:20px 0}.practice-grid h3{font-size:18px}.approach-list>div{grid-template-columns:35px 1fr;gap:10px}.office-gallery{grid-template-columns:1fr;gap:20px}.office-gallery img,.office-gallery figure:first-child img{height:auto;aspect-ratio:1.4/1;max-height:380px}.office-address{font-size:14px;line-height:1.6}.contact-layout{grid-template-columns:1fr;gap:30px;padding:0 0 38px}.contact-intro h2{font-size:36px}.contact-phone{font-size:28px}.contact-section iframe{height:250px}.legal-note{font-size:9px}.portfolio-footer .wrap{align-items:flex-start;flex-direction:column;gap:12px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+
+/* CINEMATIC MOTION — restrained, accessible, no autoplay video payload */
+.portfolio-hero { isolation:isolate; }
+.hero-photo {
+  transform:scale(1.035);
+  animation:heroKenBurns 24s ease-in-out infinite alternate;
+  will-change:transform;
+}
+.hero-shade {
+  background-size:160% 160%;
+  animation:heroLight 18s ease-in-out infinite alternate;
+}
+.hero-copy .eyebrow,.hero-copy h1,.hero-description,.hero-actions,.hero-meta {
+  animation:heroIntro .9s cubic-bezier(.2,.7,.2,1) both;
+}
+.hero-copy h1 { animation-delay:.12s; }
+.hero-description { animation-delay:.24s; }
+.hero-actions { animation-delay:.36s; }
+.hero-meta { animation-delay:.48s; }
+.hero-index { animation:heroIntro 1.1s .4s both; }
+.hero-bottom { animation:heroIntro .8s .65s both; }
+@keyframes heroKenBurns {
+  from { transform:scale(1.035) translate3d(0,0,0); }
+  to { transform:scale(1.13) translate3d(-1.2%,.5%,0); }
+}
+@keyframes heroLight {
+  from { background-position:0% 50%; }
+  to { background-position:100% 50%; }
+}
+@keyframes heroIntro {
+  from { opacity:0; transform:translate3d(0,22px,0); }
+  to { opacity:1; transform:translate3d(0,0,0); }
+}
+.js-motion .profile-photo,
+.js-motion .profile-text,
+.js-motion .practice-intro,
+.js-motion .practice-grid article,
+.js-motion .approach-list>div,
+.js-motion .office-gallery figure,
+.js-motion .contact-intro,
+.js-motion .contact-details,
+.js-motion .map-frame {
+  opacity:0;
+  transform:translate3d(0,26px,0);
+  transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1);
+}
+.js-motion .motion-visible { opacity:1!important; transform:translate3d(0,0,0)!important; }
+.practice-grid article:nth-child(2n) { transition-delay:.09s; }
+.approach-list>div:nth-child(2) { transition-delay:.07s; }
+.approach-list>div:nth-child(3) { transition-delay:.14s; }
+.approach-list>div:nth-child(4) { transition-delay:.21s; }
+.office-gallery figure:nth-child(2) { transition-delay:.12s; }
+.profile-photo img,.office-gallery img { transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .8s ease; }
+.profile-photo:hover img,.office-gallery figure:hover img { transform:scale(1.025); filter:saturate(.95); }
+.practice-grid article { transition:padding-left .3s ease,background-color .3s ease; }
+.practice-grid article:hover { padding-left:8px; }
+.portfolio-header { transition:box-shadow .3s ease,background .3s ease; }
+.portfolio-header.is-scrolled { box-shadow:0 8px 28px rgba(13,27,45,.08)!important; }
+.header-contact span,.text-link span { display:inline-block; transition:transform .25s ease; }
+.header-contact:hover span { transform:translate(3px,-3px); }
+.text-link:hover span { transform:translateY(3px); }
+@media (max-width:680px) {
+  .hero-photo { animation-duration:32s; }
+  .js-motion .profile-photo,.js-motion .profile-text,.js-motion .practice-intro,
+  .js-motion .practice-grid article,.js-motion .approach-list>div,
+  .js-motion .office-gallery figure,.js-motion .contact-intro,
+  .js-motion .contact-details,.js-motion .map-frame { transform:translate3d(0,18px,0); }
+}
+@media (prefers-reduced-motion:reduce) {
+  .hero-photo,.hero-shade,.hero-copy .eyebrow,.hero-copy h1,.hero-description,
+  .hero-actions,.hero-meta,.hero-index,.hero-bottom { animation:none!important; }
+  .js-motion .profile-photo,.js-motion .profile-text,.js-motion .practice-intro,
+  .js-motion .practice-grid article,.js-motion .approach-list>div,
+  .js-motion .office-gallery figure,.js-motion .contact-intro,
+  .js-motion .contact-details,.js-motion .map-frame { opacity:1!important;transform:none!important;transition:none!important; }
+}
