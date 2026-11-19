@@ -3063,3 +3063,19 @@ header.is-scrolled {
 @media (prefers-reduced-motion: reduce) {
   header { transition: none !important; }
 }
+
+/* Smooth page and anchor scrolling; preserve space below the sticky header */
+html {
+  scroll-behavior: smooth !important;
+  scroll-padding-top: 96px;
+}
+body {
+  scroll-behavior: smooth;
+}
+header.is-scrolled {
+  box-shadow: 0 7px 26px rgba(20,36,58,.13) !important;
+  border-bottom-color: rgba(20,36,58,.10) !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  html, body { scroll-behavior: auto !important; }
+}
