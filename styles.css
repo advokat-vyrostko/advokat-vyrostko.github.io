@@ -3938,3 +3938,30 @@ html body:has(.about-profile-grid) main .about-profile-copy > * {
   background: transparent !important;
   background-color: transparent !important;
 }
+
+
+/* TRUE TRANSPARENCY: let the page artwork show through, not a white glass fill */
+html body main .contact-grid > .contact-card.contact-card.contact-card.contact-card,
+html body main .practice-grid > .practice-card.practice-card.practice-card.practice-card,
+html body main .practice-detail-grid > .practice-detail-card.practice-detail-card.practice-detail-card.practice-detail-card,
+html body main .about-profile-grid > .about-profile-copy.about-profile-copy.about-profile-copy.about-profile-copy,
+html body main .facts > .fact.fact.fact.fact,
+html body main .about-grid > .about-panel.about-panel.about-panel.about-panel,
+html body main .wrap.content.wrap.content {
+  background: rgba(255,255,255,.055) !important;
+  background-color: rgba(255,255,255,.055) !important;
+  background-image: none !important;
+  border: 1px solid rgba(255,255,255,.58) !important;
+  box-shadow: 0 6px 18px rgba(31,45,57,.025), inset 0 1px 0 rgba(255,255,255,.18) !important;
+  -webkit-backdrop-filter: blur(2px) saturate(1.02) !important;
+  backdrop-filter: blur(2px) saturate(1.02) !important;
+}
+html body main .contact-grid,
+html body main .practice-grid,
+html body main .practice-detail-grid,
+html body main .about-profile-grid,
+html body main .facts,
+html body main .about-grid {
+  background: transparent !important;
+  background-color: transparent !important;
+}
