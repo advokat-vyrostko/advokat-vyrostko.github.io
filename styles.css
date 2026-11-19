@@ -3965,3 +3965,31 @@ html body main .about-grid {
   background: transparent !important;
   background-color: transparent !important;
 }
+
+
+/* HOME PAGE ABOUT PANEL: transparent surface with dark, high-contrast typography */
+html body main .about-grid > .about-panel.about-panel.about-panel.about-panel {
+  background: rgba(255,255,255,.055) !important;
+  background-color: rgba(255,255,255,.055) !important;
+  color: #263449 !important;
+  border: 1px solid rgba(255,255,255,.58) !important;
+  -webkit-backdrop-filter: blur(2px) saturate(1.02) !important;
+  backdrop-filter: blur(2px) saturate(1.02) !important;
+}
+html body main .about-grid > .about-panel .eyebrow,
+html body main .about-grid > .about-panel h2,
+html body main .about-grid > .about-panel p {
+  color: #263449 !important;
+  text-shadow: none !important;
+}
+html body main .about-grid > .about-panel .eyebrow:before {
+  background: #b5a27e !important;
+}
+html body main .about-grid > .about-panel .btn-outline {
+  color: #263449 !important;
+  background: rgba(255,255,255,.12) !important;
+  border-color: #b5a27e !important;
+}
+html body main .about-grid > .about-panel:after {
+  border-color: rgba(181,162,126,.22) !important;
+}
