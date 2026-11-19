@@ -3414,3 +3414,49 @@ header.is-scrolled {
     animation: none !important;
   }
 }
+
+
+/* Clear frosted-glass surfaces: keep the underlying page visible */
+.section > .wrap.content,
+.about-profile-grid,
+.practice-card,
+.fact,
+.contact-card,
+.article-item,
+.practice-detail-card,
+.practice-detail-cta,
+.note,
+.office-map,
+.section-status {
+  background: rgba(255, 255, 255, .055) !important;
+  border: 1px solid rgba(255, 255, 255, .24) !important;
+  box-shadow: 0 8px 28px rgba(10, 20, 32, .045) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(1.12) !important;
+  backdrop-filter: blur(20px) saturate(1.12) !important;
+  animation: clear-glass-breathe 9s ease-in-out infinite alternate;
+}
+@keyframes clear-glass-breathe {
+  from {
+    background-color: rgba(255, 255, 255, .035);
+    box-shadow: 0 6px 22px rgba(10, 20, 32, .025);
+  }
+  to {
+    background-color: rgba(255, 255, 255, .085);
+    box-shadow: 0 9px 28px rgba(10, 20, 32, .055);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .section > .wrap.content,
+  .about-profile-grid,
+  .practice-card,
+  .fact,
+  .contact-card,
+  .article-item,
+  .practice-detail-card,
+  .practice-detail-cta,
+  .note,
+  .office-map,
+  .section-status {
+    animation: none !important;
+  }
+}
