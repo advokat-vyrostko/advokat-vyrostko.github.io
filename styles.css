@@ -3331,3 +3331,84 @@ header.is-scrolled {
 @media (prefers-reduced-motion: reduce) {
   .swipe-hint, .swipe-hint-arrow { animation: none !important; }
 }
+
+
+/* Swipe carousel indicators for practice cards on tablet and phone */
+.practice-carousel-controls {
+  display: none;
+}
+@media (max-width: 1100px) {
+  .home-page .practice-grid {
+    display: flex !important;
+    gap: 14px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 2px 2px 12px !important;
+    margin-right: -2px;
+  }
+  .home-page .practice-grid::-webkit-scrollbar { display: none; }
+  .home-page .practice-grid > .practice-card {
+    flex: 0 0 calc((100% - 14px) / 2) !important;
+    width: calc((100% - 14px) / 2) !important;
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+  .practice-carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 18px auto 0;
+  }
+  .practice-carousel-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(190,145,54,.5);
+    border-radius: 50%;
+    background: #fff;
+    color: var(--navy);
+    font-size: 21px;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .practice-carousel-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .practice-carousel-dot {
+    width: 7px;
+    height: 7px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #c9cbd0;
+    cursor: pointer;
+    transition: width .2s ease, background .2s ease;
+  }
+  .practice-carousel-dot[aria-current="true"] {
+    width: 20px;
+    border-radius: 8px;
+    background: var(--gold);
+  }
+}
+@media (max-width: 720px) {
+  .home-page .practice-grid > .practice-card {
+    flex-basis: 86% !important;
+    width: 86% !important;
+  }
+  .practice-carousel-controls { gap: 12px; margin-top: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-page .practice-grid { scroll-behavior: auto; }
+  .practice-carousel-dot { transition: none; }
+}
