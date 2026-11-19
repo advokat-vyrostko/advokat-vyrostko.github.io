@@ -5000,33 +5000,3 @@ html{scroll-behavior:smooth;scroll-padding-top:82px}body{background:var(--ppaper
   .js-motion .contact-details,.js-motion .map-frame { opacity:1!important;transform:none!important;transition:none!important; }
 }
 
-
-
-/* Tablet hero: keep headline clear of the portrait */
-@media (min-width:681px) and (max-width:1150px){
-  .portfolio-hero .hero-layout{padding-top:66px;padding-bottom:92px}
-  .portfolio-hero .hero-copy{max-width:590px;width:60%;position:relative;z-index:3}
-  .portfolio-hero .hero-copy h1{max-width:570px;font-size:clamp(43px,5.2vw,58px)!important;line-height:1.12!important}
-  .portfolio-hero .hero-description{max-width:500px;font-size:14px!important}
-  .portfolio-hero .hero-photo{inset:0 0 0 32%;background-position:58% 35%;}
-  .portfolio-hero .hero-shade{background:linear-gradient(90deg,#101e31 0%,rgba(16,30,49,.98) 34%,rgba(16,30,49,.88) 55%,rgba(16,30,49,.42) 100%)}
-}
-
-
-/* Tablet: reveal the portrait while preserving text contrast */
-@media (min-width:681px) and (max-width:1150px){
-  .portfolio-hero .hero-photo{filter:saturate(.78) brightness(1.08)!important;background-position:58% 35%!important}
-  .portfolio-hero .hero-shade{background:linear-gradient(90deg,rgba(16,30,49,.94) 0%,rgba(16,30,49,.82) 35%,rgba(16,30,49,.48) 58%,rgba(16,30,49,.12) 100%)!important}
-}
-
-
-/* Tablet portrait-safe composition: keep every text line left of the face */
-@media (min-width:681px) and (max-width:1150px){
-  .portfolio-hero .hero-layout{align-items:center}
-  .portfolio-hero .hero-copy{width:52%!important;max-width:520px!important;flex:0 0 52%;}
-  .portfolio-hero .hero-copy h1{max-width:470px!important;font-size:clamp(39px,4.7vw,51px)!important;line-height:1.13!important}
-  .portfolio-hero .hero-description{max-width:410px!important;font-size:13px!important;line-height:1.75!important}
-  .portfolio-hero .hero-actions{gap:18px!important}
-  .portfolio-hero .hero-photo{inset:0 0 0 28%!important;background-position:70% 35%!important}
-  .portfolio-hero .hero-shade{background:linear-gradient(90deg,rgba(16,30,49,.98) 0%,rgba(16,30,49,.94) 36%,rgba(16,30,49,.60) 57%,rgba(16,30,49,.16) 100%)!important}
-}
