@@ -2620,3 +2620,36 @@ nav { font-weight: 500; letter-spacing: .01em; }
 .practice-card h3, .contact-card h3, .article-item h3 {
   font-weight: 500 !important;
 }
+
+/* Lighter typography in the top area: brand, navigation and hero headline */
+header .brand strong {
+  font-family: "Cormorant Garamond", "Iowan Old Style", Georgia, serif !important;
+  font-size: 25px !important;
+  font-weight: 500 !important;
+  letter-spacing: .005em !important;
+}
+header .brand small {
+  font-weight: 400 !important;
+  letter-spacing: .14em !important;
+}
+header .nav nav a {
+  font-weight: 400 !important;
+  letter-spacing: .015em !important;
+}
+header .nav > .btn,
+header .nav nav .menu-consult {
+  font-weight: 500 !important;
+}
+.hero-inner h1 {
+  font-family: "Cormorant Garamond", "Iowan Old Style", Georgia, serif !important;
+  font-weight: 400 !important;
+  letter-spacing: -.018em !important;
+  line-height: 1.02 !important;
+}
+.hero .eyebrow {
+  font-weight: 500 !important;
+  letter-spacing: .17em !important;
+}
+@media (max-width: 720px) {
+  header .brand strong { font-size: 22px !important; }
+}
