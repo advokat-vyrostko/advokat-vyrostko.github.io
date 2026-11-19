@@ -5289,3 +5289,41 @@ html{scroll-behavior:smooth;scroll-padding-top:82px}body{background:var(--ppaper
     opacity:1;animation:none;filter:none;transform:none;
   }
 }
+
+
+/* VERSION 0102 — wayfinding typography over the office building photo */
+.office-building-card{position:relative;overflow:hidden;border-radius:7px;isolation:isolate}
+.office-building-card>img{display:block;width:100%;height:390px;object-fit:cover;object-position:center;filter:saturate(.78)}
+.office-building-overlay{
+  position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:flex-start;
+  justify-content:flex-end;padding:clamp(18px,2.5vw,32px);
+  color:#fff;background:linear-gradient(180deg,rgba(13,27,46,.04) 18%,rgba(13,27,46,.30) 48%,rgba(13,27,46,.88) 100%);
+  pointer-events:none;
+}
+.office-building-overlay>*{opacity:0;transform:translate3d(0,15px,0);filter:blur(2px)}
+.office-building-card.building-photo-ready .office-building-overlay>*{
+  animation:officeBuildingTextReveal0102 .72s cubic-bezier(.2,.75,.25,1) both;
+}
+.office-building-card.building-photo-ready .office-building-kicker{animation-delay:1.18s}
+.office-building-card.building-photo-ready .office-building-overlay strong{animation-delay:1.34s}
+.office-building-card.building-photo-ready .office-building-overlay h3{animation-delay:1.5s}
+.office-building-card.building-photo-ready .office-building-overlay p{animation-delay:1.68s}
+.office-building-card.building-photo-ready .office-building-overlay ul{animation-delay:1.84s}
+.office-building-kicker{font:600 9px/1.4 var(--body);letter-spacing:.2em;color:#e0c18f;margin-bottom:9px}
+.office-building-overlay strong{font:500 clamp(23px,2.5vw,31px)/1.1 var(--display);color:#fff;margin-bottom:8px}
+.office-building-overlay h3{font:400 clamp(19px,2vw,26px)/1.2 var(--display);color:#fff;margin:0 0 12px}
+.office-building-overlay p{font:500 9px/1.4 var(--body);letter-spacing:.16em;text-transform:uppercase;color:#e0c18f;margin:0 0 6px}
+.office-building-overlay ul{display:flex;flex-wrap:wrap;gap:7px 16px;list-style:none;margin:0;padding:0}
+.office-building-overlay li{font:500 11px/1.5 var(--body);color:rgba(255,255,255,.92)}
+@keyframes officeBuildingTextReveal0102{
+  to{opacity:1;transform:translate3d(0,0,0);filter:blur(0)}
+}
+@media(max-width:680px){
+  .office-building-card>img{height:auto;aspect-ratio:1.4/1}
+  .office-building-overlay{padding:18px}
+  .office-building-overlay strong{font-size:24px}
+  .office-building-overlay h3{font-size:19px}
+}
+@media(prefers-reduced-motion:reduce){
+  .office-building-overlay>*{opacity:1;transform:none;filter:none;animation:none!important}
+}
