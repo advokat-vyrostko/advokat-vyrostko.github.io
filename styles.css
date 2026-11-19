@@ -3892,3 +3892,31 @@ html body main .wrap.content {
   background-color: rgba(255,255,255,.08) !important;
   background-image: none !important;
 }
+
+
+/* UNIFIED TRANSPARENT GLASS — every information block across all site tabs */
+html body main .practice-card.practice-card.practice-card,
+html body main .about-panel.about-panel.about-panel,
+html body main .fact.fact.fact,
+html body main .about-profile-copy.about-profile-copy.about-profile-copy,
+html body main .practice-detail-card.practice-detail-card.practice-detail-card,
+html body main .contact-card.contact-card.contact-card,
+html body main .wrap.content.wrap.content {
+  background: rgba(255,255,255,.34) !important;
+  background-color: rgba(255,255,255,.34) !important;
+  background-image: none !important;
+  border: 1px solid rgba(255,255,255,.68) !important;
+  box-shadow: 0 8px 24px rgba(31,45,57,.045), inset 0 1px 0 rgba(255,255,255,.35) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(1.08) !important;
+  backdrop-filter: blur(10px) saturate(1.08) !important;
+}
+html body main .practice-grid,
+html body main .about-grid,
+html body main .facts,
+html body main .about-profile-grid,
+html body main .practice-detail-grid,
+html body main .contact-grid {
+  background: rgba(255,255,255,.07) !important;
+  background-color: rgba(255,255,255,.07) !important;
+  background-image: none !important;
+}
