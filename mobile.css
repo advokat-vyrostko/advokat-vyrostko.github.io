@@ -201,3 +201,35 @@ a:focus-visible{outline:2px solid #b99a70;outline-offset:4px}
 @media(prefers-reduced-motion:reduce){
   .m-hero-photo{transition:none!important;will-change:auto}
 }
+
+
+/* CINEMATIC HERO PHOTO MOTION — continuous drift, slow zoom and hover lift */
+@keyframes mPortraitCinematic{
+  0%{transform:translate3d(0,0,0) scale(1);filter:saturate(.96) contrast(1)}
+  35%{transform:translate3d(0,-7px,0) scale(1.018);filter:saturate(1.04) contrast(1.015)}
+  70%{transform:translate3d(0,3px,0) scale(1.035);filter:saturate(1.08) contrast(1.02)}
+  100%{transform:translate3d(0,-4px,0) scale(1.012);filter:saturate(1.02) contrast(1.01)}
+}
+.m-hero-photo{
+  animation:mPortraitCinematic 12s cubic-bezier(.45,0,.55,1) infinite alternate;
+  transform-origin:50% 48%;
+  backface-visibility:hidden;
+}
+@media (hover:hover) and (pointer:fine){
+  .m-hero-photo:hover{
+    animation-play-state:paused;
+    transform:translate3d(0,-18px,0) scale(1.055) rotate(-.35deg);
+    filter:saturate(1.13) contrast(1.035);
+    box-shadow:0 32px 65px rgba(0,0,0,.30);
+  }
+}
+@media (hover:none), (pointer:coarse){
+  .m-hero-photo:active{
+    animation-play-state:paused;
+    transform:scale(1.035);
+    filter:saturate(1.12) contrast(1.025);
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .m-hero-photo{animation:none!important;transform:none!important;transition:none!important}
+}
