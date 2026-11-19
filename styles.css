@@ -4503,3 +4503,121 @@ header {
 @media (prefers-reduced-motion: reduce) {
   .btn, .brand, .brand-mark { transition: none !important; }
 }
+
+
+/* ==========================================================
+   COMPACT LAYOUT — tighter vertical rhythm, same hierarchy
+   ========================================================== */
+:root {
+  --section-space: clamp(46px, 5.2vw, 68px);
+  --page-gutter: clamp(20px, 4vw, 54px);
+  --page-max: 1120px;
+}
+.wrap {
+  width: min(var(--page-max), calc(100% - 2 * var(--page-gutter))) !important;
+}
+.nav { min-height: 70px !important; }
+.brand-mark { height: 40px !important; }
+.brand strong { font-size: 20px !important; }
+.brand small { font-size: 10px !important; }
+.nav > .btn { padding: 10px 17px !important; }
+.hero {
+  min-height: clamp(430px, 43vw, 540px) !important;
+}
+.hero-inner {
+  padding-block: clamp(42px, 5vw, 64px) !important;
+}
+.hero h1 {
+  font-size: clamp(38px, 5.1vw, 58px) !important;
+  margin-bottom: 14px !important;
+}
+.hero p {
+  font-size: 17px !important;
+  line-height: 1.55;
+  margin-bottom: 19px !important;
+}
+.hero-actions { margin-top: 18px !important; gap: 16px 26px !important; }
+.btn { padding: 11px 18px !important; }
+.contact-inline { gap: 4px !important; font-size: 13px !important; }
+.section { padding-block: var(--section-space) !important; }
+.section-head { margin-bottom: 30px !important; }
+.section-head h2 { font-size: clamp(27px, 3vw, 32px) !important; margin-bottom: 8px !important; }
+.section-head p { font-size: 14px; line-height: 1.55; }
+#about .about-profile-grid {
+  gap: clamp(26px, 4vw, 48px) !important;
+}
+.about-profile-copy h2 { font-size: 25px !important; margin-bottom: 9px !important; }
+.about-profile-copy h2:not(:first-child) { margin-top: 22px !important; }
+.about-profile-copy p { font-size: 15px !important; line-height: 1.62 !important; }
+.about-portrait img {
+  height: clamp(320px, 35vw, 440px) !important;
+}
+.facts { margin-top: 24px !important; gap: 10px !important; }
+.fact { min-height: 88px !important; padding: 14px 16px !important; }
+.fact strong { font-size: 20px !important; }
+.fact span { font-size: 12px !important; }
+.note { margin: 30px auto !important; padding: 10px 14px !important; font-size: 13px !important; }
+.office-gallery-wrap { margin-top: 46px !important; }
+.office-gallery { gap: 10px !important; }
+.office-gallery img, .office-gallery-main img {
+  height: clamp(220px, 25vw, 320px) !important;
+}
+#contacts.page-hero {
+  padding: 44px 0 18px !important;
+}
+#contacts.page-hero h1 { font-size: clamp(34px, 4vw, 44px) !important; }
+#contacts.page-hero p { font-size: 15px; }
+main > section.section:has(> .wrap.contact-grid) { padding-top: 25px !important; }
+.contact-grid { gap: 10px !important; }
+.contact-card {
+  min-height: 135px !important;
+  padding: 19px 21px !important;
+}
+.contact-card h3 { font-size: 19px !important; margin-bottom: 7px !important; }
+.contact-card p { font-size: 14px; margin: 4px 0 !important; }
+.office-map {
+  margin-top: 28px !important;
+  padding: 22px !important;
+}
+.office-map h2 { font-size: 24px !important; }
+.office-map > p { font-size: 14px; margin-bottom: 13px !important; }
+.map-frame iframe { height: 340px !important; }
+.messenger-contact { right: 14px; bottom: 14px; }
+
+@media (max-width: 900px) {
+  :root { --section-space: 54px; --page-gutter: 26px; }
+  .hero { min-height: 470px !important; }
+  .hero-inner { width: 74% !important; }
+  .about-portrait img { height: 380px !important; }
+}
+@media (max-width: 680px) {
+  :root { --section-space: 43px; --page-gutter: 18px; }
+  .nav { min-height: 64px !important; }
+  .brand strong { font-size: 15px !important; }
+  .brand small { font-size: 9px !important; }
+  .brand-mark { height: 34px !important; }
+  .nav > .btn { min-height: 38px !important; padding: 8px 11px !important; font-size: 11px !important; }
+  .hero { min-height: 510px !important; }
+  .hero-inner { padding: 38px 0 28px !important; }
+  .hero h1 { font-size: clamp(34px, 9vw, 44px) !important; margin-bottom: 12px !important; }
+  .hero p { font-size: 15px !important; max-width: 430px !important; }
+  .hero-actions { gap: 14px !important; }
+  .contact-inline { font-size: 12px !important; }
+  .section-head { margin-bottom: 23px !important; }
+  .section-head h2 { font-size: 27px !important; }
+  .about-profile-copy h2 { font-size: 23px !important; }
+  .about-profile-copy p { font-size: 14px !important; }
+  .about-portrait img { max-height: 430px !important; }
+  .fact { min-height: 82px !important; padding: 12px !important; }
+  .fact strong { font-size: 18px !important; }
+  .office-gallery-wrap { margin-top: 35px !important; }
+  .office-gallery img, .office-gallery-main img { max-height: 300px !important; }
+  #contacts.page-hero { padding: 38px 0 14px !important; }
+  .contact-card { padding: 17px !important; }
+  .office-map { margin-top: 22px !important; padding: 14px !important; }
+  .map-frame iframe { height: 280px !important; }
+}
+@media (max-width: 360px) {
+  .hero { min-height: 490px !important; }
+  .nav > .btn { font-size: 10px !important; padding-inline: 8px !important; }
+}
