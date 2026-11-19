@@ -5051,3 +5051,21 @@ html{scroll-behavior:smooth;scroll-padding-top:82px}body{background:var(--ppaper
     font-variant-emoji:text!important;
   }
 }
+
+
+/* VERSION 0102 — tablet hero copy: one uninterrupted paragraph */
+@media screen and (min-width:681px) and (max-width:1150px){
+  .portfolio-hero .hero-copy{
+    width:100%!important;
+    max-width:760px!important;
+    flex:1 1 760px!important;
+  }
+  .portfolio-hero .hero-description{
+    display:block!important;
+    width:100%!important;
+    max-width:680px!important;
+    white-space:normal!important;
+    word-break:normal!important;
+    overflow-wrap:normal!important;
+  }
+}
