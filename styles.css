@@ -3862,3 +3862,33 @@ html body main > section.section.section.section.section > .wrap.contact-grid.co
   -webkit-backdrop-filter: blur(8px) saturate(1.04) !important;
   backdrop-filter: blur(8px) saturate(1.04) !important;
 }
+
+
+/* TRANSPARENT GLASS SURFACES — apply consistently to cards on every page */
+html body main .practice-card.practice-card,
+html body main .practice-detail-card.practice-detail-card,
+html body main .contact-card.contact-card,
+html body main .about-panel.about-panel,
+html body main .fact.fact,
+html body main .about-profile-copy.about-profile-copy,
+html body main .article-card.article-card,
+html body main .publication-card.publication-card,
+html body main .case-card.case-card,
+html body main .content-card.content-card {
+  background: rgba(255,255,255,.20) !important;
+  background-color: rgba(255,255,255,.20) !important;
+  background-image: none !important;
+  border: 1px solid rgba(255,255,255,.52) !important;
+  box-shadow: 0 8px 24px rgba(31,45,57,.045), inset 0 1px 0 rgba(255,255,255,.24) !important;
+  -webkit-backdrop-filter: blur(7px) saturate(1.06) !important;
+  backdrop-filter: blur(7px) saturate(1.06) !important;
+}
+/* Make enclosing content panels transparent too, so the background is visible */
+html body main .about-profile-grid,
+html body main .facts,
+html body main .practice-detail-grid,
+html body main .practice-grid,
+html body main .wrap.content {
+  background-color: rgba(255,255,255,.08) !important;
+  background-image: none !important;
+}
