@@ -6,13 +6,32 @@
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (toggle && nav) {
+    let backdrop;
     const closeMenu = () => {
       nav.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
+      body.classList.remove('menu-is-open');
+      if (backdrop) {
+        backdrop.classList.remove('open');
+        backdrop.remove();
+        backdrop = null;
+      }
+    };
+    const openMenu = () => {
+      if (!backdrop) {
+        backdrop = document.createElement('div');
+        backdrop.className = 'menu-backdrop';
+        backdrop.addEventListener('click', closeMenu);
+        body.appendChild(backdrop);
+      }
+      body.classList.add('menu-is-open');
+      requestAnimationFrame(() => backdrop && backdrop.classList.add('open'));
+      nav.classList.add('open');
+      toggle.setAttribute('aria-expanded', 'true');
     };
     toggle.addEventListener('click', () => {
-      const isOpen = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(isOpen));
+      if (nav.classList.contains('open')) closeMenu();
+      else openMenu();
     });
     nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
     document.addEventListener('keydown', event => {
