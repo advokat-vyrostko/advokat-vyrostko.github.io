@@ -3256,3 +3256,69 @@ main {
     padding: 20px;
   }
 }
+
+/* Individual, understated Koziatyn railway-station photographs for each page */
+.page-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: #f1f0eb !important;
+}
+.page-hero > .wrap {
+  position: relative;
+  z-index: 2;
+}
+.page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-position: center 46%;
+  background-size: cover;
+  opacity: .30;
+  filter: saturate(.58) contrast(.92);
+}
+.page-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg,
+    rgba(247,246,242,.98) 0%,
+    rgba(247,246,242,.92) 42%,
+    rgba(247,246,242,.64) 70%,
+    rgba(247,246,242,.42) 100%);
+  pointer-events: none;
+}
+body.page-home .hero::before {
+  background-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Залізничний%20вокзал%20Козятин.jpg?width=1800") !important;
+  background-position: center 48% !important;
+  filter: saturate(.58) contrast(.92);
+}
+body.page-about .page-hero::before {
+  background-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Головна%20зала.jpg?width=1800");
+  background-position: center 42%;
+}
+body.page-practice .page-hero::before {
+  background-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Вокзал%20Козятин%20в%202020%20році.jpg?width=1800");
+  background-position: center 48%;
+}
+body.page-cases .page-hero::before {
+  background-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Koziatyn%20Railway%20station%20from%20the%20platform.jpg?width=1800");
+  background-position: center 52%;
+}
+body.page-publications .page-hero::before {
+  background-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Залізничний%20вокзал.%20Козятин.jpg?width=1800");
+  background-position: center 46%;
+}
+body.page-contacts .page-hero::before {
+  background-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Козятин,%20Залізничний%20вокзал.jpg?width=1800");
+  background-position: center 45%;
+}
+@media (max-width: 720px) {
+  .page-hero::before { opacity: .22; }
+  .page-hero::after {
+    background: linear-gradient(90deg, rgba(247,246,242,.96), rgba(247,246,242,.78));
+  }
+  body.page-home .hero::before { opacity: .35; }
+}
