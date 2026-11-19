@@ -354,3 +354,23 @@ a:focus-visible{outline:2px solid #b99a70;outline-offset:4px}
   .m-photo-overlay strong{font-size:23px}
   .m-photo-overlay span{font-size:8px;letter-spacing:.12em}
 }
+
+
+/* CONSISTENT HEADING TYPOGRAPHY — upright + italic contrast */
+.m-hero h1,
+.m-section-title,
+.m-contact h2{
+  font-family:Georgia,"Times New Roman",serif;
+  font-style:normal;
+  font-weight:500;
+  letter-spacing:-.035em;
+}
+.m-hero h1 em,
+.m-section-title em,
+.m-contact h2 em{
+  font-family:Georgia,"Times New Roman",serif;
+  font-style:italic;
+  font-weight:400;
+  letter-spacing:-.025em;
+  color:#c8ad89;
+}
