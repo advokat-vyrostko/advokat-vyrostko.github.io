@@ -73,4 +73,15 @@
   },{threshold:.12,rootMargin:'0px 0px -35px 0px'});
   targets.forEach(el=>observer.observe(el));
 })();
-</script></body></html>
+</script>
+<style>
+.mobile-sound-toggle{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:99999;display:flex;align-items:center;gap:8px;padding:12px 15px;border:1px solid #c8ad89;border-radius:999px;background:#0d1b2e;color:#fff;font:600 12px Arial,sans-serif;box-shadow:0 4px 18px #0004;cursor:pointer}
+.mobile-sound-toggle span:first-child{font:20px Georgia,serif;color:#d6b88f}
+.mobile-sound-toggle[aria-pressed="true"]{background:#203954}
+</style>
+<audio id="mobile-site-soundtrack" src="/Better-Call-Saul-Little-Barrie-Theme-Song.mp3" preload="auto" loop></audio>
+<button class="mobile-sound-toggle" id="mobile-sound-toggle" type="button" aria-label="Увімкнути музику" aria-pressed="false"><span>♫</span><span>Увімкнути музику</span></button>
+<script>
+(()=>{const a=document.getElementById('mobile-site-soundtrack'),b=document.getElementById('mobile-sound-toggle');if(!a||!b)return;a.volume=.2;const state=on=>{b.setAttribute('aria-pressed',String(on));b.querySelector('span:last-child').textContent=on?'Вимкнути музику':'Увімкнути музику';b.setAttribute('aria-label',on?'Вимкнути музику':'Увімкнути музику')};const play=()=>a.play().then(()=>state(true)).catch(()=>state(false));b.addEventListener('click',()=>a.paused?play():(a.pause(),state(false)));a.addEventListener('play',()=>state(true));a.addEventListener('pause',()=>state(false));})();
+</script>
+</body></html>
