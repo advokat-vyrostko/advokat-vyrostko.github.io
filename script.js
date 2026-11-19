@@ -57,6 +57,42 @@
     body.appendChild(contact);
   }
 
+  // Mobile swipe navigation between the site's main pages.
+  // Horizontal gestures are ignored in controls, maps, galleries and open menus.
+  const pageNav = document.querySelector('.nav nav');
+  if (pageNav) {
+    const pageLinks = Array.from(pageNav.querySelectorAll('a[href]'))
+      .filter(link => !link.classList.contains('menu-consult'))
+      .filter(link => !/^(https?:|mailto:|tel:|#|viber:)/i.test(link.getAttribute('href')));
+    const currentPage = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    const currentIndex = pageLinks.findIndex(link => {
+      const target = (link.getAttribute('href').split('/').pop() || 'index.html').toLowerCase();
+      return target === currentPage || (currentPage === '' && target === 'index.html');
+    });
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchStartTarget = null;
+    const ignoreSwipe = target => target && target.closest(
+      'a, button, input, textarea, select, label, iframe, video, audio, [contenteditable="true"], .menu-toggle, .menu-backdrop, .map-frame, .office-gallery, .messenger-contact, nav'
+    );
+    document.addEventListener('touchstart', event => {
+      if (!window.matchMedia('(max-width: 720px)').matches || event.touches.length !== 1) return;
+      touchStartX = event.touches[0].clientX;
+      touchStartY = event.touches[0].clientY;
+      touchStartTarget = event.target;
+    }, { passive: true });
+    document.addEventListener('touchend', event => {
+      if (!window.matchMedia('(max-width: 720px)').matches || event.changedTouches.length !== 1) return;
+      if (document.body.classList.contains('menu-is-open') || ignoreSwipe(touchStartTarget)) return;
+      const dx = event.changedTouches[0].clientX - touchStartX;
+      const dy = event.changedTouches[0].clientY - touchStartY;
+      if (Math.abs(dx) < 75 || Math.abs(dx) < Math.abs(dy) * 1.35 || currentIndex < 0) return;
+      const nextIndex = currentIndex + (dx < 0 ? 1 : -1);
+      if (nextIndex < 0 || nextIndex >= pageLinks.length) return;
+      window.location.href = pageLinks[nextIndex].href;
+    }, { passive: true });
+  }
+
   if (reduceMotion) return;
   if (isHome) body.classList.add('home-page');
 
