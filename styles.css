@@ -4999,3 +4999,14 @@ html{scroll-behavior:smooth;scroll-padding-top:82px}body{background:var(--ppaper
   .js-motion .office-gallery figure,.js-motion .contact-intro,
   .js-motion .contact-details,.js-motion .map-frame { opacity:1!important;transform:none!important;transition:none!important; }
 }
+
+
+/* Abstract video background for the portfolio hero */
+.portfolio-hero{background:#0d1b2d}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;filter:saturate(.72) brightness(.72)}
+.hero-photo{display:none!important}
+.hero-shade{z-index:1;background:linear-gradient(90deg,rgba(13,27,45,.96) 0%,rgba(13,27,45,.88) 38%,rgba(13,27,45,.58) 70%,rgba(13,27,45,.48) 100%)}
+.hero-layout{z-index:2}.hero-bottom{z-index:2}
+.video-credit{font-size:9px!important;opacity:.65}.video-credit a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:680px){.hero-video{object-position:center;filter:saturate(.65) brightness(.55)}.hero-shade{background:linear-gradient(180deg,rgba(13,27,45,.88),rgba(13,27,45,.94) 55%,#0d1b2d)}.video-credit{max-width:240px;line-height:1.5}}
+@media(prefers-reduced-motion:reduce){.hero-video{display:none}}
