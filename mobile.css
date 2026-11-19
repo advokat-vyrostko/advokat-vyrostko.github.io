@@ -235,12 +235,13 @@ a:focus-visible{outline:2px solid #b99a70;outline-offset:4px}
 }
 
 
-/* HERO PHOTO — stay hidden until the visitor scrolls it into view */
+/* HERO PHOTO — slide in from the left only after the visitor scrolls to it */
 .m-hero-photo{
   opacity:0;
-  transform:translate3d(0,42px,0) scale(.96);
+  transform:translate3d(-76px,0,0) scale(.985);
   animation:none!important;
-  transition:opacity .9s ease,transform 1.1s cubic-bezier(.2,.75,.25,1),filter .9s ease;
+  transition:opacity .85s ease,transform 1.15s cubic-bezier(.16,1,.3,1),filter .9s ease;
+  will-change:opacity,transform;
 }
 .m-hero-photo.is-photo-visible{
   opacity:1;
