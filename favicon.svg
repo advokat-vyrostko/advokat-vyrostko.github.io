@@ -1,11 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <circle cx="32" cy="32" r="30.5" fill="#e8c879"/>
-  <circle cx="32" cy="32" r="27.7" fill="#17165f" stroke="#c99d45" stroke-width="1.4"/>
-  <circle cx="32" cy="32" r="23.5" fill="none" stroke="#d9b96d" stroke-width=".8"/>
-  <g fill="#e5c477" font-family="Georgia,serif" font-weight="700" text-anchor="middle">
-    <text x="32" y="13.2" font-size="5.4" letter-spacing=".8">АДВОКАТ УКРАЇНИ</text>
-    <text x="32" y="54.5" font-size="7.5" letter-spacing="1">НААУ</text>
-  </g>
-  <path d="M22 19.5h20v2.6c-2.1 0-3.1 1.1-3.1 3v14.5c0 1.9 1 3 3.1 3v2.6H22v-2.6c2.1 0 3.1-1.1 3.1-3V25.1c0-1.9-1-3-3.1-3z" fill="none" stroke="#e5c477" stroke-width="1.5"/>
-  <path d="M32 24v17m0-17c-2.4 1.9-3.3 4.5-3.3 7.2 1.9-.6 3-1.7 3.3-3.4m0-3.8c2.4 1.9 3.3 4.5 3.3 7.2-1.9-.6-3-1.7-3.3-3.4m-5.2 1.8c.1 4.1 2.1 6.1 5.2 6.8 3.1-.7 5.1-2.7 5.2-6.8M32 41l-2.6 2.5h5.2z" fill="#e5c477" stroke="#e5c477" stroke-width="1.1" stroke-linejoin="round"/>
+  <rect x="2" y="2" width="60" height="60" rx="13" fill="#14243a"/>
+  <rect x="5.5" y="5.5" width="53" height="53" rx="10" fill="none" stroke="#c9a96e" stroke-width="1"/>
+  <path d="M12 14h40" fill="none" stroke="#c9a96e" stroke-width=".7" opacity=".75"/>
+  <text x="32" y="43" text-anchor="middle" fill="#e2c58c"
+    font-family="Georgia, 'Times New Roman', serif" font-size="30"
+    font-weight="400" letter-spacing="-2">АВ</text>
+  <path d="M17 50h30" fill="none" stroke="#c9a96e" stroke-width=".8" opacity=".8"/>
 </svg>
