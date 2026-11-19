@@ -3544,3 +3544,24 @@ section.section > .office-map,
 .section .office-map {
   background-color: rgba(255, 255, 255, .10) !important;
 }
+
+
+/* FINAL CONTACTS FIX: expose the geometric layer through genuinely clear cards */
+section.section .wrap.contact-grid {
+  background-color: #e5e3db !important;
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 29px, rgba(37, 55, 72, .20) 29px 31px),
+    repeating-linear-gradient(90deg, transparent 0 29px, rgba(37, 55, 72, .20) 29px 31px),
+    repeating-linear-gradient(45deg, transparent 0 69px, rgba(37, 55, 72, .22) 69px 71px),
+    repeating-linear-gradient(-45deg, transparent 0 69px, rgba(37, 55, 72, .16) 69px 71px) !important;
+  background-size: auto !important;
+}
+section.section .wrap.contact-grid > .contact-card {
+  background: rgba(255,255,255,.025) !important;
+  background-color: rgba(255,255,255,.025) !important;
+  -webkit-backdrop-filter: blur(1px) !important;
+  backdrop-filter: blur(1px) !important;
+  border: 1px solid rgba(255,255,255,.82) !important;
+  box-shadow: 0 8px 24px rgba(24,37,50,.045), inset 0 1px 0 rgba(255,255,255,.45) !important;
+  animation: none !important;
+}
