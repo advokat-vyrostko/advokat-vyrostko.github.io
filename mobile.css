@@ -388,3 +388,74 @@ a:focus-visible{outline:2px solid #b99a70;outline-offset:4px}
   font-weight:400;
   color:#e5d2b6;
 }
+
+
+/* GOLDEN-RATIO PHOTO COMPOSITION — text hierarchy and placement */
+.m-photo-frame:after{
+  inset:38.2% 0 0;
+  background:linear-gradient(180deg,rgba(10,22,38,0) 0%,rgba(10,22,38,.22) 23%,rgba(10,22,38,.86) 100%);
+}
+.m-photo-overlay{
+  left:6.18%;
+  right:6.18%;
+  bottom:6.18%;
+  max-width:61.8%;
+  gap:clamp(7px,2.2vw,11px);
+}
+.m-photo-overlay .m-photo-kicker,
+.m-photo-overlay .m-photo-role,
+.m-photo-overlay .m-photo-specialties{
+  display:block;
+  color:#e5d2b6;
+  font-family:Arial,sans-serif;
+  font-size:clamp(8px,2.15vw,10px);
+  font-weight:500;
+  line-height:1.55;
+  letter-spacing:.15em;
+}
+.m-photo-overlay .m-photo-kicker{
+  padding-left:11px;
+  border-left:2px solid #c8ad89;
+}
+.m-photo-overlay strong{
+  display:block;
+  max-width:100%;
+  font-size:clamp(23px,6.8vw,34px);
+  line-height:1.12;
+  letter-spacing:.005em;
+  padding:0 0 8px;
+  border-bottom:1px solid rgba(200,173,137,.72);
+}
+.m-photo-overlay strong em{
+  font-style:italic;
+  font-weight:400;
+  color:#e5d2b6;
+}
+.m-photo-overlay .m-photo-role{letter-spacing:.13em}
+.m-photo-overlay p{
+  margin:2px 0 1px;
+  color:#fff;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(14px,3.8vw,18px);
+  font-weight:400;
+  line-height:1.42;
+  letter-spacing:-.01em;
+}
+.m-photo-overlay p em{
+  color:#e5d2b6;
+  font-style:italic;
+}
+.m-photo-overlay .m-photo-specialties{
+  max-width:100%;
+  font-size:clamp(7px,1.85vw,9px);
+  line-height:1.65;
+  letter-spacing:.12em;
+  opacity:.92;
+}
+@media(max-width:390px){
+  .m-photo-overlay{max-width:76%}
+  .m-photo-overlay .m-photo-specialties{max-width:95%}
+}
+@media(prefers-reduced-motion:reduce){
+  .m-photo-overlay{transition:none}
+}
