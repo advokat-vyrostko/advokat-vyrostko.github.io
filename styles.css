@@ -2955,3 +2955,95 @@ footer a:hover,
 .footer-row > div:nth-child(2) > a:hover {
   color: #ffffff !important;
 }
+
+/* Restore the original navy, gold and warm ivory brand palette */
+:root {
+  --navy: #14243a;
+  --navy2: #0d1b2e;
+  --gold: #d39a2f;
+  --gold2: #edbd58;
+  --cream: #f7f5f0;
+  --ink: #1b2738;
+  --muted: #687385;
+  --line: #e5e2dc;
+}
+body { color: var(--ink) !important; background: #fff !important; }
+header {
+  background: rgba(255,255,255,.96) !important;
+  border-bottom-color: var(--line) !important;
+}
+.brand-mark {
+  background: linear-gradient(180deg, var(--gold2), var(--gold), #a97620) !important;
+  box-shadow: 0 0 0 4px rgba(211,154,47,.08) !important;
+}
+.brand strong, h1, h2, h3, .fact strong, .office-map h2 {
+  color: var(--navy) !important;
+}
+nav a, header .nav nav a { color: #344154 !important; }
+nav a:hover, header .nav nav a:hover,
+header .nav nav a:focus-visible { color: var(--navy) !important; }
+.btn, header .nav > .btn, header .nav nav .menu-consult {
+  background: linear-gradient(135deg, var(--gold2), var(--gold)) !important;
+  color: #171d27 !important;
+  box-shadow: 0 5px 14px rgba(176,123,31,.16) !important;
+}
+.btn-outline {
+  background: transparent !important;
+  border-color: var(--gold) !important;
+  color: var(--navy) !important;
+}
+.eyebrow, .eyebrow-light { color: var(--navy) !important; }
+.eyebrow:before { background: var(--gold) !important; }
+.hero { background: #fbfaf7 !important; }
+.hero::after {
+  background: linear-gradient(90deg, #fbfaf7 0%, rgba(251,250,247,.98) 34%, rgba(251,250,247,.76) 50%, rgba(251,250,247,.03) 73%) !important;
+}
+.hero-inner > p { color: #263449 !important; }
+.section.alt, .page-hero { background: var(--cream) !important; }
+.practice-card, .contact-card, .fact, .article-item {
+  background: #fff !important;
+  border-color: var(--line) !important;
+}
+.practice-card:hover, .fact:hover {
+  border-color: var(--gold) !important;
+  box-shadow: 0 12px 28px rgba(20,36,58,.07) !important;
+}
+.about-panel { background: var(--navy) !important; }
+.about-panel:after { border-color: rgba(237,189,88,.3) !important; }
+.note, .office-map {
+  background: #fbf8f1 !important;
+  border-color: var(--line) !important;
+}
+.map-open-link { color: var(--navy) !important; border-bottom-color: var(--gold) !important; }
+footer {
+  background: #0b1b30 !important;
+  color: #e8edf4 !important;
+  border-top-color: var(--gold) !important;
+}
+footer a,
+.footer-row > div:nth-child(2) > a,
+.footer-row > div:nth-child(2) .phone-call-link,
+.footer-compact > div:nth-child(2) > a {
+  color: #f0c56c !important;
+}
+footer small { color: #b8c1ce !important; }
+footer a:hover { color: #fff !important; }
+.practice-card .num { color: var(--gold) !important; }
+header .brand:hover strong { color: #9a6a1d !important; }
+header .nav nav a:not(.menu-consult).active,
+header .nav nav a:not(.menu-consult)[aria-current="page"] {
+  color: var(--navy) !important;
+}
+header .nav nav a:not(.menu-consult):hover,
+header .nav nav a:not(.menu-consult):focus-visible {
+  color: #b48732 !important;
+}
+.messenger-contact {
+  border-color: rgba(20,36,58,.10) !important;
+  background: rgba(255,255,255,.94) !important;
+}
+.messenger-contact .messenger-whatsapp,
+.messenger-whatsapp { background: #168b4b !important; }
+.messenger-contact .messenger-viber,
+.messenger-viber { background: #665cac !important; }
+::selection { background: #ead9b4; color: var(--navy); }
