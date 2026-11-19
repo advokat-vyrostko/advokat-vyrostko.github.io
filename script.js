@@ -58,43 +58,9 @@
   }
 
 
-  // Swipeable practice-card carousel with side arrows and centered pagination dots.
-  const practiceGrid = document.querySelector('.home-page .practice-grid');
-  const carouselControls = document.querySelector('.practice-carousel-controls');
-  if (practiceGrid && carouselControls) {
-    const dotsWrap = carouselControls.querySelector('.practice-carousel-dots');
-    const prev = carouselControls.querySelector('.practice-carousel-prev');
-    const next = carouselControls.querySelector('.practice-carousel-next');
-    const cards = Array.from(practiceGrid.querySelectorAll('.practice-card'));
-    const dots = cards.map((card, index) => {
-      const dot = document.createElement('button');
-      dot.type = 'button';
-      dot.className = 'practice-carousel-dot';
-      dot.setAttribute('aria-label', 'Показати напрям ' + (index + 1));
-      dot.addEventListener('click', () => {
-        practiceGrid.scrollTo({ left: card.offsetLeft - practiceGrid.offsetLeft, behavior: 'smooth' });
-      });
-      dotsWrap.appendChild(dot);
-      return dot;
-    });
-    const updateCarousel = () => {
-      const maxScroll = practiceGrid.scrollWidth - practiceGrid.clientWidth;
-      const active = maxScroll <= 2 ? 0 : Math.min(cards.length - 1,
-        Math.round((practiceGrid.scrollLeft / maxScroll) * (cards.length - 1)));
-      dots.forEach((dot, index) => dot.setAttribute('aria-current', index === active ? 'true' : 'false'));
-      prev.disabled = practiceGrid.scrollLeft <= 2;
-      next.disabled = practiceGrid.scrollLeft >= maxScroll - 2;
-    };
-    prev.addEventListener('click', () => practiceGrid.scrollBy({ left: -practiceGrid.clientWidth * .85, behavior: 'smooth' }));
-    next.addEventListener('click', () => practiceGrid.scrollBy({ left: practiceGrid.clientWidth * .85, behavior: 'smooth' }));
-    practiceGrid.addEventListener('scroll', updateCarousel, { passive: true });
-    window.addEventListener('resize', updateCarousel);
-    updateCarousel();
-  }
-
   // Mobile swipe navigation: horizontal gestures move between main pages.
   const pageNav = document.querySelector('.nav nav');
-  const mainContent = document.querySelector('main');
+  const mainContent = document.body;
   if (pageNav && mainContent) {
     const pageLinks = Array.from(pageNav.querySelectorAll('a[href]'))
       .filter(link => !link.classList.contains('menu-consult'))
