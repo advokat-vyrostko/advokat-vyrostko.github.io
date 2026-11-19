@@ -3791,3 +3791,53 @@ main .wrap.contact-grid > .contact-card {
   main > .section.alt,
   main > .practice-detail-section { background: rgba(245,247,246,.62) !important; }
 }
+
+
+/* VERIFIED FINAL OVERRIDES — abstract monochrome artwork, no legal icons or grid */
+html {
+  min-height: 100%;
+  background-color: #f1f2f1 !important;
+  background-image:
+    radial-gradient(ellipse at 8% 22%, rgba(160,174,184,.16) 0%, transparent 34%),
+    radial-gradient(ellipse at 92% 74%, rgba(160,174,184,.14) 0%, transparent 38%),
+    repeating-linear-gradient(158deg, transparent 0 155px, rgba(110,126,139,.085) 156px 157px, transparent 159px 235px),
+    repeating-linear-gradient(22deg, transparent 0 240px, rgba(110,126,139,.055) 241px 242px, transparent 244px 330px),
+    linear-gradient(135deg, #f8f9f8 0%, #e9edee 52%, #f5f6f4 100%) !important;
+  background-attachment: fixed !important;
+  background-size: cover !important;
+}
+html body {
+  background: transparent !important;
+  isolation: auto !important;
+}
+html body::before { content: none !important; display: none !important; }
+html body > main { background: transparent !important; }
+html body > main > section,
+html body > main > section.section,
+html body > main > section.page-hero,
+html body > main > section.practice-detail-section {
+  background: rgba(246,247,246,.34) !important;
+}
+html body > main > section > .wrap.contact-grid,
+html body main .wrap.contact-grid {
+  background: rgba(246,247,246,.20) !important;
+  background-color: rgba(246,247,246,.20) !important;
+  background-image: none !important;
+}
+html body > main > section > .wrap.contact-grid > .contact-card,
+html body main .wrap.contact-grid > .contact-card {
+  background: rgba(255,255,255,.66) !important;
+  background-color: rgba(255,255,255,.66) !important;
+  background-image: none !important;
+  -webkit-backdrop-filter: blur(8px) saturate(1.04) !important;
+  backdrop-filter: blur(8px) saturate(1.04) !important;
+}
+@media (max-width: 720px) {
+  html { background-attachment: scroll !important; }
+  html body > main > section,
+  html body > main > section.section,
+  html body > main > section.page-hero,
+  html body > main > section.practice-detail-section {
+    background: rgba(246,247,246,.48) !important;
+  }
+}
