@@ -3339,3 +3339,32 @@ header.is-scrolled {
   body { touch-action: pan-y; }
   main { touch-action: pan-y; }
 }
+
+
+/* Transparent text surfaces: keep the page backgrounds and layout visible */
+.section > .wrap.content,
+.about-profile-grid,
+.practice-card,
+.fact,
+.contact-card,
+.article-item,
+.practice-detail-card,
+.practice-detail-cta,
+.note,
+.office-map,
+.section-status {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.section > .wrap.content,
+.about-profile-grid,
+.practice-card,
+.fact,
+.contact-card,
+.article-item,
+.practice-detail-card,
+.practice-detail-cta,
+.office-map,
+.section-status {
+  border-color: transparent !important;
+}
