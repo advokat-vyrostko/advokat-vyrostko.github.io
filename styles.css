@@ -2112,3 +2112,20 @@ header .nav nav.open {
   }
   .menu-backdrop { display: none !important; }
 }
+
+
+/* Mobile/tablet menu: keep the overlay behind the sticky header stacking context */
+header {
+  position: sticky !important;
+  z-index: 1100 !important;
+}
+.menu-backdrop {
+  z-index: 1090 !important;
+}
+header .nav nav {
+  z-index: 1110 !important;
+}
+header .menu-toggle {
+  position: relative;
+  z-index: 1111;
+}
