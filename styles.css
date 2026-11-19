@@ -3460,3 +3460,25 @@ header.is-scrolled {
     animation: none !important;
   }
 }
+
+
+/* Contacts page: override the more specific white contact-card rule */
+.contact-grid > .contact-card,
+section.section .contact-grid .contact-card,
+section.section > .office-map,
+.section .office-map {
+  background: rgba(255, 255, 255, .055) !important;
+  border: 1px solid rgba(255, 255, 255, .28) !important;
+  box-shadow: 0 8px 28px rgba(10, 20, 32, .045) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(1.12) !important;
+  backdrop-filter: blur(20px) saturate(1.12) !important;
+  animation: clear-glass-breathe 9s ease-in-out infinite alternate;
+}
+@media (prefers-reduced-motion: reduce) {
+  .contact-grid > .contact-card,
+  section.section .contact-grid .contact-card,
+  section.section > .office-map,
+  .section .office-map {
+    animation: none !important;
+  }
+}
