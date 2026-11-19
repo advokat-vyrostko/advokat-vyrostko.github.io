@@ -33,19 +33,22 @@
     });
   }
 
-  if (!('IntersectionObserver' in window)) return;
   const buildingPhoto = document.querySelector('.office-gallery figure:nth-child(2)');
   if (buildingPhoto) {
-    const buildingObserver = new IntersectionObserver((entries, currentObserver) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('building-photo-enter');
-        currentObserver.unobserve(entry.target);
-      });
-    }, { threshold: 0.08, rootMargin: '0px 0px -25px 0px' });
-    buildingObserver.observe(buildingPhoto);
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      buildingPhoto.classList.add('building-photo-ready');
+    } else {
+      const buildingObserver = new IntersectionObserver((entries, currentObserver) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('building-photo-ready');
+          currentObserver.unobserve(entry.target);
+        });
+      }, { threshold: 0.01, rootMargin: '0px 0px 0px 0px' });
+      buildingObserver.observe(buildingPhoto);
+    }
   }
-  if (reduceMotion) return;
+  if (reduceMotion || !('IntersectionObserver' in window)) return;
   const targets = document.querySelectorAll(
     '.profile-photo, .profile-text, .practice-intro, .practice-grid article, ' +
     '.approach-list > div, .office-gallery figure, .contact-intro, .contact-details, .map-frame'
