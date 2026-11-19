@@ -740,3 +740,41 @@ a:focus-visible{outline:2px solid #b99a70;outline-offset:4px}
     animation:none!important;opacity:1!important;transform:none!important;filter:none!important;
   }
 }
+
+
+/* OFFICE GALLERY — photos slide in from the left; wayfinding text follows */
+@keyframes mOfficePhotoSlide{
+  from{opacity:0;transform:translate3d(-76px,0,0) scale(.985)}
+  to{opacity:1;transform:translate3d(0,0,0) scale(1)}
+}
+@keyframes mOfficeTextReveal{
+  from{opacity:0;transform:translate3d(0,15px,0);filter:blur(3px)}
+  to{opacity:1;transform:translate3d(0,0,0);filter:blur(0)}
+}
+.m-gallery .m-office-location img{
+  opacity:0;
+  transform:translate3d(-76px,0,0) scale(.985);
+  will-change:opacity,transform;
+}
+.m-gallery .m-office-location.is-visible img{
+  animation:mOfficePhotoSlide 1.15s cubic-bezier(.16,1,.3,1) both;
+}
+.m-gallery .m-office-location .m-office-overlay > *{
+  opacity:0;
+}
+.m-gallery .m-office-location.is-visible .m-office-overlay > *{
+  animation:mOfficeTextReveal .8s cubic-bezier(.2,.75,.25,1) both;
+}
+.m-gallery .m-office-location.is-visible .m-office-overlay > span{animation-delay:.25s}
+.m-gallery .m-office-location.is-visible .m-office-overlay > strong{animation-delay:.43s}
+.m-gallery .m-office-location.is-visible .m-office-overlay > p{animation-delay:.61s}
+.m-gallery .m-office-location.is-visible .m-office-overlay > ul{animation-delay:.79s}
+.m-gallery .m-office-location.is-visible figcaption{
+  animation:mOfficeTextReveal .75s ease .9s both;
+}
+@media(prefers-reduced-motion:reduce){
+  .m-gallery .m-office-location img,
+  .m-gallery .m-office-location .m-office-overlay > *{
+    opacity:1!important;transform:none!important;filter:none!important;animation:none!important;
+  }
+}
