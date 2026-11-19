@@ -2245,3 +2245,31 @@ header .nav nav a:not(.menu-consult)[aria-current="page"] {
 @media (prefers-reduced-motion: reduce) {
   header .nav nav a:not(.menu-consult) { transition: none !important; }
 }
+
+
+/* Minimal navigation: no underline, background, border or active marker */
+header .nav nav a:not(.menu-consult) {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  border-bottom: 0 !important;
+  border-radius: 0 !important;
+  transform: none !important;
+  color: var(--navy) !important;
+  transition: color .18s ease !important;
+}
+header .nav nav a:not(.menu-consult):hover,
+header .nav nav a:not(.menu-consult):focus-visible {
+  background: transparent !important;
+  box-shadow: none !important;
+  color: #b48732 !important;
+  transform: none !important;
+  outline: none;
+}
+header .nav nav a:not(.menu-consult).active,
+header .nav nav a:not(.menu-consult)[aria-current="page"] {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  color: var(--navy) !important;
+}
