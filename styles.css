@@ -3703,3 +3703,54 @@ main { background: transparent !important; }
   .section.alt:nth-of-type(even),
   .practice-detail-section { background: rgba(243,245,246,.58) !important; }
 }
+
+
+/* FINAL VISIBILITY FIX: place the monochrome architecture above the page canvas,
+   but below all site content; remove the old contact-only geometric panel. */
+html, body { min-height: 100%; }
+html { background: #edf0f2 !important; }
+body {
+  position: relative !important;
+  isolation: auto !important;
+  background: transparent !important;
+}
+body::before {
+  content: "" !important;
+  display: block !important;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  background:
+    linear-gradient(rgba(246,248,249,.34), rgba(246,248,249,.34)),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 1000'><defs><linearGradient id='g' x2='1' y2='1'><stop stop-color='%23eef1f3'/><stop offset='1' stop-color='%23dce2e7'/></linearGradient></defs><rect width='1600' height='1000' fill='url(%23g)'/><g fill='none' stroke='%23798b9d' stroke-width='3' opacity='.34'><path d='M-100 240 C220 40 520 120 800 330 S1330 580 1700 220'/><path d='M-100 310 C220 110 520 190 800 400 S1330 650 1700 290'/><path d='M-100 760 C250 560 540 640 820 810 S1340 980 1700 680'/><path d='M-100 830 C250 630 540 710 820 880 S1340 1050 1700 750'/><path d='M920 220 L1080 145 H1580 L1680 220 M960 260 V840 M1080 180 V840 M1200 180 V840 M1320 180 V840 M1440 180 V840 M1560 240 V840 M930 300 H1660 M930 520 H1660 M930 740 H1660 M910 840 H1680'/></g></svg>");
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+body > * { position: relative; z-index: 1; }
+main { background: transparent !important; }
+main > .page-hero,
+main > .section,
+main > .section.alt,
+main > .practice-detail-section {
+  background: rgba(244,246,247,.30) !important;
+}
+main .wrap.contact-grid {
+  background: rgba(239,241,239,.20) !important;
+  background-image: none !important;
+}
+main .wrap.contact-grid > .contact-card {
+  background: rgba(255,255,255,.58) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(1.08) !important;
+  backdrop-filter: blur(12px) saturate(1.08) !important;
+}
+@media (max-width: 720px) {
+  body::before { background-position: 64% center !important; }
+  main > .page-hero,
+  main > .section,
+  main > .section.alt,
+  main > .practice-detail-section {
+    background: rgba(244,246,247,.48) !important;
+  }
+}
