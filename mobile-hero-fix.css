@@ -40,3 +40,81 @@
     content: none !important;
   }
 }
+
+
+/* MOBILE ALIGNMENT REPAIR — phone only; tablet 0102 and desktop remain unchanged */
+@media screen and (max-width:680px){
+  .portfolio-header .wrap,
+  main > .section > .wrap,
+  .portfolio-hero > .wrap,
+  .portfolio-footer > .wrap{
+    width:calc(100% - 40px)!important;
+    max-width:none!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+
+  /* Remove the inherited desktop/tablet offset and use one shared content axis. */
+  .split-layout{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:18px!important;
+    width:100%!important;
+    margin:0!important;
+  }
+  .split-layout > *{
+    min-width:0!important;
+    width:100%!important;
+    max-width:100%!important;
+    margin-left:0!important;
+    margin-right:0!important;
+  }
+  .practice-intro,
+  .practice-grid,
+  .office-gallery,
+  .office-address,
+  .contact-layout,
+  .contact-section .map-frame,
+  .legal-note{
+    width:100%!important;
+    max-width:100%!important;
+    margin-left:0!important;
+    margin-right:0!important;
+  }
+
+  /* Prevent long text, grid children and images from pushing the layout right. */
+  .section,
+  .section .wrap,
+  .section-topline,
+  .practice-intro,
+  .practice-grid,
+  .approach-list,
+  .office-gallery,
+  .contact-layout,
+  .contact-details{
+    min-width:0!important;
+    max-width:100%!important;
+  }
+  .section-title,
+  .section p,
+  .approach-list h3,
+  .approach-list p,
+  .practice-grid h3,
+  .practice-grid p,
+  .office-address,
+  .contact-details a{
+    max-width:100%!important;
+    overflow-wrap:anywhere;
+    word-break:normal;
+  }
+  .office-gallery{
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+    gap:10px!important;
+  }
+  .office-gallery figure,
+  .office-gallery img{
+    min-width:0!important;
+    max-width:100%!important;
+  }
+}
+
