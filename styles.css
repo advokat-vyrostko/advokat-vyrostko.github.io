@@ -3047,3 +3047,19 @@ header .nav nav a:not(.menu-consult):focus-visible {
 .messenger-contact .messenger-viber,
 .messenger-viber { background: #665cac !important; }
 ::selection { background: #ead9b4; color: var(--navy); }
+
+/* Header becomes translucent while the page is being scrolled */
+header {
+  background: rgba(255,255,255,.96);
+  transition: background-color .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+header.is-scrolled {
+  background: rgba(255,255,255,.70) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(1.15) !important;
+  backdrop-filter: blur(14px) saturate(1.15) !important;
+  border-bottom-color: rgba(220,222,224,.55) !important;
+  box-shadow: 0 5px 22px rgba(20,36,58,.055) !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  header { transition: none !important; }
+}
