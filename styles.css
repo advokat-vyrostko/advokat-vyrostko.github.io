@@ -2848,3 +2848,85 @@ footer small { color: #c2c6c7 !important; }
 .messenger-whatsapp { background: #667e70 !important; }
 .messenger-viber { background: #777b89 !important; }
 ::selection { background: #d9dad5; color: #30383f; }
+
+/* Brighter, warmer neutral palette: elegant rather than gloomy */
+:root {
+  --navy: #3e4b57;
+  --navy2: #34414c;
+  --gold: #b5a27e;
+  --gold2: #d2c19c;
+  --cream: #f7f6f2;
+  --ink: #39434b;
+  --muted: #737d84;
+  --line: #e5e3dd;
+}
+body {
+  color: #39434b !important;
+  background: #fff !important;
+}
+header {
+  background: rgba(255,255,255,.97) !important;
+  border-bottom-color: #e6e3dc !important;
+  box-shadow: 0 4px 18px rgba(48,59,68,.045) !important;
+}
+.brand-mark {
+  background: linear-gradient(180deg, #d8c9a8, #b5a27e) !important;
+  box-shadow: 0 0 0 4px rgba(181,162,126,.09) !important;
+}
+.brand strong, h1, h2, h3, .fact strong, .office-map h2 {
+  color: #3e4b57 !important;
+}
+nav a, header .nav nav a { color: #505d67 !important; }
+nav a:hover, header .nav nav a:hover,
+header .nav nav a:focus-visible { color: #a28c62 !important; }
+.btn, header .nav > .btn, header .nav nav .menu-consult {
+  background: linear-gradient(135deg, #d8c9a8, #bca77e) !important;
+  color: #303b44 !important;
+  box-shadow: 0 5px 14px rgba(125,105,68,.13) !important;
+}
+.btn-outline {
+  background: transparent !important;
+  border-color: #b9a982 !important;
+  color: #46535d !important;
+}
+.eyebrow, .eyebrow-light { color: #8c7958 !important; }
+.eyebrow:before { background: #c0ad86 !important; }
+.hero { background: #f7f6f2 !important; }
+.hero::after {
+  background: linear-gradient(90deg, #fbfaf7 0%, rgba(251,250,247,.97) 34%, rgba(251,250,247,.74) 53%, rgba(251,250,247,.03) 77%) !important;
+}
+.hero-inner > p { color: #4f5b64 !important; }
+.section.alt, .page-hero { background: #f5f5f2 !important; }
+.practice-card, .contact-card, .fact, .article-item {
+  background: #fff !important;
+  border-color: #e5e3dd !important;
+}
+.practice-card:hover, .fact:hover {
+  border-color: #c9b994 !important;
+  box-shadow: 0 10px 24px rgba(48,59,68,.065) !important;
+}
+.about-panel {
+  background: linear-gradient(145deg, #52616b, #3e4b57) !important;
+}
+.about-panel:after { border-color: rgba(230,218,190,.32) !important; }
+.note, .office-map {
+  background: #f5f5f1 !important;
+  border-color: #e5e3dd !important;
+}
+.map-open-link { color: #45535e !important; border-bottom-color: #c0ad86 !important; }
+footer {
+  background: #3b4852 !important;
+  color: #f3f3ef !important;
+  border-top: 1px solid #59656c !important;
+}
+footer a { color: #e0d2b3 !important; }
+footer small { color: #d0d5d5 !important; }
+.messenger-contact {
+  border-color: rgba(70,78,84,.12) !important;
+  background: rgba(255,255,255,.97) !important;
+}
+.messenger-contact .messenger-whatsapp,
+.messenger-whatsapp { background: #658c75 !important; }
+.messenger-contact .messenger-viber,
+.messenger-viber { background: #827e9d !important; }
+::selection { background: #e6ddca; color: #34414c; }
