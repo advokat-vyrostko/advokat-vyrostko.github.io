@@ -2212,3 +2212,36 @@ header .menu-toggle {
     object-position: center !important;
   }
 }
+
+
+/* Navigation: replace underline indicators with a restrained brand-color highlight */
+header .nav nav a:not(.menu-consult) {
+  position: relative !important;
+  text-decoration: none !important;
+  border-bottom: 0 !important;
+  border-radius: 7px !important;
+  background: transparent !important;
+  transition: background-color .22s ease, color .22s ease, transform .22s ease, box-shadow .22s ease !important;
+}
+header .nav nav a:not(.menu-consult)::after {
+  display: none !important;
+  content: none !important;
+}
+header .nav nav a:not(.menu-consult):hover,
+header .nav nav a:not(.menu-consult):focus-visible {
+  background: rgba(202, 157, 66, .13) !important;
+  color: #9a6b18 !important;
+  box-shadow: inset 0 0 0 1px rgba(202, 157, 66, .20) !important;
+  transform: translateY(-1px);
+  outline: none;
+}
+header .nav nav a:not(.menu-consult).active,
+header .nav nav a:not(.menu-consult)[aria-current="page"] {
+  background: rgba(202, 157, 66, .10) !important;
+  color: #8b641f !important;
+  border: 0 !important;
+  box-shadow: inset 0 0 0 1px rgba(202, 157, 66, .16) !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  header .nav nav a:not(.menu-consult) { transition: none !important; }
+}
