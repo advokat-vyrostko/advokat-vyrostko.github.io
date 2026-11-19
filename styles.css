@@ -3482,3 +3482,41 @@ section.section > .office-map,
     animation: none !important;
   }
 }
+
+
+/* Visible geometric backdrop so the contact cards read as translucent glass */
+.contact-grid {
+  position: relative;
+  isolation: isolate;
+  padding: 22px;
+  border-radius: 14px;
+  background-color: rgba(224, 219, 207, .18) !important;
+  background-image:
+    linear-gradient(30deg, transparent 49.7%, rgba(67, 82, 94, .12) 49.9%, rgba(67, 82, 94, .12) 50.1%, transparent 50.3%),
+    linear-gradient(150deg, transparent 49.7%, rgba(67, 82, 94, .10) 49.9%, rgba(67, 82, 94, .10) 50.1%, transparent 50.3%),
+    linear-gradient(rgba(67, 82, 94, .055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(67, 82, 94, .055) 1px, transparent 1px) !important;
+  background-size: 120px 120px, 120px 120px, 42px 42px, 42px 42px !important;
+}
+.contact-grid > .contact-card {
+  background: rgba(255, 255, 255, .24) !important;
+  border: 1px solid rgba(255, 255, 255, .72) !important;
+  box-shadow: 0 12px 32px rgba(28, 39, 48, .075), inset 0 1px 0 rgba(255,255,255,.58) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.18) !important;
+  backdrop-filter: blur(18px) saturate(1.18) !important;
+}
+.section .office-map {
+  background-color: rgba(224, 219, 207, .18) !important;
+  background-image:
+    linear-gradient(30deg, transparent 49.7%, rgba(67, 82, 94, .12) 49.9%, rgba(67, 82, 94, .12) 50.1%, transparent 50.3%),
+    linear-gradient(150deg, transparent 49.7%, rgba(67, 82, 94, .10) 49.9%, rgba(67, 82, 94, .10) 50.1%, transparent 50.3%),
+    linear-gradient(rgba(67, 82, 94, .055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(67, 82, 94, .055) 1px, transparent 1px) !important;
+  background-size: 120px 120px, 120px 120px, 42px 42px, 42px 42px !important;
+  border-color: rgba(255,255,255,.68) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(1.12) !important;
+  backdrop-filter: blur(16px) saturate(1.12) !important;
+}
+@media (max-width: 720px) {
+  .contact-grid { padding: 12px; gap: 14px; }
+}
