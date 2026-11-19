@@ -71,3 +71,53 @@ img{display:block;max-width:100%}
 .m-desktop-link{font-size:12px;color:#d8c5a5;margin-top:7px}
 @media(min-width:681px){body{max-width:560px;margin:0 auto;box-shadow:0 0 40px rgba(0,0,0,.08)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+
+/* Visual refinement — preserve all existing layout and element placement */
+:root{
+  --navy:#17283f;
+  --deep:#101f33;
+  --gold:#b99a70;
+  --cream:#f5f3ee;
+  --ink:#263447;
+  --muted:#687587;
+  --line:#e8e5df;
+}
+body{color:var(--ink);background:#fff;font-weight:400;letter-spacing:.005em}
+.m-header{background:rgba(16,31,51,.985);border-bottom-color:rgba(255,255,255,.09)}
+.m-brand-mark{background:#b99a70}
+.m-brand small{color:#c6cbd2;letter-spacing:.18em}
+.m-brand strong{letter-spacing:-.025em}
+.m-menu{border-color:rgba(255,255,255,.24);border-radius:2px;transition:background .2s,border-color .2s}
+.m-menu:focus-visible,.m-menu:hover{background:rgba(255,255,255,.08);border-color:#b99a70}
+.m-hero{background:linear-gradient(145deg,#14243a 0%,#101f33 72%,#0d1a2c 100%)}
+.m-eyebrow,.m-kicker{color:#b99a70}
+.m-eyebrow:before{background:#b99a70}
+.m-hero h1,.m-section-title,.m-contact h2{letter-spacing:-.035em}
+.m-hero h1 em,.m-section-title em,.m-contact h2 em{color:#c8ad89}
+.m-lead{color:#e0e5eb}
+.m-button{background:#f1eee7;color:#17283f;border:1px solid #f1eee7;border-radius:2px;box-shadow:0 5px 16px rgba(0,0,0,.12);transition:background .2s,color .2s}
+.m-button:hover,.m-button:focus-visible{background:#d9c7ad;color:#14243a}
+.m-secondary{border-bottom-color:#b99a70;color:#e9e5de}
+.m-section{border-bottom-color:#e8e5df}
+.m-section-title{color:#17283f}
+.m-section p{color:#39475a}
+.m-section p.m-strong{color:#1b2d45}
+.m-credential,.m-address{background:#f5f3ee;border-left-color:#b99a70}
+.m-credential small,.m-detail-label{color:#927653}
+.m-credential strong,.m-practice-list h3,.m-approach h3{color:#1b2d45}
+.m-inline-link{border-bottom-color:#b99a70}
+.m-number{color:#9a805e}
+.m-practice-list li,.m-approach article{border-color:#e8e5df}
+.m-practice-list p,.m-approach p{color:#687587}
+.m-profile-photo img,.m-gallery img{background:#f5f3ee}
+.m-contact{background:linear-gradient(145deg,#14243a 0%,#101f33 100%)}
+.m-contact .m-kicker,.m-contact-details .m-detail-label{color:#c8ad89}
+.m-contact-details{border-top-color:rgba(255,255,255,.16)}
+.m-contact-details>div{border-bottom-color:rgba(255,255,255,.16)}
+.m-phone{letter-spacing:-.025em}
+.m-footer{background:#0b1728}
+.m-footer small{color:#aeb8c5}
+.m-desktop-link{color:#c8ad89}
+a:focus-visible{outline:2px solid #b99a70;outline-offset:4px}
+@media(prefers-reduced-motion:reduce){.m-menu,.m-button{transition:none}}
