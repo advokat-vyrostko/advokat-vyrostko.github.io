@@ -5015,3 +5015,39 @@ html{scroll-behavior:smooth;scroll-padding-top:82px}body{background:var(--ppaper
     font-variant-emoji:text;
   }
 }
+
+
+/* iPhone only: render every remaining arrow in lower sections as a text glyph, not emoji */
+@media (max-width:760px){
+  .arrow-text,
+  .practice-grid article>span,
+  .portfolio-header .header-contact span,
+  .contact-details a,
+  .portfolio-footer a{
+    font-family:Arial,Helvetica,sans-serif!important;
+    font-variant-emoji:text!important;
+    font-weight:500!important;
+    text-decoration:none;
+  }
+  .arrow-text{
+    display:inline-block!important;
+    line-height:1!important;
+    vertical-align:baseline!important;
+    color:inherit!important;
+    background:transparent!important;
+    border:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    padding:0!important;
+    margin-left:5px!important;
+  }
+  .practice-grid article>span{
+    font-size:19px!important;
+    color:#c6a875!important;
+  }
+  .portfolio-header .header-contact span,
+  .contact-details a,
+  .portfolio-footer a{
+    font-variant-emoji:text!important;
+  }
+}
