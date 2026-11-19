@@ -43,19 +43,18 @@
 (()=> {
   const photo=document.querySelector('.m-hero-photo');
   if(photo){
-    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)){
-      photo.classList.add('is-photo-visible');
-    }else{
-      const photoObserver=new IntersectionObserver(entries=>{
-        entries.forEach(entry=>{
-          if(entry.isIntersecting){
-            entry.target.classList.add('is-photo-visible');
-            photoObserver.unobserve(entry.target);
-          }
-        });
-      },{threshold:.18,rootMargin:'0px 0px -8% 0px'});
-      photoObserver.observe(photo);
-    }
+    // Reveal only after the visitor actually scrolls; never on initial page load.
+    let revealed=false;
+    const revealPhotoOnScroll=()=>{
+      if(revealed || window.scrollY < 40) return;
+      const rect=photo.getBoundingClientRect();
+      if(rect.top < window.innerHeight * .88 && rect.bottom > 0){
+        revealed=true;
+        photo.classList.add('is-photo-visible');
+        window.removeEventListener('scroll',revealPhotoOnScroll);
+      }
+    };
+    window.addEventListener('scroll',revealPhotoOnScroll,{passive:true});
   }
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const targets=document.querySelectorAll('.m-section,.m-contact,.m-footer,.m-review-list article,.m-practice-list li,.m-approach article,.m-gallery figure,.m-credential');
