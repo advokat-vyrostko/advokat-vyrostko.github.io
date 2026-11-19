@@ -3322,3 +3322,24 @@ body.page-contacts .page-hero::before {
   }
   body.page-home .hero::before { opacity: .35; }
 }
+
+.photo-credit {
+  display: block;
+  position: relative;
+  z-index: 3;
+  margin-top: 12px;
+  color: #77808a;
+  font: 11px/1.4 var(--sans);
+  opacity: .82;
+}
+.photo-credit a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(119,128,138,.45);
+  text-underline-offset: 2px;
+}
+.photo-credit a:hover { color: var(--navy); }
+body.page-home .hero .photo-credit {
+  max-width: 660px;
+  margin: -16px auto 12px;
+}
