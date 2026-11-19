@@ -4738,3 +4738,7 @@ main > section.section:has(> .wrap.contact-grid) { padding-top: 25px !important;
     font-size: 11px !important;
   }
 }
+
+
+/* Header is intentionally quiet: brand only, no competing consultation CTA */
+header .nav { justify-content: flex-start !important; }
