@@ -5453,3 +5453,98 @@ html{scroll-behavior:smooth;scroll-padding-top:82px}body{background:var(--ppaper
   .office-entrance-overlay>*,
   .office-building-overlay>*{opacity:1!important;transform:none!important;filter:none!important;animation:none!important}
 }
+
+
+/* VERSION 0102 — match office-photo overlay typography and styling to mobile.css */
+.office-gallery .office-entrance-card,
+.office-gallery .office-building-card{
+  position:relative!important;
+  overflow:hidden!important;
+  background:#14243a!important;
+  isolation:isolate;
+}
+.office-gallery .office-entrance-card:after,
+.office-gallery .office-building-card:after{
+  content:"";
+  position:absolute;
+  inset:28% 0 0;
+  z-index:1;
+  pointer-events:none;
+  background:linear-gradient(180deg,transparent 0%,rgba(10,22,38,.25) 28%,rgba(10,22,38,.88) 100%);
+}
+.office-gallery .office-entrance-card:after{
+  background:linear-gradient(180deg,transparent 38%,rgba(10,22,38,.18) 55%,rgba(10,22,38,.86) 100%);
+}
+.office-gallery .office-entrance-overlay,
+.office-gallery .office-building-overlay{
+  position:absolute!important;
+  z-index:2!important;
+  left:18px!important;
+  right:18px!important;
+  bottom:42px!important;
+  top:auto!important;
+  display:block!important;
+  padding:0!important;
+  color:#fff!important;
+  background:none!important;
+  text-shadow:0 1px 10px rgba(0,0,0,.3)!important;
+}
+.office-gallery .office-entrance-overlay>span,
+.office-gallery .office-building-overlay>span{
+  display:inline-block!important;
+  margin:0 0 8px!important;
+  padding:0 0 0 9px!important;
+  border-left:2px solid #c8ad89!important;
+  color:#e5d2b6!important;
+  font:500 9px/1.5 Arial,sans-serif!important;
+  letter-spacing:.16em!important;
+  text-transform:none!important;
+  text-shadow:0 1px 10px rgba(0,0,0,.3)!important;
+}
+.office-gallery .office-entrance-overlay strong,
+.office-gallery .office-building-overlay strong{
+  display:block!important;
+  margin:0!important;
+  color:#fff!important;
+  font:500 25px/1.15 Georgia,"Times New Roman",serif!important;
+  text-shadow:0 1px 10px rgba(0,0,0,.3)!important;
+}
+.office-gallery .office-entrance-overlay p,
+.office-gallery .office-building-overlay p{
+  margin:9px 0 6px!important;
+  color:#e5d2b6!important;
+  font:italic 14px/1.35 Georgia,"Times New Roman",serif!important;
+  letter-spacing:0!important;
+  text-transform:none!important;
+  text-shadow:0 1px 10px rgba(0,0,0,.3)!important;
+}
+.office-gallery .office-entrance-overlay ul,
+.office-gallery .office-building-overlay ul{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  gap:6px 14px!important;
+  margin:0!important;
+  padding:0!important;
+  list-style:none!important;
+}
+.office-gallery .office-entrance-overlay li,
+.office-gallery .office-building-overlay li{
+  color:#fff!important;
+  font:500 10px/1.5 Arial,sans-serif!important;
+  letter-spacing:.04em!important;
+  text-shadow:0 1px 10px rgba(0,0,0,.3)!important;
+}
+.office-gallery .office-entrance-overlay li:before,
+.office-gallery .office-building-overlay li:before{
+  content:"•";
+  color:#c8ad89;
+  margin-right:6px;
+}
+.office-gallery .office-entrance-card figcaption,
+.office-gallery .office-building-card figcaption{position:relative;z-index:3}
+@media(max-width:680px){
+  .office-gallery .office-entrance-overlay,
+  .office-gallery .office-building-overlay{left:18px!important;right:18px!important;bottom:42px!important}
+  .office-gallery .office-entrance-overlay strong,
+  .office-gallery .office-building-overlay strong{font-size:clamp(19px,5vw,25px)!important}
+}
