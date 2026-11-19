@@ -720,3 +720,23 @@ a:focus-visible{outline:2px solid #b99a70;outline-offset:4px}
 }
 .m-office-overlay li:before{content:"•";color:#c8ad89;margin-right:6px}
 .m-gallery .m-office-location figcaption{position:relative;z-index:3}
+
+
+/* PHOTO SIGNATURE — staggered text reveal after the portrait appears */
+@keyframes mPhotoTextReveal{
+  0%{opacity:0;transform:translate3d(0,16px,0);filter:blur(4px)}
+  100%{opacity:1;transform:translate3d(0,0,0);filter:blur(0)}
+}
+.m-hero-photo.is-photo-visible + .m-photo-overlay > *{
+  animation:mPhotoTextReveal .85s cubic-bezier(.2,.75,.25,1) both;
+}
+.m-hero-photo.is-photo-visible + .m-photo-overlay .m-photo-kicker{animation-delay:.18s}
+.m-hero-photo.is-photo-visible + .m-photo-overlay strong{animation-delay:.38s}
+.m-hero-photo.is-photo-visible + .m-photo-overlay .m-photo-role{animation-delay:.58s}
+.m-hero-photo.is-photo-visible + .m-photo-overlay p{animation-delay:.78s}
+.m-hero-photo.is-photo-visible + .m-photo-overlay .m-photo-specialties{animation-delay:.98s}
+@media(prefers-reduced-motion:reduce){
+  .m-hero-photo.is-photo-visible + .m-photo-overlay > *{
+    animation:none!important;opacity:1!important;transform:none!important;filter:none!important;
+  }
+}
