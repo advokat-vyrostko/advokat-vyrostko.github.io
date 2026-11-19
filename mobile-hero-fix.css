@@ -211,3 +211,107 @@
     display:none!important;
   }
 }
+
+
+/* PHONE TYPOGRAPHY ACCESSIBILITY — larger, readable text on phones only.
+   Tablet 0102 (681px+) and desktop are unchanged. */
+@media screen and (max-width:680px) {
+  html { -webkit-text-size-adjust: 100%; }
+
+  .hero-copy .eyebrow,
+  .section .eyebrow,
+  .section-kicker,
+  .section-topline > span {
+    font-size:11px!important;
+    line-height:1.55!important;
+    letter-spacing:.12em!important;
+  }
+  .portfolio-hero .hero-copy h1 {
+    font-size:clamp(43px,11.2vw,52px)!important;
+    line-height:1.12!important;
+  }
+  .portfolio-hero .hero-description {
+    font-size:17px!important;
+    line-height:1.7!important;
+  }
+  .portfolio-hero .hero-actions .btn {
+    font-size:15px!important;
+    line-height:1.45!important;
+    min-height:56px!important;
+    padding:15px 20px!important;
+  }
+  .portfolio-hero .hero-actions .text-link {
+    font-size:15px!important;
+    line-height:1.55!important;
+  }
+  .hero-meta,
+  .hero-bottom {
+    font-size:10px!important;
+    line-height:1.6!important;
+  }
+
+  .section-title {
+    font-size:clamp(33px,8.8vw,39px)!important;
+    line-height:1.2!important;
+  }
+  .profile-text p,
+  .practice-intro > p:last-child,
+  .practice-grid article p,
+  .approach-list p,
+  .contact-intro > p:not(.eyebrow),
+  .contact-details a,
+  .contact-details p,
+  .office-address {
+    font-size:16px!important;
+    line-height:1.7!important;
+  }
+  .profile-text p.lead {
+    font-size:20px!important;
+    line-height:1.55!important;
+  }
+  .practice-grid article h3,
+  .approach-list h3 {
+    font-size:19px!important;
+    line-height:1.4!important;
+  }
+  .credential strong {
+    font-size:16px!important;
+    line-height:1.6!important;
+  }
+  .credential p,
+  .credential a,
+  .office-gallery figcaption,
+  .contact-hours,
+  .legal-note {
+    font-size:13px!important;
+    line-height:1.65!important;
+  }
+  .contact-intro h2 {
+    font-size:clamp(37px,9.5vw,43px)!important;
+    line-height:1.16!important;
+  }
+  .contact-phone {
+    font-size:clamp(28px,7.5vw,33px)!important;
+  }
+  .contact-details > div > span {
+    font-size:11px!important;
+    line-height:1.5!important;
+  }
+  .portfolio-header .brand strong {
+    font-size:18px!important;
+  }
+  .portfolio-header .brand small {
+    font-size:10px!important;
+  }
+  .menu-toggle {
+    font-size:23px!important;
+  }
+  .portfolio-header nav a {
+    font-size:16px!important;
+  }
+  .portfolio-footer .wrap > span,
+  .portfolio-footer a:last-child {
+    font-size:13px!important;
+    line-height:1.6!important;
+  }
+}
