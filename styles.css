@@ -4959,3 +4959,15 @@ html{scroll-behavior:smooth;scroll-padding-top:82px}body{background:var(--ppaper
   color:rgba(255,255,255,.88)!important;
 }
 #contacts.contact-section .contact-details a:hover{color:#d2b47b!important}
+
+
+/* Tablet hero: move “фізичним” to its own line and keep copy clear of portrait */
+@media (min-width:681px) and (max-width:1150px){
+  .portfolio-hero .hero-description{
+    width:100%!important;
+    max-width:430px!important;
+  }
+  .portfolio-hero .hero-description-break{
+    display:block!important;
+  }
+}
