@@ -531,3 +531,80 @@ a:focus-visible{outline:2px solid #b99a70;outline-offset:4px}
   .m-photo-overlay strong{font-size:18px}
   .m-photo-overlay .m-photo-kicker,.m-photo-overlay .m-photo-role{font-size:7px}
 }
+
+
+/* SITE-WIDE TYPOGRAPHIC MOTION — refined staggered text reveals */
+@keyframes mTextRise{
+  0%{opacity:0;transform:translate3d(0,17px,0);filter:blur(3px)}
+  65%{opacity:1;filter:blur(0)}
+  100%{opacity:1;transform:translate3d(0,0,0);filter:blur(0)}
+}
+@keyframes mTextSlide{
+  0%{opacity:0;transform:translate3d(-14px,0,0);letter-spacing:.035em}
+  100%{opacity:1;transform:translate3d(0,0,0);letter-spacing:inherit}
+}
+@keyframes mGoldSweep{
+  0%{background-position:100% 0}
+  100%{background-position:0 0}
+}
+/* Hero: sequential arrival of the main message */
+.m-hero .m-eyebrow{animation:mTextSlide .8s cubic-bezier(.2,.75,.25,1) .05s both}
+.m-hero h1{animation:mTextRise .95s cubic-bezier(.2,.75,.25,1) .16s both}
+.m-hero .m-lead{animation:mTextRise .9s cubic-bezier(.2,.75,.25,1) .3s both}
+.m-hero .m-actions{animation:mTextRise .85s cubic-bezier(.2,.75,.25,1) .43s both}
+/* Section headings and copy animate in a deliberate reading order */
+.m-section.is-visible .m-kicker,
+.m-contact.is-visible .m-kicker{
+  animation:mTextSlide .75s cubic-bezier(.2,.75,.25,1) .04s both;
+}
+.m-section.is-visible .m-section-title,
+.m-contact.is-visible h2{
+  animation:mTextRise .9s cubic-bezier(.2,.75,.25,1) .13s both;
+}
+.m-section.is-visible .wrap > p:not(.m-kicker),
+.m-contact.is-visible .wrap > p:not(.m-kicker):not(.m-legal){
+  animation:mTextRise .85s cubic-bezier(.2,.75,.25,1) .25s both;
+}
+.m-section.is-visible .m-credential,
+.m-section.is-visible .m-reviews-score,
+.m-section.is-visible .m-reviews-link,
+.m-contact.is-visible .m-contact-details{
+  animation:mTextRise .85s cubic-bezier(.2,.75,.25,1) .38s both;
+}
+/* Lists: each title and description follows its number */
+.m-practice-list li.is-visible h3,
+.m-approach article.is-visible h3{animation:mTextSlide .7s ease .08s both}
+.m-practice-list li.is-visible p,
+.m-approach article.is-visible p{animation:mTextRise .75s ease .18s both}
+.m-practice-list li .m-number,
+.m-approach article .m-number{transition:color .5s ease,transform .5s ease}
+.m-practice-list li.is-visible .m-number,
+.m-approach article.is-visible .m-number{color:#b99a70;transform:translateX(3px)}
+/* Review cards and office captions */
+.m-review-list article.is-visible blockquote{animation:mTextRise .8s ease .1s both}
+.m-review-list article.is-visible strong{animation:mTextSlide .7s ease .22s both}
+.m-gallery figure.is-visible figcaption{animation:mTextRise .75s ease .18s both}
+.m-hero-caption{animation:mTextSlide .8s ease .35s both}
+/* Footer and contact details */
+.m-footer.is-visible strong,
+.m-footer.is-visible small,
+.m-footer.is-visible a{animation:mTextRise .8s ease .12s both}
+.m-contact-details a,
+.m-contact-details p{transition:color .3s ease}
+.m-contact-details a:active{color:#e5d2b6}
+/* Motion stays subtle and never hides content for reduced-motion users */
+@media(prefers-reduced-motion:reduce){
+  .m-hero .m-eyebrow,.m-hero h1,.m-hero .m-lead,.m-hero .m-actions,
+  .m-section.is-visible .m-kicker,.m-contact.is-visible .m-kicker,
+  .m-section.is-visible .m-section-title,.m-contact.is-visible h2,
+  .m-section.is-visible .wrap > p,.m-contact.is-visible .wrap > p,
+  .m-section.is-visible .m-credential,.m-section.is-visible .m-reviews-score,
+  .m-section.is-visible .m-reviews-link,.m-contact.is-visible .m-contact-details,
+  .m-practice-list li.is-visible h3,.m-approach article.is-visible h3,
+  .m-practice-list li.is-visible p,.m-approach article.is-visible p,
+  .m-review-list article.is-visible blockquote,.m-review-list article.is-visible strong,
+  .m-gallery figure.is-visible figcaption,.m-hero-caption,
+  .m-footer.is-visible strong,.m-footer.is-visible small,.m-footer.is-visible a{
+    animation:none!important;filter:none!important;transform:none!important;opacity:1!important;
+  }
+}
