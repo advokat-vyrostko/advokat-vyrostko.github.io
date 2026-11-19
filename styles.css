@@ -2930,3 +2930,28 @@ footer small { color: #d0d5d5 !important; }
 .messenger-contact .messenger-viber,
 .messenger-viber { background: #827e9d !important; }
 ::selection { background: #e6ddca; color: #34414c; }
+
+/* Remove remaining gold-colored typography; retain champagne only as a subtle surface accent */
+footer a,
+.footer-row > div:nth-child(2) > a,
+.footer-row > div:nth-child(2) .phone-call-link,
+.footer-compact > div:nth-child(2) > a {
+  color: #e0e5e7 !important;
+}
+.eyebrow-light,
+.practice-card .num {
+  color: #78858d !important;
+}
+header .brand:hover strong,
+header .nav nav a:not(.menu-consult):hover,
+header .nav nav a:not(.menu-consult):focus-visible {
+  color: #78858d !important;
+}
+header .nav nav a:not(.menu-consult).active,
+header .nav nav a:not(.menu-consult)[aria-current="page"] {
+  color: #46545e !important;
+}
+footer a:hover,
+.footer-row > div:nth-child(2) > a:hover {
+  color: #ffffff !important;
+}
