@@ -5000,3 +5000,21 @@ html{scroll-behavior:smooth;scroll-padding-top:82px}body{background:var(--ppaper
   .js-motion .contact-details,.js-motion .map-frame { opacity:1!important;transform:none!important;transition:none!important; }
 }
 
+
+
+/* CONTACT SECTION — restore readable contrast and prevent hidden reveal state */
+section.section.contact-section#contacts{background:#14243a!important;background-image:none!important;color:#fff!important;}
+section.section.contact-section#contacts .section-kicker,
+section.section.contact-section#contacts .section-topline>span{color:rgba(255,255,255,.72)!important;}
+section.section.contact-section#contacts .contact-intro h2,
+section.section.contact-section#contacts .contact-phone{color:#fff!important;}
+section.section.contact-section#contacts .contact-intro>p:not(.eyebrow),
+section.section.contact-section#contacts .contact-hours,
+section.section.contact-section#contacts .contact-details a,
+section.section.contact-section#contacts .contact-details p,
+section.section.contact-section#contacts .legal-note{color:rgba(255,255,255,.88)!important;}
+section.section.contact-section#contacts .contact-details>div>span,
+section.section.contact-section#contacts .contact-intro h2 em,
+section.section.contact-section#contacts .contact-details>div>a:last-child{color:#d2b47b!important;}
+section.section.contact-section#contacts .contact-intro,
+section.section.contact-section#contacts .contact-details{opacity:1!important;transform:none!important;}
