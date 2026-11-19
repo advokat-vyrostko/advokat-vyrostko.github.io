@@ -5019,3 +5019,9 @@ section.section.contact-section#contacts .contact-details>div>a:last-child{color
 section.section.contact-section#contacts .contact-intro,
 section.section.contact-section#contacts .contact-details{opacity:1!important;transform:none!important;}
 
+
+
+/* Tablet hero: keep the word “фізичним” and the full description left of the portrait */
+@media (min-width:681px) and (max-width:1150px){
+  .portfolio-hero .hero-description{max-width:470px!important;width:470px!important;}
+}
