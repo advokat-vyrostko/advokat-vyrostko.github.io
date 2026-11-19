@@ -4922,3 +4922,39 @@ html{scroll-behavior:smooth;scroll-padding-top:82px}body{background:var(--ppaper
 @media(max-width:900px){.wrap{width:calc(100% - 44px)!important}.portfolio-header .nav{gap:15px}.portfolio-header nav{gap:12px}.portfolio-header nav a{font-size:10px!important}.header-contact{display:none}.hero-index{display:none}.split-layout{grid-template-columns:100px 1fr;gap:25px}.practice-intro,.practice-grid,.office-gallery,.office-address,.contact-layout,.contact-section .map-frame,.legal-note{margin-left:125px}.contact-layout{padding-left:0}}
 @media(max-width:680px){html{scroll-padding-top:64px}.wrap{width:calc(100% - 36px)!important}.portfolio-header .nav{min-height:64px!important;gap:10px}.portfolio-header .brand strong{font-size:17px!important}.portfolio-header .brand-mark{height:34px!important}.menu-toggle{display:block;margin-left:auto;padding:6px 9px;border:1px solid var(--pline);background:transparent;color:var(--pnavy);font-size:21px}.portfolio-header nav{display:none;position:absolute;top:64px;left:0;right:0;padding:15px 20px 20px;background:#f9f8f4;flex-direction:column;gap:0;border-bottom:1px solid var(--pline);box-shadow:0 12px 20px #0d1b2d12}.portfolio-header nav.open{display:flex}.portfolio-header nav a{padding:12px 0!important;border-bottom:1px solid var(--pline)!important;font-size:13px!important}.portfolio-hero{min-height:calc(100svh - 64px);align-items:flex-start}.hero-photo{inset:0;background-position:58% center}.hero-shade{background:linear-gradient(180deg,#0d1b2de0,#0d1b2df2 54%,#0d1b2d 100%)}.hero-layout{padding:65px 0 95px}.hero-copy .eyebrow{max-width:290px;font-size:9px!important}.hero-copy h1{font-size:clamp(43px,11vw,60px)!important;margin:24px 0 17px!important}.hero-description{font-size:14px!important}.hero-actions{align-items:flex-start;flex-direction:column;gap:19px;margin-top:27px!important}.hero-meta{margin-top:38px;font-size:8px}.hero-bottom{padding:13px 18px;font-size:8px}.section{padding:68px 0!important}.split-layout{grid-template-columns:1fr;gap:22px}.section-title{font-size:36px!important;margin-bottom:28px!important}.profile-content{grid-template-columns:1fr;gap:25px}.profile-photo{max-width:440px}.profile-photo img{aspect-ratio:5/4;max-height:390px}.profile-text p.lead{font-size:19px}.section-topline{margin-bottom:36px}.section-topline>span{font-size:8px}.practice-intro,.practice-grid,.office-gallery,.office-address,.contact-layout,.contact-section .map-frame,.legal-note{margin-left:0}.practice-intro{margin-bottom:25px}.practice-grid{grid-template-columns:1fr}.practice-grid article{min-height:0;padding:20px 0}.practice-grid h3{font-size:18px}.approach-list>div{grid-template-columns:35px 1fr;gap:10px}.office-gallery{grid-template-columns:1fr;gap:20px}.office-gallery img,.office-gallery figure:first-child img{height:auto;aspect-ratio:1.4/1;max-height:380px}.office-address{font-size:14px;line-height:1.6}.contact-layout{grid-template-columns:1fr;gap:30px;padding:0 0 38px}.contact-intro h2{font-size:36px}.contact-phone{font-size:28px}.contact-section iframe{height:250px}.legal-note{font-size:9px}.portfolio-footer .wrap{align-items:flex-start;flex-direction:column;gap:12px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+
+/* FINAL CONTACT FIX — strong contrast, no pale text on pale background */
+#contacts.contact-section{
+  background:#14243a!important;
+  background-image:none!important;
+  color:#f7f5f0!important;
+}
+#contacts.contact-section .section-kicker,
+#contacts.contact-section .section-topline>span{
+  color:rgba(255,255,255,.72)!important;
+}
+#contacts.contact-section .section-kicker b{color:#d2b47b!important}
+#contacts.contact-section .contact-intro,
+#contacts.contact-section .contact-details{
+  opacity:1!important;
+  visibility:visible!important;
+  transform:none!important;
+}
+#contacts.contact-section .contact-intro h2,
+#contacts.contact-section .contact-phone{
+  color:#fff!important;
+}
+#contacts.contact-section .contact-intro h2 em,
+#contacts.contact-section .contact-details>div>span,
+#contacts.contact-section .contact-details>div>a:last-child{
+  color:#d2b47b!important;
+}
+#contacts.contact-section .contact-intro>p:not(.eyebrow),
+#contacts.contact-section .contact-hours,
+#contacts.contact-section .contact-details a,
+#contacts.contact-section .contact-details p,
+#contacts.contact-section .legal-note{
+  color:rgba(255,255,255,.88)!important;
+}
+#contacts.contact-section .contact-details a:hover{color:#d2b47b!important}
