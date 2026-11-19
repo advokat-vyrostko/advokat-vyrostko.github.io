@@ -4971,3 +4971,44 @@ html{scroll-behavior:smooth;scroll-padding-top:82px}body{background:var(--ppaper
     display:block!important;
   }
 }
+
+
+/* PHONE ONLY — match the tablet hero arrow treatment; tablet layout 0102 remains untouched */
+@media (max-width:680px){
+  .portfolio-hero .hero-actions .btn{
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    gap:22px!important;
+    width:max-content!important;
+    max-width:100%!important;
+    white-space:nowrap!important;
+  }
+  .portfolio-hero .hero-actions .btn span{
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    flex:0 0 auto!important;
+    margin-left:4px!important;
+    padding:0!important;
+    font-family:Arial,sans-serif!important;
+    font-size:17px!important;
+    line-height:1!important;
+  }
+  .portfolio-hero .hero-actions .text-link{
+    display:inline-flex!important;
+    align-items:center!important;
+    gap:8px!important;
+    white-space:nowrap!important;
+  }
+  .portfolio-hero .hero-actions .text-link span{
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    padding:0!important;
+    margin:0!important;
+    font-family:Arial,sans-serif!important;
+    font-size:16px!important;
+    line-height:1!important;
+  }
+}
