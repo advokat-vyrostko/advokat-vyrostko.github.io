@@ -5000,3 +5000,14 @@ html{scroll-behavior:smooth;scroll-padding-top:82px}body{background:var(--ppaper
   .js-motion .contact-details,.js-motion .map-frame { opacity:1!important;transform:none!important;transition:none!important; }
 }
 
+
+
+/* Tablet hero: keep headline clear of the portrait */
+@media (min-width:681px) and (max-width:1150px){
+  .portfolio-hero .hero-layout{padding-top:66px;padding-bottom:92px}
+  .portfolio-hero .hero-copy{max-width:590px;width:60%;position:relative;z-index:3}
+  .portfolio-hero .hero-copy h1{max-width:570px;font-size:clamp(43px,5.2vw,58px)!important;line-height:1.12!important}
+  .portfolio-hero .hero-description{max-width:500px;font-size:14px!important}
+  .portfolio-hero .hero-photo{inset:0 0 0 32%;background-position:58% 35%;}
+  .portfolio-hero .hero-shade{background:linear-gradient(90deg,#101e31 0%,rgba(16,30,49,.98) 34%,rgba(16,30,49,.88) 55%,rgba(16,30,49,.42) 100%)}
+}
