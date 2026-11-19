@@ -5346,3 +5346,110 @@ html{scroll-behavior:smooth;scroll-padding-top:82px}body{background:var(--ppaper
   filter:blur(2px);
   animation:officeBuildingTextReveal0102 .72s cubic-bezier(.2,.75,.25,1) both;
 }
+
+
+/* 0102 — readable information overlays on BOTH office photographs */
+.office-gallery figure.office-entrance-card,
+.office-gallery figure.office-building-card{
+  position:relative!important;
+  overflow:hidden!important;
+  border-radius:7px;
+  isolation:isolate;
+  opacity:1!important;
+  transform:none!important;
+  visibility:visible!important;
+}
+.office-gallery figure.office-entrance-card>img,
+.office-gallery figure.office-building-card>img{
+  display:block;
+  width:100%;
+  height:390px;
+  object-fit:cover;
+  object-position:center;
+}
+.office-entrance-overlay,
+.office-building-overlay{
+  position:absolute!important;
+  inset:0!important;
+  z-index:2!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  justify-content:flex-end!important;
+  gap:7px!important;
+  padding:clamp(22px,3vw,38px)!important;
+  color:#fff!important;
+  background:linear-gradient(180deg,rgba(8,20,36,.03) 12%,rgba(8,20,36,.30) 48%,rgba(8,20,36,.91) 100%)!important;
+  pointer-events:none;
+}
+.office-entrance-overlay>*,
+.office-building-overlay>*{
+  color:#fff!important;
+  opacity:1!important;
+  transform:none!important;
+  filter:none!important;
+  text-shadow:0 2px 9px rgba(0,0,0,.55);
+}
+.office-entrance-overlay span,
+.office-building-overlay .office-building-kicker{
+  color:#f0d4a5!important;
+  font:700 11px/1.4 var(--body)!important;
+  letter-spacing:.19em!important;
+  margin:0 0 5px!important;
+}
+.office-entrance-overlay strong,
+.office-building-overlay strong{
+  color:#fff!important;
+  font:500 clamp(27px,3vw,38px)/1.1 var(--display)!important;
+  margin:0!important;
+}
+.office-entrance-overlay p,
+.office-building-overlay h3{
+  color:#fff!important;
+  font:500 clamp(19px,2.1vw,27px)/1.25 var(--display)!important;
+  margin:0!important;
+}
+.office-entrance-overlay small,
+.office-building-overlay p{
+  color:#f0d4a5!important;
+  font:600 12px/1.5 var(--body)!important;
+  letter-spacing:.12em!important;
+  margin:2px 0 0!important;
+}
+.office-building-overlay ul{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  gap:7px 18px!important;
+  list-style:none!important;
+  margin:4px 0 0!important;
+  padding:0!important;
+}
+.office-building-overlay li{
+  color:#fff!important;
+  font:600 14px/1.5 var(--body)!important;
+  text-shadow:0 2px 8px rgba(0,0,0,.7);
+}
+.office-gallery figure.office-entrance-card figcaption,
+.office-gallery figure.office-building-card figcaption{
+  position:absolute;
+  left:0;
+  bottom:0;
+  z-index:3;
+  margin:0;
+  padding:5px 10px;
+  color:rgba(255,255,255,.0);
+  font-size:1px;
+}
+@media(max-width:680px){
+  .office-gallery figure.office-entrance-card>img,
+  .office-gallery figure.office-building-card>img{height:auto;aspect-ratio:1.4/1}
+  .office-entrance-overlay,.office-building-overlay{padding:16px!important;gap:5px!important}
+  .office-entrance-overlay strong,.office-building-overlay strong{font-size:23px!important}
+  .office-entrance-overlay p,.office-building-overlay h3{font-size:17px!important}
+  .office-entrance-overlay span,.office-building-overlay .office-building-kicker{font-size:9px!important}
+  .office-building-overlay li{font-size:11px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .office-entrance-overlay>*,
+  .office-building-overlay>*{opacity:1!important;transform:none!important;filter:none!important;animation:none!important}
+}
