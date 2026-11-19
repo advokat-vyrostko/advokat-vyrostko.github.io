@@ -5018,3 +5018,15 @@ html{scroll-behavior:smooth;scroll-padding-top:82px}body{background:var(--ppaper
   .portfolio-hero .hero-photo{filter:saturate(.78) brightness(1.08)!important;background-position:58% 35%!important}
   .portfolio-hero .hero-shade{background:linear-gradient(90deg,rgba(16,30,49,.94) 0%,rgba(16,30,49,.82) 35%,rgba(16,30,49,.48) 58%,rgba(16,30,49,.12) 100%)!important}
 }
+
+
+/* Tablet portrait-safe composition: keep every text line left of the face */
+@media (min-width:681px) and (max-width:1150px){
+  .portfolio-hero .hero-layout{align-items:center}
+  .portfolio-hero .hero-copy{width:52%!important;max-width:520px!important;flex:0 0 52%;}
+  .portfolio-hero .hero-copy h1{max-width:470px!important;font-size:clamp(39px,4.7vw,51px)!important;line-height:1.13!important}
+  .portfolio-hero .hero-description{max-width:410px!important;font-size:13px!important;line-height:1.75!important}
+  .portfolio-hero .hero-actions{gap:18px!important}
+  .portfolio-hero .hero-photo{inset:0 0 0 28%!important;background-position:70% 35%!important}
+  .portfolio-hero .hero-shade{background:linear-gradient(90deg,rgba(16,30,49,.98) 0%,rgba(16,30,49,.94) 36%,rgba(16,30,49,.60) 57%,rgba(16,30,49,.16) 100%)!important}
+}
