@@ -137,3 +137,42 @@ a:focus-visible{outline:2px solid #b99a70;outline-offset:4px}
 .m-review-list article>strong{font-size:13px;color:var(--navy)}
 .m-reviews-link{display:inline-block;margin-top:20px;color:var(--navy);font-size:14px;font-weight:700;border-bottom:1px solid var(--gold);padding-bottom:5px}
 .m-reviews-note{font-size:11px!important;color:var(--muted)!important;margin-top:13px!important}
+
+
+/* MOBILE MOTION — subtle scroll reveals and responsive micro-interactions */
+@keyframes mFadeUp{
+  from{opacity:0;transform:translate3d(0,22px,0)}
+  to{opacity:1;transform:translate3d(0,0,0)}
+}
+@keyframes mPhotoReveal{
+  from{opacity:.72;transform:scale(1.025)}
+  to{opacity:1;transform:scale(1)}
+}
+.m-hero .m-eyebrow,.m-hero h1,.m-hero .m-lead,.m-hero .m-actions,.m-hero-photo,.m-hero-caption{
+  animation:mFadeUp .75s cubic-bezier(.2,.7,.2,1) both;
+}
+.m-hero h1{animation-delay:.08s}
+.m-hero .m-lead{animation-delay:.16s}
+.m-hero .m-actions{animation-delay:.24s}
+.m-hero-photo{animation:mPhotoReveal 1.1s cubic-bezier(.2,.7,.2,1) .18s both;transform-origin:center}
+.m-hero-caption{animation-delay:.3s}
+.js-reveal{opacity:0;transform:translate3d(0,24px,0);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.js-reveal.is-visible{opacity:1;transform:translate3d(0,0,0)}
+.m-review-list article,.m-practice-list li,.m-approach article,.m-gallery figure{
+  transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
+}
+.m-review-list article:active,.m-practice-list li:active,.m-approach article:active{
+  transform:scale(.99);
+}
+.m-gallery img{transition:transform .65s cubic-bezier(.2,.7,.2,1),filter .5s ease}
+.m-gallery figure:active img{transform:scale(1.015);filter:saturate(1.06)}
+.m-button,.m-secondary,.m-reviews-link,.m-phone,.m-social a,.m-menu{
+  transition:transform .22s ease,background-color .22s ease,color .22s ease,border-color .22s ease;
+}
+.m-button:active,.m-menu:active{transform:translateY(1px) scale(.985)}
+.m-secondary:active,.m-reviews-link:active,.m-social a:active{opacity:.72}
+@media(prefers-reduced-motion:reduce){
+  .m-hero .m-eyebrow,.m-hero h1,.m-hero .m-lead,.m-hero .m-actions,.m-hero-photo,.m-hero-caption{animation:none!important}
+  .js-reveal{opacity:1!important;transform:none!important;transition:none!important}
+  .m-review-list article,.m-practice-list li,.m-approach article,.m-gallery img,.m-button,.m-secondary,.m-reviews-link,.m-phone,.m-social a,.m-menu{transition:none!important}
+}
