@@ -4375,3 +4375,131 @@ main > section.section:has(> .wrap.contact-grid) {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+
+
+/* ==========================================================
+   FINAL VISUAL SYSTEM — restrained 60 / 30 / 10 palette
+   60% warm neutral surfaces, 30% deep navy structure/type,
+   10% antique-gold emphasis. Gold is an accent, not a fill.
+   ========================================================== */
+:root {
+  --navy: #17283f;
+  --navy2: #101e31;
+  --gold: #b88735;
+  --gold2: #d5b16b;
+  --cream: #f5f3ee;
+  --ink: #253246;
+  --muted: #697486;
+  --line: #e4e0d7;
+  --surface: #fbfaf7;
+}
+body {
+  color: var(--ink);
+  background: var(--surface);
+}
+header {
+  background: rgba(251,250,247,.96) !important;
+  border-bottom: 1px solid rgba(23,40,63,.10) !important;
+  box-shadow: 0 4px 18px rgba(16,30,49,.045) !important;
+}
+.brand strong, h1, h2, h3 { color: var(--navy); }
+.brand small { color: #687386; }
+.brand-mark {
+  background: var(--gold) !important;
+  box-shadow: none !important;
+}
+.brand:hover .brand-mark { box-shadow: 0 0 0 4px rgba(184,135,53,.10) !important; }
+.btn {
+  background: var(--gold) !important;
+  color: #fff !important;
+  border: 1px solid var(--gold) !important;
+  border-radius: 3px !important;
+  box-shadow: none !important;
+  transition: background .2s ease, border-color .2s ease, transform .2s ease !important;
+}
+.btn:hover {
+  background: #9f722b !important;
+  border-color: #9f722b !important;
+  filter: none !important;
+  transform: translateY(-1px);
+}
+.btn-outline {
+  color: var(--navy) !important;
+  background: transparent !important;
+  border-color: var(--navy) !important;
+}
+.btn-outline:hover {
+  color: #fff !important;
+  background: var(--navy) !important;
+  border-color: var(--navy) !important;
+}
+.eyebrow { color: var(--navy); }
+.eyebrow:before { background: var(--gold); }
+.hero {
+  background: #f3f1eb !important;
+}
+.hero::after {
+  background: linear-gradient(90deg,
+    rgba(245,243,238,.99) 0%,
+    rgba(245,243,238,.97) 35%,
+    rgba(245,243,238,.80) 53%,
+    rgba(245,243,238,.08) 78%) !important;
+}
+.hero p { color: #354257 !important; }
+.contact-inline {
+  border-color: rgba(184,135,53,.75) !important;
+}
+.section { background: var(--surface); }
+.section.alt { background: var(--cream) !important; }
+.section-head h2 { color: var(--navy); }
+.section-head p { color: var(--muted); }
+.fact, .contact-card {
+  background: rgba(255,255,255,.78) !important;
+  border: 1px solid var(--line) !important;
+  box-shadow: 0 5px 18px rgba(16,30,49,.025);
+}
+.fact strong { color: var(--navy); }
+.fact span, .contact-card p { color: var(--muted); }
+.contact-card h3 { color: var(--navy); }
+.contact-card a:not(.btn) { color: var(--navy); text-decoration-color: var(--gold); text-underline-offset: 3px; }
+.contact-card a:not(.btn):hover { color: #956a28; }
+.note {
+  background: #eeece5 !important;
+  border-left: 3px solid var(--gold) !important;
+  color: #596579 !important;
+}
+.office-gallery img, .about-portrait img { box-shadow: 0 8px 24px rgba(16,30,49,.08); }
+#contacts.page-hero {
+  background: var(--navy) !important;
+  border: 0 !important;
+}
+#contacts.page-hero h1 { color: #fff !important; }
+#contacts.page-hero p { color: #d8dee7 !important; }
+#contacts.page-hero .eyebrow { color: var(--gold2) !important; }
+#contacts.page-hero .eyebrow:before { background: var(--gold2) !important; }
+.office-map {
+  background: #f1efe9 !important;
+  border-color: var(--line) !important;
+}
+.office-map h2 { color: var(--navy) !important; }
+.map-open-link {
+  color: var(--navy) !important;
+  border-color: var(--gold) !important;
+}
+.messenger-contact {
+  background: rgba(251,250,247,.97) !important;
+  border-color: rgba(23,40,63,.12) !important;
+  box-shadow: 0 5px 18px rgba(16,30,49,.12) !important;
+}
+@media (max-width: 680px) {
+  .hero::after {
+    background: linear-gradient(180deg,
+      rgba(245,243,238,.99) 0%,
+      rgba(245,243,238,.96) 54%,
+      rgba(245,243,238,.35) 100%) !important;
+  }
+  .contact-inline { border-top-color: rgba(184,135,53,.75) !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn, .brand, .brand-mark { transition: none !important; }
+}
