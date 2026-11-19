@@ -176,3 +176,28 @@ a:focus-visible{outline:2px solid #b99a70;outline-offset:4px}
   .js-reveal{opacity:1!important;transform:none!important;transition:none!important}
   .m-review-list article,.m-practice-list li,.m-approach article,.m-gallery img,.m-button,.m-secondary,.m-reviews-link,.m-phone,.m-social a,.m-menu{transition:none!important}
 }
+
+
+/* HERO PORTRAIT — more noticeable but restrained motion */
+.m-hero-photo{
+  position:relative;
+  transform-origin:50% 55%;
+  transition:transform .8s cubic-bezier(.2,.75,.25,1),filter .8s ease,box-shadow .8s ease;
+  will-change:transform;
+}
+@media (hover:hover) and (pointer:fine){
+  .m-hero-photo:hover{
+    transform:translate3d(0,-10px,0) scale(1.018);
+    filter:saturate(1.07) contrast(1.015);
+    box-shadow:0 24px 48px rgba(0,0,0,.22);
+  }
+}
+@media (hover:none), (pointer:coarse){
+  .m-hero-photo:active{
+    transform:scale(1.012);
+    filter:saturate(1.06);
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .m-hero-photo{transition:none!important;will-change:auto}
+}
