@@ -3993,3 +3993,16 @@ html body main .about-grid > .about-panel .btn-outline {
 html body main .about-grid > .about-panel:after {
   border-color: rgba(181,162,126,.22) !important;
 }
+
+
+/* CONTACTS — remove the opaque white card fill completely */
+html body main .contact-grid > div.contact-card,
+html body main .contact-grid > .contact-card {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  border: 1px solid rgba(255,255,255,.82) !important;
+  box-shadow: 0 5px 18px rgba(35,48,60,.035), inset 0 1px 0 rgba(255,255,255,.3) !important;
+}
