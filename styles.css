@@ -3368,3 +3368,49 @@ header.is-scrolled {
 .section-status {
   border-color: transparent !important;
 }
+
+
+/* Animated translucent dark glass surfaces beneath text content */
+.section > .wrap.content,
+.about-profile-grid,
+.practice-card,
+.fact,
+.contact-card,
+.article-item,
+.practice-detail-card,
+.practice-detail-cta,
+.note,
+.office-map,
+.section-status {
+  background: rgba(18, 29, 43, .20) !important;
+  border: 1px solid rgba(255, 255, 255, .20) !important;
+  box-shadow: 0 10px 30px rgba(10, 20, 32, .10) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(1.08) !important;
+  backdrop-filter: blur(12px) saturate(1.08) !important;
+  animation: text-surface-breathe 8s ease-in-out infinite alternate;
+}
+@keyframes text-surface-breathe {
+  from {
+    background-color: rgba(18, 29, 43, .16);
+    box-shadow: 0 8px 24px rgba(10, 20, 32, .08);
+  }
+  to {
+    background-color: rgba(18, 29, 43, .25);
+    box-shadow: 0 12px 32px rgba(10, 20, 32, .14);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .section > .wrap.content,
+  .about-profile-grid,
+  .practice-card,
+  .fact,
+  .contact-card,
+  .article-item,
+  .practice-detail-card,
+  .practice-detail-cta,
+  .note,
+  .office-map,
+  .section-status {
+    animation: none !important;
+  }
+}
