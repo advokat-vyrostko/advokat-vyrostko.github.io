@@ -4006,3 +4006,17 @@ html body main .contact-grid > .contact-card {
   border: 1px solid rgba(255,255,255,.82) !important;
   box-shadow: 0 5px 18px rgba(35,48,60,.035), inset 0 1px 0 rgba(255,255,255,.3) !important;
 }
+
+
+/* HIGHEST-PRIORITY CONTACT CARD OVERRIDE.
+   Supersedes legacy section.section.section.section.section selector above. */
+html body main > section.section.section.section.section > .wrap.contact-grid.contact-grid.contact-grid > div.contact-card.contact-card.contact-card.contact-card.contact-card {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  animation: none !important;
+  border: 1px solid rgba(255,255,255,.82) !important;
+  box-shadow: 0 5px 18px rgba(35,48,60,.035), inset 0 1px 0 rgba(255,255,255,.3) !important;
+}
