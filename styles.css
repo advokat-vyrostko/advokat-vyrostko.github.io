@@ -4766,3 +4766,78 @@ header .nav { justify-content: flex-start !important; }
 @media (max-width: 680px) {
   .contact-inline { border-left: 0; border-top: 1px solid rgba(184,135,53,.55); }
 }
+
+
+/* CONTACTS TYPOGRAPHY — clear modern body text with restrained serif headings */
+#contacts.page-hero .eyebrow {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: .16em !important;
+}
+#contacts.page-hero h1 {
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: clamp(38px, 4vw, 48px) !important;
+  font-weight: 500 !important;
+  letter-spacing: -.035em !important;
+  line-height: 1.08 !important;
+}
+#contacts.page-hero p {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  line-height: 1.7 !important;
+  letter-spacing: 0 !important;
+}
+.contact-card {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif !important;
+}
+.contact-card h3 {
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 22px !important;
+  font-weight: 500 !important;
+  letter-spacing: -.02em !important;
+  line-height: 1.2 !important;
+}
+.contact-card p,
+.contact-card p a,
+.contact-card .phone-call-link {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.7 !important;
+  letter-spacing: 0 !important;
+}
+.contact-card p { margin: 6px 0 !important; }
+.contact-card a:not(.messenger-link) {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.contact-card .messenger-link {
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+}
+.contact-card .messenger-brand-icon {
+  width: 18px;
+  height: 18px;
+}
+.office-map h2 {
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 27px !important;
+  font-weight: 500 !important;
+  letter-spacing: -.025em !important;
+}
+.office-map p,
+.office-map .map-open-link {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif !important;
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+}
+@media (max-width: 680px) {
+  #contacts.page-hero h1 { font-size: 37px !important; }
+  #contacts.page-hero p { font-size: 14px !important; }
+  .contact-card h3 { font-size: 21px !important; }
+  .contact-card p,
+  .contact-card p a { font-size: 14px !important; }
+}
