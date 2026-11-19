@@ -3565,3 +3565,16 @@ section.section .wrap.contact-grid > .contact-card {
   box-shadow: 0 8px 24px rgba(24,37,50,.045), inset 0 1px 0 rgba(255,255,255,.45) !important;
   animation: none !important;
 }
+
+
+/* CONTACT CARDS — no opaque fill; show the patterned layer behind them */
+section.section .wrap.contact-grid > .contact-card {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  border: 1px solid rgba(255,255,255,.88) !important;
+  box-shadow: 0 5px 18px rgba(24,37,50,.035), inset 0 1px 0 rgba(255,255,255,.35) !important;
+  animation: none !important;
+}
