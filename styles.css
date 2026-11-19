@@ -4973,8 +4973,8 @@ html{scroll-behavior:smooth;scroll-padding-top:82px}body{background:var(--ppaper
 }
 
 
-/* PHONE ONLY — match the tablet hero arrow treatment; tablet layout 0102 remains untouched */
-@media (max-width:680px){
+/* PHONE ONLY — match tablet arrow treatment; tablet 0102 (768px+) remains untouched */
+@media (max-width:760px){
   .portfolio-hero .hero-actions .btn{
     display:inline-flex!important;
     align-items:center!important;
