@@ -4621,3 +4621,73 @@ main > section.section:has(> .wrap.contact-grid) { padding-top: 25px !important;
   .hero { min-height: 490px !important; }
   .nav > .btn { font-size: 10px !important; padding-inline: 8px !important; }
 }
+
+
+/* CONSULTATION CTA — restrained, typographic and consistent with the navy/gold identity */
+.btn,
+.btn:visited {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 48px;
+  padding: 13px 22px !important;
+  border: 1px solid var(--navy) !important;
+  border-bottom: 2px solid var(--gold) !important;
+  border-radius: 2px !important;
+  background: var(--navy) !important;
+  color: #fff !important;
+  box-shadow: 0 5px 14px rgba(16,30,49,.10) !important;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  letter-spacing: .005em !important;
+  text-transform: none !important;
+  text-decoration: none !important;
+  transition: background .18s ease, border-color .18s ease, box-shadow .18s ease, transform .18s ease !important;
+}
+.btn:hover,
+.btn:focus-visible {
+  background: var(--navy2) !important;
+  border-color: var(--navy2) !important;
+  border-bottom-color: var(--gold2) !important;
+  color: #fff !important;
+  box-shadow: 0 7px 18px rgba(16,30,49,.16) !important;
+  transform: translateY(-1px);
+}
+.btn:focus-visible {
+  outline: 3px solid rgba(184,135,53,.35);
+  outline-offset: 3px;
+}
+.hero-actions > .btn {
+  min-height: 52px;
+  padding: 15px 25px !important;
+  font-size: 15px !important;
+}
+.hero-actions > .btn::after {
+  content: "→";
+  color: var(--gold2);
+  font-size: 17px;
+  line-height: 1;
+  margin-left: 2px;
+}
+.nav > .btn {
+  min-height: 43px;
+  padding: 11px 18px !important;
+  font-size: 13px !important;
+  white-space: nowrap;
+  box-shadow: none !important;
+}
+@media (max-width: 680px) {
+  .nav > .btn {
+    min-height: 39px;
+    padding: 9px 12px !important;
+    font-size: 12px !important;
+  }
+  .hero-actions > .btn {
+    min-height: 49px;
+    padding: 13px 20px !important;
+    font-size: 14px !important;
+  }
+}
