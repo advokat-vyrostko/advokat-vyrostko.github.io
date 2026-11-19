@@ -32,15 +32,6 @@
     });
   }
 
-  if (!document.querySelector('.messenger-contact')) {
-    const contact = document.createElement('div');
-    contact.className = 'messenger-contact';
-    contact.setAttribute('aria-label', 'Зв’язатися з адвокатом у месенджері');
-    const message = encodeURIComponent('Добрий день! Хочу отримати консультацію адвоката.');
-    contact.innerHTML = '<a class="messenger-link messenger-whatsapp" href="https://wa.me/380638180427?text=' + message + '" target="_blank" rel="noopener noreferrer" aria-label="Написати у WhatsApp">WhatsApp</a><a class="messenger-link messenger-viber" href="viber://chat?number=%2B380638180427" aria-label="Написати у Viber">Viber</a>';
-    body.appendChild(contact);
-  }
-
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduceMotion || !('IntersectionObserver' in window)) return;
   const targets = document.querySelectorAll('.section-head, .practice-card, .fact, .about-portrait, .office-gallery figure, .contact-card, .office-map');
