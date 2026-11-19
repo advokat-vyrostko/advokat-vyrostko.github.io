@@ -3163,3 +3163,24 @@ header.is-scrolled {
   .practice-detail-card { min-height: 0; padding: 22px; }
   .practice-detail-cta { align-items: flex-start; flex-direction: column; padding: 22px; }
 }
+
+.section-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 18px;
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fbfaf7;
+  color: var(--muted);
+  font: 500 13px/1.2 var(--sans);
+}
+.section-status .status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #b99b5d;
+}
+.content ul { margin: 14px 0 20px; }
+.content li { padding: 3px 0; }
