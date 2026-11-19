@@ -4742,3 +4742,27 @@ main > section.section:has(> .wrap.contact-grid) { padding-top: 25px !important;
 
 /* Header is intentionally quiet: brand only, no competing consultation CTA */
 header .nav { justify-content: flex-start !important; }
+
+
+/* Final harmony pass: fewer repeated elements, cleaner call to action */
+.hero-actions > .btn::after { content: none !important; display: none !important; }
+.registry-link {
+  display: inline-block;
+  margin-top: 7px;
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-underline-offset: 3px;
+}
+.registry-link:hover { color: #956a28; }
+.facts { display: none !important; }
+.contact-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+@media (max-width: 760px) {
+  .contact-grid { grid-template-columns: 1fr !important; }
+}
+.contact-inline { border-left: 1px solid rgba(184,135,53,.55); }
+@media (max-width: 680px) {
+  .contact-inline { border-left: 0; border-top: 1px solid rgba(184,135,53,.55); }
+}
