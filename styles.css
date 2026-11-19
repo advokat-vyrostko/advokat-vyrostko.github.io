@@ -4841,3 +4841,70 @@ header .nav { justify-content: flex-start !important; }
   .contact-card p,
   .contact-card p a { font-size: 14px !important; }
 }
+
+
+/* CONTACT CARDS — unified typography, color and spacing */
+.contact-card {
+  background: rgba(255,255,255,.72) !important;
+  border: 1px solid rgba(23,40,63,.12) !important;
+  border-radius: 5px !important;
+  padding: 24px 26px !important;
+  box-shadow: 0 4px 16px rgba(16,30,49,.035) !important;
+  color: #253246 !important;
+}
+.contact-card h3 {
+  margin: 0 0 12px !important;
+  color: #17283f !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 23px !important;
+  font-weight: 500 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -.02em !important;
+}
+.contact-card p,
+.contact-card p a,
+.contact-card .phone-call-link {
+  color: #344257 !important;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+  letter-spacing: 0 !important;
+}
+.contact-card p {
+  margin: 7px 0 !important;
+}
+.contact-card p:last-child {
+  color: #737f8e !important;
+}
+.contact-card a:not(.messenger-link) {
+  text-decoration: none !important;
+}
+.contact-card a:not(.messenger-link):hover {
+  color: #9a702e !important;
+}
+.contact-card .instagram-link {
+  color: #9a702e !important;
+}
+.contact-card .messenger-link {
+  width: 36px !important;
+  height: 36px !important;
+  padding: 8px !important;
+}
+.contact-card .messenger-brand-icon {
+  width: 18px !important;
+  height: 18px !important;
+}
+@media (max-width: 680px) {
+  .contact-card {
+    padding: 20px 21px !important;
+  }
+  .contact-card h3 {
+    font-size: 22px !important;
+  }
+  .contact-card p,
+  .contact-card p a,
+  .contact-card .phone-call-link {
+    font-size: 14px !important;
+  }
+}
