@@ -5011,3 +5011,10 @@ html{scroll-behavior:smooth;scroll-padding-top:82px}body{background:var(--ppaper
   .portfolio-hero .hero-photo{inset:0 0 0 32%;background-position:58% 35%;}
   .portfolio-hero .hero-shade{background:linear-gradient(90deg,#101e31 0%,rgba(16,30,49,.98) 34%,rgba(16,30,49,.88) 55%,rgba(16,30,49,.42) 100%)}
 }
+
+
+/* Tablet: reveal the portrait while preserving text contrast */
+@media (min-width:681px) and (max-width:1150px){
+  .portfolio-hero .hero-photo{filter:saturate(.78) brightness(1.08)!important;background-position:58% 35%!important}
+  .portfolio-hero .hero-shade{background:linear-gradient(90deg,rgba(16,30,49,.94) 0%,rgba(16,30,49,.82) 35%,rgba(16,30,49,.48) 58%,rgba(16,30,49,.12) 100%)!important}
+}
