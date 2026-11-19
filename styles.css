@@ -3184,3 +3184,75 @@ header.is-scrolled {
 }
 .content ul { margin: 14px 0 20px; }
 .content li { padding: 3px 0; }
+
+/* Layered neutral backgrounds: reduce blank white areas without darkening the site */
+body {
+  background: #f3f4f2 !important;
+}
+main {
+  background: #f3f4f2;
+}
+.page-hero {
+  background: linear-gradient(135deg, #eeefec 0%, #f5f4f0 58%, #eceeea 100%) !important;
+  border-bottom: 1px solid #e1e2de !important;
+}
+.section {
+  background: #f7f7f4;
+}
+.section.alt {
+  background: #eceeeb !important;
+}
+.section:nth-of-type(even) {
+  background: #f0f1ee;
+}
+.section.alt:nth-of-type(even) {
+  background: #e9ece8 !important;
+}
+/* Text-heavy pages sit on a soft inset panel */
+.section > .wrap.content {
+  padding: 34px 42px;
+  border: 1px solid rgba(218,220,215,.85);
+  border-radius: 10px;
+  background: rgba(255,255,255,.78);
+  box-shadow: 0 8px 26px rgba(28,39,48,.035);
+}
+/* Profile and contact content gain a subtle surface behind the cards */
+.about-profile-grid {
+  padding: 30px;
+  border: 1px solid rgba(218,220,215,.8);
+  border-radius: 10px;
+  background: rgba(255,255,255,.72);
+  box-shadow: 0 8px 26px rgba(28,39,48,.035);
+}
+.contact-grid .contact-card {
+  background: rgba(255,255,255,.92) !important;
+  box-shadow: 0 7px 22px rgba(28,39,48,.045);
+}
+.office-map {
+  background: #e9ece8 !important;
+  border-color: #dfe2dc !important;
+}
+.practice-detail-section {
+  background: linear-gradient(180deg, #f2f3f0 0%, #eceeda 100%);
+}
+.practice-detail-card {
+  background: rgba(255,255,255,.92) !important;
+  box-shadow: 0 8px 24px rgba(28,39,48,.055);
+}
+.practice-detail-cta {
+  background: #e8ebe6 !important;
+  border-color: #d9ddd6 !important;
+}
+.note {
+  background: #f0f1ed !important;
+  border-color: #e0e2dc !important;
+}
+@media (max-width: 720px) {
+  .section > .wrap.content {
+    padding: 24px 20px;
+    width: min(100% - 30px, 600px);
+  }
+  .about-profile-grid {
+    padding: 20px;
+  }
+}
