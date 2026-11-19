@@ -3272,3 +3272,9 @@ header.is-scrolled {
   border-bottom-color: rgba(176,183,182,.7) !important;
   box-shadow: 0 9px 28px rgba(26,38,49,.16) !important;
 }
+
+
+/* Preserve horizontal pointer gestures for page-to-page swiping on touch devices. */
+@media (max-width: 720px) {
+  main { touch-action: pan-y; }
+}
