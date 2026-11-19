@@ -469,7 +469,8 @@ footer a { color: #f0c56c; display: inline-block; margin-top: 5px; }
 }
 .office-gallery figure:nth-child(2) { transition-delay: .14s; }
 .about-portrait.is-visible,
-.office-gallery figure.is-visible {
+.office-gallery figure.is-visible,
+.office-gallery figure.motion-visible {
   opacity: 1;
   transform: translate3d(0, 0, 0);
 }
