@@ -5,33 +5,6 @@
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.portfolio-header nav');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const soundtrack = document.getElementById('site-soundtrack');
-  const soundButton = document.querySelector('.soundtrack-toggle');
-  if (soundtrack && soundButton) {
-    soundtrack.volume = 0.2;
-    const setSoundState = (playing) => {
-      soundButton.setAttribute('aria-pressed', String(playing));
-      soundButton.setAttribute('aria-label', playing ? 'Вимкнути звук' : 'Увімкнути звук');
-      soundButton.querySelector('.soundtrack-label').textContent = playing ? 'Вимкнути звук' : 'Увімкнути звук';
-      soundButton.classList.toggle('is-playing', playing);
-    };
-    const startSound = () => {
-      soundtrack.play().then(() => setSoundState(true)).catch(() => setSoundState(false));
-    };
-    startSound();
-    const unlockSound = () => {
-      if (soundtrack.paused) startSound();
-    };
-    window.addEventListener('pointerdown', unlockSound, { once: true, passive: true });
-    window.addEventListener('keydown', unlockSound, { once: true });
-    soundButton.addEventListener('click', () => {
-      if (soundtrack.paused) startSound();
-      else { soundtrack.pause(); setSoundState(false); }
-    });
-    soundtrack.addEventListener('play', () => setSoundState(true));
-    soundtrack.addEventListener('pause', () => setSoundState(false));
-  }
-
 
   const updateHeader = () => {
     if (header) header.classList.toggle('is-scrolled', window.scrollY > 24);
