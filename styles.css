@@ -2427,3 +2427,149 @@ header .nav nav a:not(.menu-consult)[aria-current="page"] {
     object-fit: contain;
   }
 }
+
+
+/* =========================================================
+   Site-wide composition system: 12-column grid + golden ratio
+   ========================================================= */
+:root {
+  --type-body: 16px;
+  --type-small: 14px;
+  --type-h3: 21px;
+  --type-h2: 26px;
+  --type-h1: 42px;
+  --space-1: 8px;
+  --space-2: 13px;
+  --space-3: 21px;
+  --space-4: 34px;
+  --space-5: 55px;
+  --space-6: 89px;
+}
+body { font-size: var(--type-body); }
+h1 { font-size: clamp(42px, 4.1vw, 64px); line-height: 1.06; }
+h2, .section-head h2 { font-size: clamp(26px, 2.3vw, 36px); line-height: 1.14; }
+h3 { font-size: var(--type-h3); line-height: 1.2; }
+p { text-wrap: pretty; }
+.wrap { width: min(1200px, calc(100% - 48px)); }
+
+/* Twelve-column base for all wide-screen content groups */
+@media (min-width: 1101px) {
+  .about-grid,
+  .about-profile-grid,
+  .office-gallery,
+  .contact-grid,
+  .practice-grid {
+    display: grid;
+  }
+  .about-grid,
+  .about-profile-grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  }
+  .about-grid > .about-panel,
+  .about-profile-grid > .about-profile-copy { grid-column: span 7; }
+  .about-grid > .facts,
+  .about-profile-grid > .about-portrait { grid-column: span 5; }
+  .about-portrait { max-width: 100%; justify-self: center; }
+  .about-portrait img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+  }
+  .office-gallery {
+    grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+    gap: 21px;
+  }
+  .office-gallery-main { grid-column: span 7; }
+  .office-gallery figure:not(.office-gallery-main) { grid-column: span 5; }
+  .office-gallery-main img,
+  .office-gallery figure:not(.office-gallery-main) img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+  }
+  .contact-grid { grid-template-columns: repeat(12, minmax(0, 1fr)) !important; }
+  .contact-grid > .contact-card { grid-column: span 6; }
+  .practice-grid { grid-template-columns: repeat(12, minmax(0, 1fr)) !important; }
+  .practice-grid > .practice-card { grid-column: span 4; }
+}
+
+/* Hero follows a Z-scan: clear headline first, action at the end of the scan */
+.hero { min-height: clamp(500px, 43vw, 620px); }
+.hero > .wrap { width: min(1200px, calc(100% - 48px)); }
+.hero-inner {
+  width: min(62%, 740px) !important;
+  max-width: 740px !important;
+  padding: clamp(48px, 6vw, 84px) 0 !important;
+}
+.hero-inner h1 { max-width: 700px; margin: 18px 0 21px; }
+.hero-inner > p {
+  max-width: 560px;
+  margin: 0 0 28px;
+  color: #263449;
+  font-size: clamp(17px, 1.4vw, 20px);
+  line-height: 1.55;
+}
+.hero-actions { align-items: center; gap: 21px 34px; }
+.contact-inline { font-size: 14px; line-height: 1.5; }
+.section-head { max-width: 760px; margin-inline: auto; }
+.practice-card { min-height: 178px; padding: 26px 24px; }
+.practice-card h3 { font-size: 21px; margin: 13px 0 8px; }
+
+/* Reading pages use a controlled F-pattern measure */
+.content {
+  max-width: 760px;
+  margin-inline: 0 auto;
+}
+.content h2 {
+  font-size: clamp(24px, 2vw, 29px);
+  margin-top: 34px;
+  margin-bottom: 12px;
+}
+.content p, .content li {
+  font-size: 16px;
+  line-height: 1.72;
+  max-width: 72ch;
+}
+.page-hero > .wrap > p { max-width: 760px; line-height: 1.65; }
+
+/* AIDA sequence: clear spacing between introduction, evidence and contact action */
+.cta-band { padding-block: 34px; }
+.cta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 34px;
+}
+.cta-row > div { max-width: 62%; }
+.cta-row h2 { margin: 0 0 8px; }
+.cta-row p { margin: 0; color: var(--muted); }
+
+/* Consistent whitespace scale */
+.section-head { margin-bottom: 34px; }
+.contact-grid { gap: 21px; }
+.contact-card { padding: 26px; }
+.office-map { padding: 34px; }
+@media (min-width: 721px) and (max-width: 1100px) {
+  .hero-inner { width: min(72%, 680px) !important; }
+  .practice-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .about-grid, .about-profile-grid { grid-template-columns: 1.3fr 1fr !important; }
+  .office-gallery { grid-template-columns: 1.3fr 1fr !important; }
+  .contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+@media (max-width: 720px) {
+  .wrap, .hero > .wrap { width: min(100% - 30px, 600px); }
+  .hero { min-height: 540px; }
+  .hero-inner { width: 100% !important; padding: 46px 0 !important; }
+  .hero-inner > p { max-width: 100%; }
+  .practice-grid, .about-grid, .about-profile-grid,
+  .office-gallery, .contact-grid { grid-template-columns: 1fr !important; }
+  .cta-row { align-items: flex-start; flex-direction: column; }
+  .cta-row > div { max-width: 100%; }
+  .office-gallery-main img,
+  .office-gallery figure:not(.office-gallery-main) img {
+    height: auto;
+    max-height: 520px;
+    object-fit: contain;
+  }
+}
