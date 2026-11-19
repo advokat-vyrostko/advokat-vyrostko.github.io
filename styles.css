@@ -5025,3 +5025,12 @@ section.section.contact-section#contacts .contact-details{opacity:1!important;tr
 @media (min-width:681px) and (max-width:1150px){
   .portfolio-hero .hero-description{max-width:470px!important;width:470px!important;}
 }
+
+
+/* Unified arrow glyphs across phone, tablet and desktop */
+.link-arrow{display:inline-flex!important;align-items:center;justify-content:center;font-family:Arial,sans-serif!important;font-size:.92em!important;font-weight:500!important;line-height:1!important;vertical-align:baseline;margin-left:.22em;white-space:nowrap;transition:transform .2s ease,opacity .2s ease}
+a:hover .link-arrow{transform:translate(2px,-2px)}
+.link-arrow-down{margin-left:.35em;font-size:1em!important}
+.text-link:hover .link-arrow-down{transform:translateY(2px)}
+@media(max-width:680px){.link-arrow{font-size:.92em!important;margin-left:.22em}.btn .link-arrow{font-size:1em!important}.text-link .link-arrow-down{font-size:1em!important}}
+@media(prefers-reduced-motion:reduce){.link-arrow{transition:none!important}}
