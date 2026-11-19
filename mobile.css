@@ -4,7 +4,7 @@ html{scroll-behavior:smooth;scroll-padding-top:76px;-webkit-text-size-adjust:100
 body{margin:0;color:var(--ink);font:17px/1.7 "DM Sans",Arial,sans-serif;background:#fff}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
-.wrap{width:min(100% - 40px,560px);margin-inline:auto}
+.wrap{width:min(calc(100% - 28px),760px);margin-inline:auto}
 .m-header{position:sticky;top:0;z-index:20;background:rgba(13,27,46,.97);color:#fff;border-bottom:1px solid rgba(255,255,255,.12);backdrop-filter:blur(12px)}
 .m-head-inner{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:14px}
 .m-brand{display:flex;align-items:center;gap:11px;min-width:0}
