@@ -2013,3 +2013,23 @@ body.menu-is-open { overflow: hidden; }
   .menu-backdrop,
   header .menu-toggle { transition: none !important; }
 }
+
+
+/* Keep the centered menu fixed to the viewport, not the sticky header */
+header {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+header .nav nav {
+  position: fixed !important;
+  top: 50vh !important;
+  left: 50vw !important;
+  right: auto !important;
+  width: min(440px, calc(100vw - 36px)) !important;
+  max-height: min(82vh, 680px) !important;
+  overflow-y: auto !important;
+  transform: translate(-50%, -50%) scale(.97) !important;
+}
+header .nav nav.open {
+  transform: translate(-50%, -50%) scale(1) !important;
+}
