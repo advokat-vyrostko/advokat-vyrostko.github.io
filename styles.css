@@ -2273,3 +2273,157 @@ header .nav nav a:not(.menu-consult)[aria-current="page"] {
   border: 0 !important;
   color: var(--navy) !important;
 }
+
+
+/* Golden-section layout system: 1.618 / 1 proportions */
+:root {
+  --golden-major: 1.618;
+  --golden-minor: 1;
+  --space-golden-1: 13px;
+  --space-golden-2: 21px;
+  --space-golden-3: 34px;
+  --space-golden-4: 55px;
+}
+
+/* Consistent page rhythm and readable text measure */
+.section {
+  padding-block: clamp(42px, 4.7vw, 64px);
+}
+.page-hero {
+  padding-block: clamp(42px, 4.2vw, 58px);
+}
+.page-hero > .wrap > p {
+  max-width: min(62%, 760px);
+}
+.content {
+  max-width: 760px;
+}
+.section-head {
+  max-width: 760px;
+  margin-bottom: var(--space-golden-4);
+}
+
+/* Homepage: primary introduction receives the larger visual share */
+.hero-inner {
+  width: min(62%, 700px);
+  max-width: 700px;
+}
+.hero-actions {
+  gap: var(--space-golden-3);
+}
+.practice-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-golden-2);
+}
+.practice-card {
+  min-height: 176px;
+  padding: 26px 22px;
+}
+.about-grid {
+  grid-template-columns: minmax(0, 1.618fr) minmax(0, 1fr);
+  gap: var(--space-golden-3);
+}
+.facts {
+  gap: var(--space-golden-2);
+}
+.fact {
+  padding: 24px 21px;
+}
+
+/* Profile: text is the main column; portrait keeps its full natural proportions */
+.about-profile-grid {
+  grid-template-columns: minmax(0, 1.618fr) minmax(280px, 1fr);
+  gap: var(--space-golden-3);
+  align-items: center;
+}
+.about-profile-copy {
+  max-width: 760px;
+}
+.about-portrait {
+  width: 100%;
+  max-width: 390px;
+  justify-self: center;
+}
+.about-portrait img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+
+/* Office images: one dominant view and one supporting view */
+.office-gallery {
+  grid-template-columns: minmax(0, 1.618fr) minmax(0, 1fr);
+  gap: var(--space-golden-2);
+}
+.office-gallery-main img {
+  height: 460px;
+}
+.office-gallery figure:not(.office-gallery-main) img {
+  height: 460px;
+}
+
+/* Contact cards retain equal weight; map is a full-width destination block */
+.contact-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-golden-2);
+}
+.contact-card {
+  padding: 26px;
+}
+.office-map {
+  margin-top: var(--space-golden-3);
+}
+
+/* Medium screens: keep the same hierarchy without squeezing columns */
+@media (min-width: 721px) and (max-width: 1100px) {
+  .hero-inner {
+    width: min(72%, 650px);
+  }
+  .practice-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .about-grid,
+  .about-profile-grid {
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    gap: 24px;
+  }
+  .about-portrait {
+    max-width: 340px;
+  }
+  .office-gallery {
+    grid-template-columns: 1.3fr 1fr;
+  }
+  .office-gallery-main img,
+  .office-gallery figure:not(.office-gallery-main) img {
+    height: 340px;
+  }
+  .page-hero > .wrap > p {
+    max-width: 78%;
+  }
+}
+
+/* Small screens: preserve a clear single-column reading sequence */
+@media (max-width: 720px) {
+  .hero-inner {
+    width: 100%;
+    max-width: 100%;
+  }
+  .practice-grid,
+  .about-grid,
+  .about-profile-grid,
+  .office-gallery,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .page-hero > .wrap > p,
+  .content {
+    max-width: 100%;
+  }
+  .office-gallery-main img,
+  .office-gallery figure:not(.office-gallery-main) img {
+    height: auto;
+    max-height: 520px;
+    object-fit: contain;
+  }
+}
