@@ -57,8 +57,7 @@
     body.appendChild(contact);
   }
 
-  // Mobile/tablet swipe navigation between the site's main pages.
-  // Pointer Events cover touch screens more consistently than touchend alone.
+  // Mobile swipe navigation: horizontal gestures move between main pages.
   const pageNav = document.querySelector('.nav nav');
   const mainContent = document.querySelector('main');
   if (pageNav && mainContent) {
@@ -66,38 +65,43 @@
       .filter(link => !link.classList.contains('menu-consult'))
       .filter(link => !/^(https?:|mailto:|tel:|#|viber:)/i.test(link.getAttribute('href')));
     const currentPage = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
-    const currentIndex = pageLinks.findIndex(link => {
-      const target = (link.getAttribute('href').split('/').pop() || 'index.html').toLowerCase();
-      return target === currentPage;
-    });
+    const currentIndex = pageLinks.findIndex(link =>
+      (link.getAttribute('href').split('/').pop() || 'index.html').toLowerCase() === currentPage
+    );
     let startX = 0;
     let startY = 0;
-    let tracking = false;
-    const isSwipeControl = target => target && target.closest(
+    let activePointerId = null;
+    const excluded = target => target && target.closest(
       'a, button, input, textarea, select, label, iframe, video, audio, [contenteditable="true"], .menu-toggle, .map-frame, .office-gallery, .messenger-contact, nav'
     );
+
     mainContent.addEventListener('pointerdown', event => {
-      if (event.pointerType === 'mouse' || event.isPrimary === false ||
-          document.body.classList.contains('menu-is-open') || isSwipeControl(event.target)) {
-        tracking = false;
-        return;
-      }
+      if (event.pointerType === 'mouse' || !event.isPrimary ||
+          document.body.classList.contains('menu-is-open') || excluded(event.target)) return;
       startX = event.clientX;
       startY = event.clientY;
-      tracking = true;
+      activePointerId = event.pointerId;
+      try { mainContent.setPointerCapture(event.pointerId); } catch (_) {}
     }, { passive: true });
+
     mainContent.addEventListener('pointerup', event => {
-      if (!tracking) return;
-      tracking = false;
+      if (activePointerId !== event.pointerId) return;
+      activePointerId = null;
       if (document.body.classList.contains('menu-is-open') || currentIndex < 0) return;
       const dx = event.clientX - startX;
       const dy = event.clientY - startY;
       if (Math.abs(dx) < 55 || Math.abs(dx) < Math.abs(dy) * 1.25) return;
       const nextIndex = currentIndex + (dx < 0 ? 1 : -1);
-      if (nextIndex < 0 || nextIndex >= pageLinks.length) return;
-      window.location.assign(pageLinks[nextIndex].href);
+      if (nextIndex >= 0 && nextIndex < pageLinks.length) {
+        window.location.href = pageLinks[nextIndex].href;
+      }
     }, { passive: true });
-    mainContent.addEventListener('pointercancel', () => { tracking = false; }, { passive: true });
+
+    const cancelSwipe = event => {
+      if (activePointerId === event.pointerId) activePointerId = null;
+    };
+    mainContent.addEventListener('pointercancel', cancelSwipe, { passive: true });
+    mainContent.addEventListener('lostpointercapture', cancelSwipe, { passive: true });
   }
 
   if (reduceMotion) return;
