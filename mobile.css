@@ -608,3 +608,57 @@ a:focus-visible{outline:2px solid #b99a70;outline-offset:4px}
     animation:none!important;filter:none!important;transform:none!important;opacity:1!important;
   }
 }
+
+
+/* OFFICE PHOTO — practical wayfinding overlay */
+.m-gallery .m-office-location{position:relative;overflow:hidden;background:#14243a}
+.m-gallery .m-office-location:after{
+  content:"";
+  position:absolute;
+  inset:32% 0 0;
+  background:linear-gradient(180deg,transparent 0%,rgba(10,22,38,.28) 28%,rgba(10,22,38,.88) 100%);
+  pointer-events:none;
+}
+.m-office-overlay{
+  position:absolute;
+  z-index:2;
+  left:18px;
+  right:18px;
+  bottom:42px;
+  color:#fff;
+  text-shadow:0 1px 10px rgba(0,0,0,.25);
+}
+.m-office-overlay>span{
+  display:inline-block;
+  margin-bottom:8px;
+  padding-left:9px;
+  border-left:2px solid #c8ad89;
+  color:#e5d2b6;
+  font:500 9px/1.5 Arial,sans-serif;
+  letter-spacing:.16em;
+}
+.m-office-overlay strong{
+  display:block;
+  color:#fff;
+  font:500 clamp(19px,5vw,25px)/1.15 Georgia,"Times New Roman",serif;
+}
+.m-office-overlay p{
+  margin:9px 0 6px;
+  color:#e5d2b6;
+  font:italic 14px/1.35 Georgia,"Times New Roman",serif;
+}
+.m-office-overlay ul{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px 14px;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.m-office-overlay li{
+  color:#fff;
+  font:500 10px/1.5 Arial,sans-serif;
+  letter-spacing:.04em;
+}
+.m-office-overlay li:before{content:"•";color:#c8ad89;margin-right:6px}
+.m-gallery .m-office-location figcaption{position:relative;z-index:3}
