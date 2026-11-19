@@ -5327,3 +5327,22 @@ html{scroll-behavior:smooth;scroll-padding-top:82px}body{background:var(--ppaper
 @media(prefers-reduced-motion:reduce){
   .office-building-overlay>*{opacity:1;transform:none;filter:none;animation:none!important}
 }
+
+
+/* FAIL-SAFE: office location text must remain visible even if scroll JS does not run. */
+.office-gallery figure.office-building-card{
+  opacity:1!important;
+  transform:none!important;
+  visibility:visible!important;
+}
+.office-building-overlay>*{
+  opacity:1;
+  transform:none;
+  filter:none;
+}
+.office-building-card.building-photo-ready .office-building-overlay>*{
+  opacity:0;
+  transform:translate3d(0,15px,0);
+  filter:blur(2px);
+  animation:officeBuildingTextReveal0102 .72s cubic-bezier(.2,.75,.25,1) both;
+}
