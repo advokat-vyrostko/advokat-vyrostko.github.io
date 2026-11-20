@@ -2,7 +2,7 @@
 <html lang="uk">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="Адвокат у Козятині: розірвання шлюбу, стягнення аліментів та поділ майна подружжя. Правова оцінка, підготовка документів і представництво в суді.">
 <meta name="theme-color" content="#14243a">
 <title>Сімейний адвокат у Козятині — розлучення, аліменти, поділ майна | Альбін Виростко</title>
@@ -15,29 +15,75 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=soundtrack-toggle-20261120"><link rel="icon" type="image/svg+xml" href="/favicon.svg?v=brand-naau-1">
 <style>
-:root{--navy:#14243a;--ink:#263448;--muted:#687587;--gold:#c6973b;--line:#e6e9ed;--paper:#f7f8fa}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.7;background:#fff}a{color:inherit}.wrap{width:min(1120px,calc(100% - 48px));margin:auto}
-header{height:82px;border-bottom:1px solid var(--line);display:flex;align-items:center;background:#fff}.nav{display:flex;justify-content:space-between;align-items:center;gap:20px}.brand{text-decoration:none;color:var(--navy);font-weight:700;display:flex;align-items:center;gap:12px}.mark{width:4px;height:42px;background:var(--gold);border-radius:4px}.brand small{display:block;font-size:10px;letter-spacing:.18em}.brand strong{font-size:18px}.back{font-size:14px;text-decoration:none;color:var(--muted)}
-.hero{background:var(--navy);color:#fff;padding:86px 0 78px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:460px;height:460px;border:1px solid rgba(255,255,255,.12);border-radius:50%;right:-130px;top:-210px;box-shadow:0 0 0 55px rgba(255,255,255,.025),0 0 0 110px rgba(255,255,255,.02)}.eyebrow{font-size:11px;letter-spacing:.17em;color:var(--gold);font-weight:700;text-transform:uppercase}.hero h1{font:500 clamp(38px,6vw,66px)/1.12 "Playfair Display",serif;max-width:850px;margin:18px 0}.hero h1 em,h2 em{color:#d7b36d;font-style:normal}.hero p{max-width:700px;color:#d5dce5;font-size:18px}.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;background:var(--gold);color:#17263b;text-decoration:none;font-weight:700;border-radius:3px}.btn.alt{background:transparent;border:1px solid rgba(255,255,255,.45);color:#fff}
-main section{padding:68px 0}.intro{max-width:760px;margin-bottom:34px}.intro h2{font:500 clamp(30px,4vw,43px)/1.2 "Playfair Display",serif;color:var(--navy);margin:8px 0 14px}.intro p{color:var(--muted)}.services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.service{border:1px solid var(--line);padding:26px;background:#fff;scroll-margin-top:24px}.service .num{color:var(--gold);font-weight:700;font-size:12px}.service h3{font:600 23px "Playfair Display",serif;color:var(--navy);margin:12px 0}.service p{font-size:15px;color:var(--muted);margin:0 0 14px}.service ul{padding-left:18px;color:#465469;font-size:14px}.note{background:var(--paper);border-left:3px solid var(--gold);padding:22px 26px;margin-top:28px}.process{background:var(--paper)}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.step{border-top:2px solid var(--gold);padding-top:16px}.step b{color:var(--gold);font-size:12px}.step h3{color:var(--navy);font-size:17px;margin:8px 0}.step p{font-size:14px;color:var(--muted);margin:0}.contact{background:var(--navy);color:#fff}.contact h2{font:500 40px "Playfair Display",serif;margin:8px 0}.contact p{color:#d5dce5}.phone{display:inline-block;font-size:28px;font-weight:700;color:#fff;text-decoration:none;margin:10px 0}.address{font-size:14px;color:#d5dce5}footer{padding:26px 0;color:var(--muted);font-size:13px}footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
-@media(max-width:760px){.wrap{width:calc(100% - 36px)}header{height:70px}.hero{padding:62px 0}.hero p{font-size:16px}.services{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}main section{padding:52px 0}.service{padding:22px}.contact h2{font-size:34px}.phone{font-size:25px}}
-@media(max-width:420px){.steps{grid-template-columns:1fr}.brand strong{font-size:16px}}
+.family-page .family-hero { min-height: 0 !important; }
+.family-page .family-hero .hero-layout { padding: clamp(48px, 8vw, 96px) 0; }
+.family-page .family-hero h1 { font-size: clamp(38px, 8vw, 68px) !important; }
+.family-page .family-hero .hero-description { font-size: 17px !important; }
+.family-page .family-nav { min-width: 0; }
+.family-page .header-contact { display: inline-block; }
+.family-page .family-topics { display: flex; flex-wrap: wrap; gap: 12px 24px; padding: 0; margin: 0 0 30px; list-style: none; }
+.family-page .family-topics a, .family-page .family-law a { text-decoration: underline; text-underline-offset: 4px; }
+.family-page .family-topic { border-top: 1px solid var(--pline); padding: 28px 0; }
+.family-page .family-topic h2 { margin: 0 0 14px !important; }
+.family-page .family-topic p { max-width: 75ch; margin: 0 0 12px; font-size: 17px; }
+.family-page .family-topic .family-law { margin-bottom: 0; font-size: 15px; }
+@media (max-width: 680px) {
+  .family-page .family-topic p { font-size: 16px; }
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Attorney","name":"Виростко Альбін Вікторович","url":"https://advokat-vyrostko.com.ua/simeyni-spory.html","telephone":"+380638180427","address":{"@type":"PostalAddress","streetAddress":"вул. Грушевського, 70, оф. 3","addressLocality":"Козятин","addressRegion":"Вінницька область","postalCode":"22100","addressCountry":"UA"},"areaServed":"Козятин та Вінницька область","knowsAbout":["Розірвання шлюбу","Стягнення аліментів","Поділ майна подружжя"]}</script>
 </head>
-<body>
-<header><div class="wrap nav"><a class="brand" href="/"><span class="mark"></span><span><small>АДВОКАТ</small><strong>Альбін Виростко</strong></span></a><a class="back" href="/">← Головна сторінка</a></div></header>
+<body id="top" class="family-page">
+<header class="portfolio-header">
+  <div class="wrap nav family-nav">
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span><span><small>АДВОКАТ</small><strong>Альбін Виростко</strong></span></a>
+    <a class="header-contact" href="/">Головна</a>
+  </div>
+</header>
 <main>
-<section class="hero"><div class="wrap"><div class="eyebrow">СІМЕЙНІ СПОРИ · КОЗЯТИН</div><h1>Правовий захист у <em>сімейних</em> справах.</h1><p>Розірвання шлюбу, стягнення аліментів і поділ майна подружжя. Аналіз обставин, підготовка процесуальних документів та представництво інтересів у суді.</p><div class="actions"><a class="btn" href="#contacts">Отримати консультацію</a><a class="btn alt" href="#services">Напрями допомоги</a></div></div></section>
-<section id="services"><div class="wrap"><div class="intro"><div class="eyebrow">НАПРЯМИ ПРАВНИЧОЇ ДОПОМОГИ</div><h2>Сімейні питання потребують чіткої правової позиції.</h2><p>Кожна ситуація має власні фактичні та юридичні обставини. Перед визначенням способу захисту аналізуються документи, інтереси сторін і можливі правові наслідки.</p></div>
-<div class="services">
-<article class="service" id="rozluchennya"><span class="num">01 / РОЗІРВАННЯ ШЛЮБУ</span><h3>Розлучення</h3><p>Правнича допомога під час припинення шлюбу — від оцінки ситуації до оформлення необхідних документів і судового представництва.</p><ul><li>Підготовка позову про розірвання шлюбу</li><li>Представництво інтересів у суді</li><li>Справи за наявності дітей</li><li>Визначення належного порядку звернення</li></ul></article>
-<article class="service" id="alimenty"><span class="num">02 / АЛІМЕНТИ</span><h3>Стягнення аліментів</h3><p>Допомога у визначенні способу стягнення аліментів та підготовці документів з урахуванням потреб дитини й обставин платника.</p><ul><li>Стягнення аліментів через суд</li><li>Визначення розміру та способу стягнення</li><li>Збільшення або зменшення розміру аліментів</li><li>Стягнення заборгованості з аліментів</li></ul></article>
-<article class="service" id="podil-maina"><span class="num">03 / ПОДІЛ МАЙНА</span><h3>Поділ майна подружжя</h3><p>Правовий аналіз майнових прав подружжя, режиму спільної сумісної власності та можливих способів врегулювання спору.</p><ul><li>Поділ нерухомості та іншого майна</li><li>Визначення часток подружжя</li><li>Підготовка позову та доказів</li><li>Представництво у майновому спорі</li></ul></article>
-</div><div class="note"><strong>Важливо:</strong> конкретний спосіб захисту та перспективи справи можна визначити після ознайомлення з документами й обставинами. Інформація на цій сторінці має загальний характер і не є індивідуальною правовою консультацією.</div></div></section>
-<section class="process"><div class="wrap"><div class="intro"><div class="eyebrow">ПОРЯДОК РОБОТИ</div><h2>Від первинного звернення до правової позиції.</h2></div><div class="steps"><div class="step"><b>01</b><h3>Звернення</h3><p>Коротко окресліть питання та наявні документи.</p></div><div class="step"><b>02</b><h3>Аналіз</h3><p>Вивчення фактів, документів і правового регулювання.</p></div><div class="step"><b>03</b><h3>Стратегія</h3><p>Обговорення варіантів захисту, ризиків і наступних кроків.</p></div><div class="step"><b>04</b><h3>Супровід</h3><p>Виконання погоджених дій та представництво за дорученням.</p></div></div></div></section>
-<section class="contact" id="contacts"><div class="wrap"><div class="eyebrow">ЗВ’ЯЗОК З АДВОКАТОМ</div><h2>Обговорімо вашу ситуацію.</h2><p>Адвокат Альбін Виростко · Козятин</p><a class="phone" href="tel:+380638180427">+38 (063) 818-04-27</a><p class="address">вул. Грушевського, 70, оф. 3 · м. Козятин, Вінницька область, 22100</p><div class="actions"><a class="btn" href="https://wa.me/380638180427">Написати у WhatsApp</a><a class="btn alt" href="viber://add?number=%2B380638180427">Viber</a><a class="btn alt" href="/">Головна сторінка</a></div></div></section>
+  <section class="portfolio-hero family-hero">
+    <div class="wrap hero-layout"><div class="hero-copy">
+      <h1>Сімейний адвокат <em>у Козятині</em></h1>
+      <p class="hero-description">Надаю правничу допомогу у справах про розірвання шлюбу, стягнення аліментів і поділ спільного майна подружжя.</p>
+      <div class="hero-actions"><a class="btn" href="#contacts">Отримати консультацію</a></div>
+    </div></div>
+  </section>
+  <section class="section profile-section" id="services" aria-label="Напрями сімейної практики">
+    <div class="wrap">
+      <ul class="family-topics" aria-label="Перейти до розділу">
+        <li><a href="#rozluchennya">Розірвання шлюбу</a></li>
+        <li><a href="#alimenty">Аліменти на дитину</a></li>
+        <li><a href="#podil-maina">Поділ майна подружжя</a></li>
+      </ul>
+      <article class="family-topic" id="rozluchennya">
+        <h2 class="section-title">Розірвання шлюбу</h2>
+        <p>Якщо подружжя не має дітей і обоє згодні на розірвання шлюбу, можна подати спільну заяву до відділу ДРАЦС. Подружжя, яке має дітей, може подати до суду спільну заяву разом із письмовим договором щодо місця проживання дітей, участі у забезпеченні умов їхнього життя та вихованні. Якщо подружжя укладає договір про розмір аліментів на дитину, його посвідчує нотаріус. Один із подружжя також може самостійно подати позов про розірвання шлюбу.</p>
+        <p>Допоможу визначити порядок звернення, підготувати заяву або позов і представлю ваші інтереси в суді.</p>
+        <p class="family-law"><a href="https://zakon.rada.gov.ua/laws/show/2947-14#Text">Статті 106, 109–110 Сімейного кодексу України</a></p>
+      </article>
+      <article class="family-topic" id="alimenty">
+        <h2 class="section-title">Аліменти на дитину</h2>
+        <p>Батьки можуть домовитися про сплату аліментів і укласти письмовий нотаріально посвідчений договір. Для стягнення аліментів через суд можна подати заяву про видачу судового наказу, якщо вимога відповідає умовам наказного провадження, або звернутися з позовом. У наказному провадженні закон встановлює розміри аліментів, які можна вимагати: визначену частку від доходу платника або 50% прожиткового мінімуму для дитини відповідного віку. Судовий наказ застосовується, якщо вимога не пов’язана зі встановленням чи оспорюванням батьківства або материнства й немає потреби залучати інших заінтересованих осіб. Якщо потрібно обґрунтувати інший розмір, можна подати позов.</p>
+        <p>Допоможу обрати спосіб звернення, підготувати документи для стягнення аліментів або зміни їхнього розміру та з’ясувати, як стягнути заборгованість.</p>
+        <p class="family-law"><a href="https://zakon.rada.gov.ua/laws/show/2947-14#Text">Статті 180–184, 189, 192, 194–195 Сімейного кодексу України</a> · <a href="https://zakon.rada.gov.ua/laws/show/1618-15#Text">Стаття 161 ЦПК України</a></p>
+      </article>
+      <article class="family-topic" id="podil-maina">
+        <h2 class="section-title">Поділ майна подружжя</h2>
+        <p>Майно, набуте під час шлюбу, за загальним правилом є спільною сумісною власністю подружжя, навіть якщо його оформлено на одного з них. Майно, набуте до шлюбу, одержане у спадщину чи в дар або придбане за особисті кошти, за загальним правилом належить тому з подружжя, хто його набув.</p>
+        <p>Спільне майно можна поділити під час шлюбу або після його розірвання. Якщо подружжя погодило поділ нерухомості, договір посвідчує нотаріус. Якщо є спір, його вирішує суд. Частки за загальним правилом рівні, але інше може випливати з домовленості, шлюбного договору або визначених законом підстав для відступу від рівності часток.</p>
+        <p>Після розірвання шлюбу до вимоги про поділ спільного майна застосовується трирічна позовна давність. Її перебіг обчислюється від дня, коли співвласник дізнався або міг дізнатися про порушення свого права власності.</p>
+        <p>Перевірю документи про набуття майна та джерела коштів, допоможу погодити умови поділу або підготую позов і представлю ваші інтереси в суді.</p>
+        <p class="family-law"><a href="https://zakon.rada.gov.ua/laws/show/2947-14#Text">Статті 57, 60, 68–72 Сімейного кодексу України</a></p>
+      </article>
+    </div>
+  </section>
+  <section class="section contact-section" id="contacts"><div class="wrap"><div class="contact-layout">
+<div class="contact-intro"><h2>Консультація <em>адвоката</em></h2><p>Для первинного звернення зателефонуйте або напишіть. Прийом в офісі — за попереднім узгодженням.</p><a class="contact-phone" href="tel:+380638180427">+38 (063) 818-04-27</a><span class="contact-hours">Понеділок–п’ятниця · 10:00–19:00</span></div>
+<div class="contact-details"><div><span>ЕЛЕКТРОННА ПОШТА</span><a href="mailto:albinvyrostko.attorney-at-law@ukr.net">albinvyrostko.attorney-at-law@ukr.net</a></div><div><span>МЕСЕНДЖЕРИ ТА СОЦМЕРЕЖІ</span><p><a href="https://wa.me/380638180427" target="_blank" rel="noopener noreferrer">WhatsApp ↗︎</a><a href="viber://add?number=%2B380638180427">Viber ↗︎</a><a href="https://www.instagram.com/albin_vyrostko/" target="_blank" rel="noopener noreferrer">Instagram ↗︎</a></p></div><div><span>АДРЕСА</span><p>вул. Грушевського, 70, оф. 3<br>м. Козятин, Вінницька область, 22100</p><a href="https://www.google.com/maps/search/?api=1&query=Advokat%20Vyrostko%20Albin%20Viktorovych%2C%20Hrushevskoho%2070%2C%20Koziatyn%2C%20Vinnytsia%20Oblast%2C%20Ukraine" target="_blank" rel="noopener noreferrer">Офіс на Google Maps ↗︎</a></div></div></div>
+</div></section>
 </main>
-<footer><div class="wrap"><span>© Адвокат Альбін Виростко</span><a href="/">advokat-vyrostko.com.ua</a></div></footer>
-</body></html>
+<footer class="portfolio-footer"><div class="wrap"><a href="/">Альбін Виростко <small>АДВОКАТ</small></a><span>Індивідуальна адвокатська практика · Козятин</span><a href="#top">На початок ↑︎</a></div></footer>
+</body>
+</html>
