@@ -33,6 +33,35 @@
 @media (max-width: 680px) {
   .family-page .family-topic p { font-size: 16px; }
 }
+
+@media (min-width: 681px) and (prefers-reduced-motion: no-preference) {
+  .family-page .family-hero .hero-copy h1,
+  .family-page .family-hero .hero-description,
+  .family-page .family-hero .hero-actions {
+    animation: family-entrance 600ms ease-out both;
+  }
+  .family-page .family-hero .hero-description { animation-delay: 100ms; }
+  .family-page .family-hero .hero-actions { animation-delay: 190ms; }
+
+  .family-page .family-topic h2,
+  .family-page .contact-layout > div {
+    animation: var(--family-entrance, none);
+  }
+  .family-page .family-in-view { --family-entrance: family-entrance 480ms ease-out both; }
+  .family-page .family-topics a,
+  .family-page .family-law a {
+    transition: color 180ms ease, text-underline-offset 180ms ease;
+  }
+  .family-page .family-topics a:is(:hover, :focus-visible),
+  .family-page .family-law a:is(:hover, :focus-visible) {
+    color: #805c28;
+    text-underline-offset: 7px;
+  }
+}
+@keyframes family-entrance {
+  from { opacity: .55; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Attorney","name":"Виростко Альбін Вікторович","url":"https://advokat-vyrostko.com.ua/simeyni-spory.html","telephone":"+380638180427","address":{"@type":"PostalAddress","streetAddress":"вул. Грушевського, 70, оф. 3","addressLocality":"Козятин","addressRegion":"Вінницька область","postalCode":"22100","addressCountry":"UA"},"areaServed":"Козятин та Вінницька область","knowsAbout":["Розірвання шлюбу","Стягнення аліментів","Поділ майна подружжя"]}</script>
 </head>
@@ -86,5 +115,20 @@
 </div></section>
 </main>
 <footer class="portfolio-footer"><div class="wrap"><a href="/">Альбін Виростко <small>АДВОКАТ</small></a><span>Індивідуальна адвокатська практика · Козятин</span><a href="#top">На початок ↑︎</a></div></footer>
+<script>
+if ('IntersectionObserver' in window) {
+  const sections = document.querySelectorAll('.family-topic, .contact-layout');
+  const observer = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      if (!entry.target.matches(':target, :target *')) {
+        entry.target.classList.add('family-in-view');
+      }
+      observer.unobserve(entry.target);
+    }
+  }, { rootMargin: '0px 0px -12% 0px' });
+  for (const section of sections) observer.observe(section);
+}
+</script>
 </body>
 </html>
